@@ -73,6 +73,14 @@
         "description": "AI-powered website development, SEO, growth marketing, business automations, and 14 practical AI courses."
       },
       {
+        "@type": "Service",
+        "name": "Google Merchant Center Setup & Product Feed Optimization",
+        "provider": { "@id": "https://vortexdigitalai.com/#organization" },
+        "areaServed": "Worldwide",
+        "serviceType": "Google Merchant Center Expert",
+        "description": "Google Merchant Center account setup, product feed creation and optimization, feed error and disapproval fixes, category mapping, and Shopping Ads readiness for e-commerce stores."
+      },
+      {
         "@type": "FAQPage",
         "mainEntity": [
           {
@@ -89,6 +97,16 @@
             "@type": "Question",
             "name": "How can I contact VortexDigitalAI?",
             "acceptedAnswer": { "@type": "Answer", "text": "Via WhatsApp at +92 312 528 2051, email at info@vortexdigitalai.com, or by booking a free 30-minute Google Meet call." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does VortexDigitalAI offer Google Merchant Center services?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. VortexDigitalAI specializes in Google Merchant Center account setup, product feed creation and optimization, fixing feed errors and disapprovals, category mapping, and preparing stores for Google Shopping Ads." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is my Google Merchant Center product feed disapproved?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Common causes include missing GTIN/brand data, incorrect pricing or availability, policy violations, or image quality issues. VortexDigitalAI audits your feed, identifies the exact cause, and fixes it so products stay approved and eligible for ads." }
           },
           {
             "@type": "Question",
@@ -582,6 +600,54 @@
     .deal-text-group .deal-value { font-family: var(--font-display); font-size: 1.1rem; }
 
     /* ============================
+       TECH / PLATFORM BADGES
+    ============================ */
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+    .tech-badge {
+      display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center;
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg);
+      padding: 20px 14px; backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%);
+      transition: border-color .25s, transform .25s var(--ease-expo), box-shadow .25s;
+      position: relative;
+    }
+    .tech-badge:hover { transform: translateY(-3px); border-color: rgba(0,212,255,.35); box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+    .tech-badge .tech-icon {
+      width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-size: 19px;
+      background: linear-gradient(135deg, rgba(0,212,255,.14), rgba(139,92,246,.1)); color: var(--cyan);
+      border: 1px solid rgba(0,212,255,.18);
+    }
+    .tech-badge .tech-name { font-size: .78rem; font-weight: 700; }
+    .tech-badge .tech-tag {
+      font-size: .64rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em;
+    }
+    .tech-badge.featured {
+      border-color: rgba(245,158,11,.4);
+      background: linear-gradient(135deg, rgba(245,158,11,.08), rgba(0,212,255,.05));
+    }
+    .tech-badge.featured .tech-icon { background: linear-gradient(135deg, rgba(245,158,11,.2), rgba(244,63,94,.12)); color: var(--amber); border-color: rgba(245,158,11,.3); }
+    .tech-badge.featured::before {
+      content: 'Specialty'; position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--amber), var(--rose)); color: #fff; font-size: .6rem; font-weight: 800;
+      letter-spacing: .05em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px;
+    }
+    .tech-category-label {
+      font-size: .78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .1em;
+      margin: 28px 0 12px; display: flex; align-items: center; gap: 8px;
+    }
+    .tech-category-label:first-child { margin-top: 0; }
+    .expertise-callout {
+      background: linear-gradient(135deg, rgba(245,158,11,.08), rgba(0,212,255,.05));
+      border: 1px solid rgba(245,158,11,.25); border-radius: var(--r-xl);
+      padding: 32px; margin-top: 40px;
+    }
+    .expertise-callout h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .expertise-callout h3 i { color: var(--amber); }
+    .expertise-callout p { color: var(--muted); font-size: .92rem; line-height: 1.75; margin-bottom: 10px; }
+    .expertise-callout ul { margin: 10px 0 0; padding-left: 0; display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 8px; }
+    .expertise-callout li { font-size: .85rem; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+    .expertise-callout li i { color: var(--emerald); font-size: .8rem; }
+
+    /* ============================
        FAQ
     ============================ */
     .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
@@ -831,6 +897,7 @@
       <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
         <a href="#hero">Home</a>
         <a href="#services">Services</a>
+        <a href="#technologies">Integrations</a>
         <a href="#courses">Courses</a>
         <a href="#faq">FAQ</a>
         <a href="#get-in-touch">Contact</a>
@@ -913,6 +980,43 @@
       <p class="section-sub reveal reveal-delay-2">From AI strategy to deployment — every capability you need under one roof.</p>
       <div class="services-grid" id="servicesGrid">
         <!-- cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGIES / PLATFORMS -->
+  <section id="technologies" aria-labelledby="techHeading">
+    <div class="section">
+      <p class="section-label reveal">Tools & Integrations</p>
+      <h2 class="section-heading reveal reveal-delay-1" id="techHeading">Platforms & Integrations We Work With</h2>
+      <p class="section-sub reveal reveal-delay-2">We connect your business to the platforms that matter — from e-commerce and customer support to AI, automation, and paid advertising infrastructure.</p>
+
+      <div class="tech-category-label reveal">E-Commerce Platforms</div>
+      <div class="tech-grid" id="techGridCommerce"></div>
+
+      <div class="tech-category-label reveal">Marketing, Ads & Google Merchant Center</div>
+      <div class="tech-grid" id="techGridMarketing"></div>
+
+      <div class="tech-category-label reveal">Customer Support</div>
+      <div class="tech-grid" id="techGridSupport"></div>
+
+      <div class="tech-category-label reveal">Automation & AI</div>
+      <div class="tech-grid" id="techGridAutomation"></div>
+
+      <div class="tech-category-label reveal">Development & Payments</div>
+      <div class="tech-grid" id="techGridDev"></div>
+
+      <div class="expertise-callout reveal">
+        <h3><i class="fas fa-store"></i> Google Merchant Center Experts</h3>
+        <p>VortexDigitalAI specializes in <strong>Google Merchant Center</strong> setup, product feed optimization, and Shopping Ads readiness — helping stores pass product data policy checks, fix disapprovals, and get listed correctly across Google Shopping, Search, and AI Overviews.</p>
+        <p>Our Google Merchant Center service covers: product feed structure (title, GTIN, availability, price accuracy), category mapping, merchant policy compliance, feed error resolution, and ongoing feed health monitoring so your products stay visible and eligible for ads.</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Merchant Center account setup & verification</li>
+          <li><i class="fas fa-check-circle"></i> Product feed creation & optimization</li>
+          <li><i class="fas fa-check-circle"></i> Feed error & disapproval fixes</li>
+          <li><i class="fas fa-check-circle"></i> Shopping Ads campaign readiness</li>
+          <li><i class="fas fa-check-circle"></i> Ongoing feed health monitoring</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -1006,6 +1110,14 @@
           <p>14 practical, industry-certified AI courses — from financial analysis and e-commerce to graphic design, digital marketing, coding, and business automation. Beginner to advanced, taught by practitioners.</p>
         </details>
         <details class="faq-item reveal reveal-delay-2">
+          <summary>Does VortexDigitalAI offer Google Merchant Center services?</summary>
+          <p>Yes — we specialize in Google Merchant Center account setup, product feed creation and optimization, fixing feed errors and disapprovals, category mapping, and preparing stores for Google Shopping Ads.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Why is my Google Merchant Center product feed disapproved?</summary>
+          <p>Usually it's missing GTIN/brand data, incorrect pricing or availability, a policy violation, or image quality issues. We audit your feed, pinpoint the exact cause, and fix it so your products stay approved and eligible for ads.</p>
+        </details>
+        <details class="faq-item reveal reveal-delay-1">
           <summary>How can I contact VortexDigitalAI?</summary>
           <p>WhatsApp at +92 312 528 2051, email at info@vortexdigitalai.com, or book a free 30-minute Google Meet call directly from this site.</p>
         </details>
@@ -1184,8 +1296,14 @@
 
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEtxN4OYM1pbj7lEV2KbJfUCsw-H-dsPD-VO0cymCiQ3n5_qJA6uAgCLoK4mqRiEn7vg/exec';
 
-  /* ---- Page load fade-in ---- */
-  window.addEventListener('load', () => document.body.classList.add('loaded'));
+  /* ---- Page load fade-in (with safety fallback so a slow YouTube embed can't strand the page invisible) ---- */
+  function revealPage() { document.body.classList.add('loaded'); }
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    revealPage();
+  } else {
+    document.addEventListener('DOMContentLoaded', revealPage);
+  }
+  setTimeout(revealPage, 1200); // hard safety net, never leaves the page stuck transparent
 
   /* ---- Scroll progress bar ---- */
   const scrollProgress = document.getElementById('scrollProgress');
@@ -1320,7 +1438,7 @@
     {icon:'fa-brain',      title:'Artificial Intelligence',desc:'Prediction, automation and decisioning with modern AI and LLM integrations.',  wa:'AI+solutions'},
     {icon:'fa-cloud',      title:'NetSuite ERP',         desc:'ERP implementations, third-party integrations and workflow automation.',          wa:'NetSuite+ERP'},
     {icon:'fab fa-microsoft',title:'Microsoft Dynamics', desc:'Dynamics 365 customization for operations and sales pipelines.',                  wa:'Microsoft+Dynamics'},
-    {icon:'fa-shopping-cart',title:'Ecommerce',          desc:'Store setup, CRO, speed optimization and catalog automations that convert.',     wa:'Ecommerce'},
+    {icon:'fa-shopping-cart',title:'Ecommerce',          desc:'Store setup, CRO, Google Merchant Center feed optimization, and speed optimization that converts.',     wa:'Ecommerce'},
     {icon:'fab fa-salesforce',title:'Salesforce',        desc:'CRM automation, flows and AI copilots built for growth-focused teams.',           wa:'Salesforce'},
     {icon:'fa-leaf',       title:'AgTech',               desc:'IoT and AI for precision agriculture — yield optimization with real-time data.',  wa:'AgTech'},
     {icon:'fa-heartbeat',  title:'Digital Health',       desc:'Telehealth platforms, EHR integrations, and data-driven patient care solutions.', wa:'Digital+Health'},
@@ -1347,6 +1465,63 @@
       </div>`;
     grid.appendChild(card);
     revealObs.observe(card);
+  });
+
+  /* ---- Technologies / Platforms badges ---- */
+  const TECH = {
+    techGridCommerce: [
+      { icon: 'fab fa-wordpress', name: 'WordPress' },
+      { icon: 'fab fa-shopify', name: 'Shopify' },
+      { icon: 'fas fa-shopping-basket', name: 'WooCommerce' },
+      { icon: 'fas fa-store-alt', name: 'PrestaShop' },
+      { icon: 'fas fa-shopping-bag', name: 'Magento' },
+      { icon: 'fas fa-cart-plus', name: 'BigCommerce' },
+      { icon: 'fas fa-cart-arrow-down', name: 'OpenCart' },
+    ],
+    techGridMarketing: [
+      { icon: 'fas fa-store', name: 'Google Merchant Center', featured: true },
+      { icon: 'fab fa-google', name: 'Google Ads' },
+      { icon: 'fas fa-chart-line', name: 'Google Analytics' },
+      { icon: 'fas fa-search', name: 'Search Console' },
+      { icon: 'fas fa-tags', name: 'Google Tag Manager' },
+      { icon: 'fab fa-facebook', name: 'Meta Ads' },
+      { icon: 'fab fa-tiktok', name: 'TikTok Ads' },
+    ],
+    techGridSupport: [
+      { icon: 'fas fa-headset', name: 'Zendesk' },
+      { icon: 'fas fa-comment-dots', name: 'Intercom' },
+      { icon: 'fas fa-comments', name: 'Tidio' },
+      { icon: 'fas fa-life-ring', name: 'Freshdesk' },
+      { icon: 'fas fa-robot', name: 'Gorgias' },
+      { icon: 'fas fa-bolt', name: 'LiveChat' },
+    ],
+    techGridAutomation: [
+      { icon: 'fas fa-bolt', name: 'Zapier' },
+      { icon: 'fas fa-cogs', name: 'Make.com' },
+      { icon: 'fas fa-project-diagram', name: 'n8n' },
+      { icon: 'fas fa-brain', name: 'OpenAI' },
+      { icon: 'fas fa-atom', name: 'Claude' },
+      { icon: 'fas fa-gem', name: 'Gemini' },
+    ],
+    techGridDev: [
+      { icon: 'fab fa-react', name: 'React' },
+      { icon: 'fas fa-bolt', name: 'Next.js' },
+      { icon: 'fab fa-node-js', name: 'Node.js' },
+      { icon: 'fab fa-laravel', name: 'Laravel' },
+      { icon: 'fab fa-stripe', name: 'Stripe' },
+      { icon: 'fab fa-paypal', name: 'PayPal' },
+    ],
+  };
+  Object.keys(TECH).forEach(gridId => {
+    const el = document.getElementById(gridId);
+    if (!el) return;
+    TECH[gridId].forEach((t, i) => {
+      const badge = document.createElement('div');
+      badge.className = 'tech-badge reveal' + (t.featured ? ' featured' : '') + (i % 3 === 1 ? ' reveal-delay-1' : i % 3 === 2 ? ' reveal-delay-2' : '');
+      badge.innerHTML = `<div class="tech-icon"><i class="${t.icon}"></i></div><div class="tech-name">${t.name}</div>`;
+      el.appendChild(badge);
+      revealObs.observe(badge);
+    });
   });
 
   /* ---- Courses data ---- */
@@ -1459,6 +1634,7 @@
       { kw: ['contact','reach','phone','number','whatsapp','email'], a: "You can reach us on WhatsApp at +92 312 528 2051 or email info@vortexdigitalai.com — or book a free 30-min Google Meet call.", link: WA_LINK, linkLabel: 'Chat on WhatsApp' },
       { kw: ['founder','who made','naveed','owner','ceo'], a: "VortexDigitalAI was founded by Naveed Ali. His certifications are verified on Credly.", link: 'https://www.credly.com/users/naveed-ali-qureshi', linkLabel: 'View Credly Profile' },
       { kw: ['website','web design','build a site'], a: "We build custom AI-enhanced websites with modern UX, fast load times, and SEO built in from day one. Want a quote?", link: WA_LINK, linkLabel: 'Get a Quote' },
+      { kw: ['merchant center','gmc','product feed','shopping ads','feed disapproved','google shopping'], a: "Yes! We specialize in Google Merchant Center — account setup, product feed optimization, fixing disapprovals/errors, category mapping, and getting stores ready for Google Shopping Ads." },
       { kw: ['seo'], a: "Our AI SEO service covers searcher intent mapping, technical audits, and programmatic content at scale to grow your organic traffic." },
       { kw: ['automation','automate','workflow'], a: "We build automations with Make.com and n8n, plus helpdesk and chat funnels that save teams hours every week." },
       { kw: ['meeting','call','book','schedule'], a: "You can book a free 30-minute call directly here:", link: 'https://meet.google.com/tzj-zyqu-tkn', linkLabel: 'Book Google Meet' },
@@ -1466,7 +1642,7 @@
       { kw: ['thanks','thank you','shukriya'], a: "You're welcome! Anything else I can help with?" },
     ];
 
-    const QUICK_REPLIES = ['Services', 'Courses', 'Pricing', 'Contact'];
+    const QUICK_REPLIES = ['Services', 'Courses', 'Google Merchant Center', 'Contact'];
 
     const chatToggle = document.getElementById('chatToggle');
     const chatToggleIcon = document.getElementById('chatToggleIcon');
