@@ -5,6 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="VortexDigitalAI: AI website development, SEO, marketing, automations & AI courses. Faster, smarter digital growth." />
   <title>VortexDigitalAI – AI Websites, Automations & Courses</title>
+  <link rel="canonical" href="https://vortexdigitalai.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="VortexDigitalAI" />
+  <meta property="og:title" content="VortexDigitalAI – AI Websites, Automations & Courses" />
+  <meta property="og:description" content="AI website development, SEO, marketing, automations & AI courses. Faster, smarter digital growth." />
+  <meta property="og:url" content="https://vortexdigitalai.com/" />
+  <meta property="og:image" content="http://vortexdigitalai.com/wp-content/uploads/2026/04/Untitled-design.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VortexDigitalAI – AI Websites, Automations & Courses" />
+  <meta name="twitter:description" content="AI website development, SEO, marketing, automations & AI courses. Faster, smarter digital growth." />
+  <meta name="twitter:image" content="http://vortexdigitalai.com/wp-content/uploads/2026/04/Untitled-design.png" />
+  <meta name="twitter:site" content="@vortexdigitalai" />
+
+  <!-- Structured data: Organization + Person + Services + FAQ (AEO/GEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vortexdigitalai.com/#organization",
+        "name": "VortexDigitalAI",
+        "url": "https://vortexdigitalai.com/",
+        "logo": "http://vortexdigitalai.com/wp-content/uploads/2026/04/Untitled-design.png",
+        "email": "info@vortexdigitalai.com",
+        "sameAs": [
+          "https://www.linkedin.com/company/vortexdigitalai",
+          "https://twitter.com/vortexdigitalai",
+          "https://www.youtube.com/@vortexdigitalai",
+          "https://www.instagram.com/vortexdigitalai",
+          "https://github.com/vortexdigitalai",
+          "https://www.tiktok.com/@vortexdigitalai"
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Naveed Ali",
+          "jobTitle": "Founder",
+          "sameAs": ["https://www.credly.com/users/naveed-ali-qureshi"]
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "email": "info@vortexdigitalai.com",
+          "telephone": "+92-312-528-2051",
+          "areaServed": "PK",
+          "availableLanguage": ["English", "Urdu"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vortexdigitalai.com/#website",
+        "url": "https://vortexdigitalai.com/",
+        "name": "VortexDigitalAI",
+        "publisher": { "@id": "https://vortexdigitalai.com/#organization" }
+      },
+      {
+        "@type": "Service",
+        "name": "AI Websites, SEO, Automations & AI Courses",
+        "provider": { "@id": "https://vortexdigitalai.com/#organization" },
+        "areaServed": "Worldwide",
+        "description": "AI-powered website development, SEO, growth marketing, business automations, and 14 practical AI courses."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What services does VortexDigitalAI offer?",
+            "acceptedAnswer": { "@type": "Answer", "text": "AI-powered websites, AI SEO, automations, growth marketing, e-commerce, app development, ERP/CRM integrations (NetSuite, Salesforce, Microsoft Dynamics), cloud infrastructure, and industry solutions for AgTech, EdTech, and digital health." }
+          },
+          {
+            "@type": "Question",
+            "name": "What AI courses does VortexDigitalAI teach?",
+            "acceptedAnswer": { "@type": "Answer", "text": "14 practical, industry-certified AI courses covering financial analysis, e-commerce, freelancing, graphic design, digital marketing/SEO, resume writing, content writing, coding, customer support, business automation, and data analysis." }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I contact VortexDigitalAI?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Via WhatsApp at +92 312 528 2051, email at info@vortexdigitalai.com, or by booking a free 30-minute Google Meet call." }
+          },
+          {
+            "@type": "Question",
+            "name": "Who founded VortexDigitalAI?",
+            "acceptedAnswer": { "@type": "Answer", "text": "VortexDigitalAI was founded by Naveed Ali, whose certifications are verified on Credly." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -487,6 +582,27 @@
     .deal-text-group .deal-value { font-family: var(--font-display); font-size: 1.1rem; }
 
     /* ============================
+       FAQ
+    ============================ */
+    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+    .faq-item {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg);
+      padding: 18px 22px; backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%);
+      transition: border-color .3s;
+    }
+    .faq-item[open] { border-color: rgba(0,212,255,.3); }
+    .faq-item summary {
+      cursor: pointer; font-family: var(--font-display); font-weight: 700; font-size: .98rem;
+      list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+'; font-size: 1.3rem; color: var(--cyan); flex-shrink: 0; transition: transform .3s var(--ease-expo);
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item p { font-size: .89rem; color: var(--muted); line-height: 1.65; margin-top: 12px; }
+
+    /* ============================
        LEAD / CONTACT
     ============================ */
     .lead-section {
@@ -578,6 +694,74 @@
     @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
 
     /* ============================
+       CHATBOT WIDGET
+    ============================ */
+    #chatToggle {
+      position: fixed; bottom: 24px; right: 24px; z-index: 150;
+      width: 58px; height: 58px; border-radius: 50%; border: none; cursor: pointer;
+      background: linear-gradient(135deg, var(--cyan), var(--violet)); color: #fff; font-size: 22px;
+      box-shadow: 0 8px 28px rgba(0,212,255,.35); display: grid; place-items: center;
+      transition: transform .25s var(--ease-spring), box-shadow .25s;
+    }
+    #chatToggle:hover { transform: scale(1.08); box-shadow: 0 12px 36px rgba(139,92,246,.45); }
+    #chatToggle.open { transform: rotate(90deg); }
+
+    #chatPanel {
+      position: fixed; bottom: 96px; right: 24px; z-index: 150;
+      width: 360px; max-width: calc(100vw - 32px); height: 480px; max-height: calc(100vh - 140px);
+      background: rgba(6,13,26,.92); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border: 1px solid var(--border-bright); border-radius: var(--r-xl);
+      box-shadow: 0 24px 70px rgba(0,0,0,.55);
+      display: flex; flex-direction: column; overflow: hidden;
+      opacity: 0; transform: translateY(16px) scale(.97); pointer-events: none;
+      transition: opacity .25s var(--ease-expo), transform .25s var(--ease-expo);
+    }
+    [data-theme="light"] #chatPanel { background: rgba(255,255,255,.92); }
+    #chatPanel.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+    #chatHeader { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--border); }
+    #chatHeaderAvatar { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--cyan), var(--violet)); display: grid; place-items: center; color: #fff; font-size: 15px; flex-shrink: 0; }
+    #chatHeaderTitle { font-family: var(--font-display); font-weight: 700; font-size: .92rem; }
+    #chatHeaderStatus { font-size: .74rem; color: var(--muted); display: flex; align-items: center; gap: 5px; }
+    .chat-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--emerald); display: inline-block; }
+    #chatClose { margin-left: auto; background: none; border: none; color: var(--muted); font-size: 16px; cursor: pointer; padding: 4px; }
+    #chatClose:hover { color: var(--ink); }
+
+    #chatMessages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+    .chat-msg { max-width: 84%; padding: 10px 14px; border-radius: 14px; font-size: .85rem; line-height: 1.55; }
+    .chat-msg.bot { align-self: flex-start; background: var(--surface); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+    .chat-msg.user { align-self: flex-end; background: linear-gradient(135deg, var(--cyan), var(--violet)); color: #fff; border-bottom-right-radius: 4px; }
+    .chat-msg a.chat-link {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-weight: 700;
+      background: rgba(255,255,255,.08); border: 1px solid var(--border-bright); border-radius: 999px;
+      padding: 6px 12px; font-size: .78rem; color: var(--ink); text-decoration: none;
+    }
+    .chat-msg a.chat-link:hover { border-color: var(--cyan); }
+
+    #chatQuickReplies { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 10px; }
+    .chat-quick {
+      font-size: .74rem; font-weight: 600; padding: 6px 12px; border-radius: 999px;
+      border: 1px solid var(--border-bright); background: var(--surface); color: var(--ink); cursor: pointer;
+      transition: border-color .2s, background .2s;
+    }
+    .chat-quick:hover { border-color: var(--cyan); background: rgba(0,212,255,.08); }
+
+    #chatInputRow { display: flex; gap: 8px; padding: 12px 14px; border-top: 1px solid var(--border); }
+    #chatInput {
+      flex: 1; background: rgba(255,255,255,.05); border: 1px solid var(--border); border-radius: 999px;
+      padding: 10px 16px; font-family: var(--font-body); font-size: .85rem; color: var(--ink);
+    }
+    #chatInput:focus { outline: none; border-color: var(--cyan); }
+    #chatInputRow button {
+      width: 38px; height: 38px; border-radius: 50%; border: none; cursor: pointer; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--cyan), var(--violet)); color: #fff; display: grid; place-items: center;
+    }
+    @media (max-width: 420px) {
+      #chatPanel { right: 16px; bottom: 88px; width: calc(100vw - 32px); }
+      #chatToggle { right: 16px; bottom: 16px; }
+    }
+
+    /* ============================
        SCROLL PROGRESS + PAGE LOAD
     ============================ */
     .scroll-progress {
@@ -648,6 +832,7 @@
         <a href="#hero">Home</a>
         <a href="#services">Services</a>
         <a href="#courses">Courses</a>
+        <a href="#faq">FAQ</a>
         <a href="#get-in-touch">Contact</a>
         <a href="#videos">Insights</a>
         <a href="#deals">Platforms</a>
@@ -805,6 +990,37 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faqHeading">
+    <div class="section">
+      <p class="section-label reveal">Common Questions</p>
+      <h2 class="section-heading reveal reveal-delay-1" id="faqHeading">Frequently Asked Questions</h2>
+      <p class="section-sub reveal reveal-delay-2">Quick answers about our services, courses, and how to get started.</p>
+      <div class="faq-list" id="faqList">
+        <details class="faq-item reveal">
+          <summary>What services does VortexDigitalAI offer?</summary>
+          <p>AI-powered websites, AI SEO, automations, growth marketing, e-commerce, app development, ERP/CRM integrations (NetSuite, Salesforce, Microsoft Dynamics), cloud infrastructure, and industry solutions for AgTech, EdTech, and digital health.</p>
+        </details>
+        <details class="faq-item reveal reveal-delay-1">
+          <summary>What AI courses does VortexDigitalAI teach?</summary>
+          <p>14 practical, industry-certified AI courses — from financial analysis and e-commerce to graphic design, digital marketing, coding, and business automation. Beginner to advanced, taught by practitioners.</p>
+        </details>
+        <details class="faq-item reveal reveal-delay-2">
+          <summary>How can I contact VortexDigitalAI?</summary>
+          <p>WhatsApp at +92 312 528 2051, email at info@vortexdigitalai.com, or book a free 30-minute Google Meet call directly from this site.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Who founded VortexDigitalAI?</summary>
+          <p>Naveed Ali founded VortexDigitalAI. His certifications are verified on Credly.</p>
+        </details>
+        <details class="faq-item reveal reveal-delay-1">
+          <summary>How fast will I get a response?</summary>
+          <p>Form submissions are answered within 24 hours. WhatsApp messages are typically answered much faster during business hours.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- GET IN TOUCH -->
   <section id="get-in-touch" aria-labelledby="leadHeading">
     <div class="section">
@@ -941,6 +1157,27 @@
       </nav>
     </div>
   </footer>
+
+  <!-- CHATBOT WIDGET -->
+  <button id="chatToggle" aria-label="Open chat assistant" aria-expanded="false">
+    <i class="fas fa-comment-dots" id="chatToggleIcon"></i>
+  </button>
+  <div id="chatPanel" role="dialog" aria-label="VortexDigitalAI Assistant" aria-hidden="true">
+    <div id="chatHeader">
+      <div id="chatHeaderAvatar"><i class="fas fa-bolt"></i></div>
+      <div>
+        <div id="chatHeaderTitle">Vortex Assistant</div>
+        <div id="chatHeaderStatus"><span class="chat-dot"></span> Online · Replies instantly</div>
+      </div>
+      <button id="chatClose" aria-label="Close chat"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="chatMessages"></div>
+    <div id="chatQuickReplies"></div>
+    <form id="chatInputRow">
+      <input id="chatInput" type="text" placeholder="Ask about services, courses, pricing…" autocomplete="off" />
+      <button type="submit" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
 
   <script>
   'use strict';
@@ -1207,6 +1444,119 @@
     document.getElementById('leadSuccess').style.display='none';
     document.getElementById('leadError').style.display='none';
   }
+
+  /* ---- Chatbot ---- */
+  (function() {
+    const WA_LINK = 'https://wa.me/923125282051?text=Hi%2C%20I%20have%20a%20question%20from%20your%20website%20chatbot';
+    const EMAIL_LINK = 'mailto:info@vortexdigitalai.com';
+    const FALLBACK = "I don't have that information available right now. You can reach our team directly and we'll help you out:";
+
+    // Knowledge base: each entry = keywords to match + answer
+    const KB = [
+      { kw: ['service','services','what do you do','offer'], a: "We offer AI Websites, AI SEO, Automations, Growth Marketing, PrestaShop Migration, Zendesk/Intercom support, App Development, ERP (NetSuite, Microsoft Dynamics, Salesforce), Ecommerce, AgTech, Digital Health, EdTech, and Cloud Infrastructure." },
+      { kw: ['course','courses','learn','training','class'], a: "We teach 14 practical AI courses — Financial Analyst, AI for Everyone, E-Commerce, Freelancing, Graphic Design, Digital Marketing/SEO, Resume+HR, Content Writing, Coding, Customer Support, Business Automation, and Data Analysis. Beginner to advanced." },
+      { kw: ['price','pricing','cost','how much','budget'], a: "Pricing depends on project scope. Our contact form has a budget selector ranging from Under $500 to $10,000+ — fill it in and we'll tailor a quote, or just tell me your budget range here." },
+      { kw: ['contact','reach','phone','number','whatsapp','email'], a: "You can reach us on WhatsApp at +92 312 528 2051 or email info@vortexdigitalai.com — or book a free 30-min Google Meet call.", link: WA_LINK, linkLabel: 'Chat on WhatsApp' },
+      { kw: ['founder','who made','naveed','owner','ceo'], a: "VortexDigitalAI was founded by Naveed Ali. His certifications are verified on Credly.", link: 'https://www.credly.com/users/naveed-ali-qureshi', linkLabel: 'View Credly Profile' },
+      { kw: ['website','web design','build a site'], a: "We build custom AI-enhanced websites with modern UX, fast load times, and SEO built in from day one. Want a quote?", link: WA_LINK, linkLabel: 'Get a Quote' },
+      { kw: ['seo'], a: "Our AI SEO service covers searcher intent mapping, technical audits, and programmatic content at scale to grow your organic traffic." },
+      { kw: ['automation','automate','workflow'], a: "We build automations with Make.com and n8n, plus helpdesk and chat funnels that save teams hours every week." },
+      { kw: ['meeting','call','book','schedule'], a: "You can book a free 30-minute call directly here:", link: 'https://meet.google.com/tzj-zyqu-tkn', linkLabel: 'Book Google Meet' },
+      { kw: ['hi','hello','hey','salam','assalam'], a: "Hey there! 👋 I'm the Vortex Assistant. Ask me about our services, AI courses, or how to get in touch." },
+      { kw: ['thanks','thank you','shukriya'], a: "You're welcome! Anything else I can help with?" },
+    ];
+
+    const QUICK_REPLIES = ['Services', 'Courses', 'Pricing', 'Contact'];
+
+    const chatToggle = document.getElementById('chatToggle');
+    const chatToggleIcon = document.getElementById('chatToggleIcon');
+    const chatPanel = document.getElementById('chatPanel');
+    const chatClose = document.getElementById('chatClose');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatQuick = document.getElementById('chatQuickReplies');
+    const chatForm = document.getElementById('chatInputRow');
+    const chatInput = document.getElementById('chatInput');
+    let opened = false;
+
+    function addMsg(text, sender, link, linkLabel) {
+      const div = document.createElement('div');
+      div.className = 'chat-msg ' + sender;
+      div.textContent = text;
+      if (link) {
+        const a = document.createElement('a');
+        a.href = link; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.className = 'chat-link';
+        a.innerHTML = `<i class="fab fa-whatsapp"></i> ${linkLabel || 'Open link'}`;
+        div.appendChild(document.createElement('br'));
+        div.appendChild(a);
+      }
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function renderQuickReplies() {
+      chatQuick.innerHTML = '';
+      QUICK_REPLIES.forEach(q => {
+        const btn = document.createElement('button');
+        btn.className = 'chat-quick'; btn.type = 'button'; btn.textContent = q;
+        btn.addEventListener('click', () => handleUserMessage(q));
+        chatQuick.appendChild(btn);
+      });
+    }
+
+    function findAnswer(msg) {
+      const lower = msg.toLowerCase();
+      for (const entry of KB) {
+        if (entry.kw.some(k => lower.includes(k))) return entry;
+      }
+      return null;
+    }
+
+    function handleUserMessage(text) {
+      if (!text.trim()) return;
+      addMsg(text, 'user');
+      chatInput.value = '';
+      setTimeout(() => {
+        const match = findAnswer(text);
+        if (match) {
+          addMsg(match.a, 'bot', match.link, match.linkLabel);
+        } else {
+          addMsg(FALLBACK, 'bot');
+          const div = document.createElement('div');
+          div.className = 'chat-msg bot';
+          const wa = document.createElement('a');
+          wa.href = WA_LINK; wa.target = '_blank'; wa.rel = 'noopener noreferrer'; wa.className = 'chat-link';
+          wa.innerHTML = '<i class="fab fa-whatsapp"></i> WhatsApp Us';
+          const em = document.createElement('a');
+          em.href = EMAIL_LINK; em.className = 'chat-link'; em.style.marginLeft = '8px';
+          em.innerHTML = '<i class="fas fa-envelope"></i> Email Us';
+          div.appendChild(wa); div.appendChild(em);
+          chatMessages.appendChild(div);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+      }, 450);
+    }
+
+    function openChat() {
+      chatPanel.classList.add('open'); chatPanel.setAttribute('aria-hidden', 'false');
+      chatToggle.classList.add('open'); chatToggle.setAttribute('aria-expanded', 'true');
+      chatToggleIcon.className = 'fas fa-times';
+      if (!opened) {
+        opened = true;
+        addMsg("Hi! I'm the Vortex Assistant 🤖 Ask me about our services, courses, pricing, or how to reach the team.", 'bot');
+        renderQuickReplies();
+      }
+      chatInput.focus();
+    }
+    function closeChat() {
+      chatPanel.classList.remove('open'); chatPanel.setAttribute('aria-hidden', 'true');
+      chatToggle.classList.remove('open'); chatToggle.setAttribute('aria-expanded', 'false');
+      chatToggleIcon.className = 'fas fa-comment-dots';
+    }
+
+    chatToggle.addEventListener('click', () => chatPanel.classList.contains('open') ? closeChat() : openChat());
+    chatClose.addEventListener('click', closeChat);
+    chatForm.addEventListener('submit', (e) => { e.preventDefault(); handleUserMessage(chatInput.value); });
+  })();
   </script>
 </body>
 </html>
