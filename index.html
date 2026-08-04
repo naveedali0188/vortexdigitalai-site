@@ -13,14 +13,14 @@
   <meta property="og:title" content="VortexDigitalAI – AI Websites, Automations & Courses" />
   <meta property="og:description" content="AI website development, SEO, marketing, automations & AI courses. Faster, smarter digital growth." />
   <meta property="og:url" content="https://vortexdigitalai.com/" />
-  <meta property="og:image" content="http://vortexdigitalai.com/wp-content/uploads/2026/04/Untitled-design.png" />
+  <meta property="og:image" content="https://vortexdigitalai.com/naveed-ali.jpg" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="VortexDigitalAI – AI Websites, Automations & Courses" />
   <meta name="twitter:description" content="AI website development, SEO, marketing, automations & AI courses. Faster, smarter digital growth." />
-  <meta name="twitter:image" content="http://vortexdigitalai.com/wp-content/uploads/2026/04/Untitled-design.png" />
+  <meta name="twitter:image" content="https://vortexdigitalai.com/naveed-ali.jpg" />
   <meta name="twitter:site" content="@vortexdigitalai" />
 
   <!-- Structured data: Organization + Person + Services + FAQ (AEO/GEO) -->
@@ -33,7 +33,7 @@
         "@id": "https://vortexdigitalai.com/#organization",
         "name": "VortexDigitalAI",
         "url": "https://vortexdigitalai.com/",
-        "logo": "http://vortexdigitalai.com/wp-content/uploads/2026/04/Untitled-design.png",
+        "logo": "https://vortexdigitalai.com/naveed-ali.jpg",
         "email": "info@vortexdigitalai.com",
         "sameAs": [
           "https://www.linkedin.com/company/vortexdigitalai",
@@ -54,9 +54,18 @@
           "contactType": "customer service",
           "email": "info@vortexdigitalai.com",
           "telephone": "+92-312-528-2051",
-          "areaServed": "PK",
+          "areaServed": ["US", "CA", "IT", "GB", "AU", "DE", "PK", "Worldwide"],
           "availableLanguage": ["English", "Urdu"]
-        }
+        },
+        "knowsAbout": ["AI Website Development", "Google Merchant Center", "Google SEO", "AI Automation", "Google Shopping Ads", "E-commerce Development"],
+        "areaServed": [
+          { "@type": "Country", "name": "United States" },
+          { "@type": "Country", "name": "Canada" },
+          { "@type": "Country", "name": "Italy" },
+          { "@type": "Country", "name": "United Kingdom" },
+          { "@type": "Country", "name": "Australia" },
+          { "@type": "Country", "name": "Germany" }
+        ]
       },
       {
         "@type": "WebSite",
@@ -69,16 +78,16 @@
         "@type": "Service",
         "name": "AI Websites, SEO, Automations & AI Courses",
         "provider": { "@id": "https://vortexdigitalai.com/#organization" },
-        "areaServed": "Worldwide",
-        "description": "AI-powered website development, SEO, growth marketing, business automations, and 14 practical AI courses."
+        "areaServed": ["United States", "Canada", "Italy", "United Kingdom", "Australia", "Germany", "Worldwide"],
+        "description": "AI-powered website development, SEO, growth marketing, business automations, and 14 practical AI courses for clients in the US, Canada, Italy, UK, Australia, and worldwide."
       },
       {
         "@type": "Service",
         "name": "Google Merchant Center Setup & Product Feed Optimization",
         "provider": { "@id": "https://vortexdigitalai.com/#organization" },
-        "areaServed": "Worldwide",
+        "areaServed": ["United States", "Canada", "Italy", "United Kingdom", "Australia", "Germany", "Worldwide"],
         "serviceType": "Google Merchant Center Expert",
-        "description": "Google Merchant Center account setup, product feed creation and optimization, feed error and disapproval fixes, category mapping, and Shopping Ads readiness for e-commerce stores."
+        "description": "Google Merchant Center account setup, product feed creation and optimization, feed error and disapproval fixes, category mapping, and Shopping Ads readiness for e-commerce stores in the US, Canada, Italy, and other developed markets."
       },
       {
         "@type": "FAQPage",
@@ -107,6 +116,11 @@
             "@type": "Question",
             "name": "Why is my Google Merchant Center product feed disapproved?",
             "acceptedAnswer": { "@type": "Answer", "text": "Common causes include missing GTIN/brand data, incorrect pricing or availability, policy violations, or image quality issues. VortexDigitalAI audits your feed, identifies the exact cause, and fixes it so products stay approved and eligible for ads." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does VortexDigitalAI work with clients in the USA, Canada, Italy, or UK?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. VortexDigitalAI works remotely with businesses in the United States, Canada, Italy, United Kingdom, Australia, Germany, and worldwide, delivering AI websites, SEO, Google Merchant Center optimization, and automation with flexible scheduling across time zones." }
           },
           {
             "@type": "Question",
@@ -390,6 +404,17 @@
       display: flex; flex-direction: column;
       
       box-shadow: none;
+    }
+    .service-tag {
+      position: absolute; top: 14px; right: 14px;
+      font-size: .62rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+      color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 3px 9px;
+    }
+    .service-card.service-featured {
+      border-color: #000; border-width: 1.5px;
+    }
+    .service-card.service-featured .service-tag {
+      background: #000; color: #fff; border-color: #000;
     }
     .service-card::after {
       content: ''; position: absolute; inset: 0; opacity: 0;
@@ -871,6 +896,7 @@
         <a href="#technologies">Integrations</a>
         <a href="#courses">Courses</a>
         <a href="#faq">FAQ</a>
+        <a href="#global-reach">Global</a>
         <a href="#get-in-touch">Contact</a>
         <a href="#videos">Insights</a>
         <a href="#deals">Platforms</a>
@@ -927,7 +953,7 @@
       <div class="hero-photo-wrap">
         <div class="photo-ring" aria-hidden="true"></div>
         <div class="hero-photo-card">
-          <img src="http://vortexdigitalai.com/wp-content/uploads/2026/04/Untitled-design.png" alt="Naveed Ali — Founder, VortexDigitalAI" />
+          <img src="https://vortexdigitalai.com/naveed-ali.jpg" alt="Naveed Ali — Founder, VortexDigitalAI" />
           <div class="hero-photo-badge">
             <div class="badge-avatar"><i class="fas fa-user-tie"></i></div>
             <div>
@@ -948,7 +974,7 @@
     <div class="section">
       <p class="section-label reveal">What We Do</p>
       <h2 class="section-heading reveal reveal-delay-1" id="servicesHeading">End-to-End Digital Services</h2>
-      <p class="section-sub reveal reveal-delay-2">From AI strategy to deployment — every capability you need under one roof.</p>
+      <p class="section-sub reveal reveal-delay-2">From AI strategy to deployment — every capability you need under one roof. We work with businesses across the USA, Canada, UK, Australia, Italy, Germany, and worldwide, delivering AI-powered websites, SEO, and automation with fast turnaround and 24-hour response times regardless of time zone.</p>
       <div class="services-grid" id="servicesGrid">
         <!-- cards injected by JS -->
       </div>
@@ -1053,7 +1079,7 @@
       <h2 class="section-heading reveal reveal-delay-1" id="dealsHeading">Find Us Online</h2>
       <p class="section-sub reveal reveal-delay-2">Hire us on Google or verify Naveed's credentials on Credly.</p>
       <div class="deals-grid reveal reveal-delay-3">
-        <a class="deal-card Google" href="wa.me/923125282051" target="_blank" rel="noopener noreferrer" aria-label="Hire on Google">
+        <a class="deal-card Google" href="https://wa.me/923125282051" target="_blank" rel="noopener noreferrer" aria-label="Hire on Google">
           <div class="deal-icon-wrap"><i class="fas fa-briefcase"></i></div>
           <div class="deal-text-group"><div class="deal-label">Hire us on</div><div class="deal-value">Google Agency</div></div>
         </a>
@@ -1061,6 +1087,27 @@
           <div class="deal-icon-wrap"><i class="fas fa-certificate"></i></div>
           <div class="deal-text-group"><div class="deal-label">Verified credentials</div><div class="deal-value">Credly · Naveed Ali</div></div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL REACH -->
+  <section id="global-reach" aria-labelledby="globalHeading">
+    <div class="section">
+      <p class="section-label reveal">International Clients</p>
+      <h2 class="section-heading reveal reveal-delay-1" id="globalHeading">Serving Businesses Worldwide</h2>
+      <p class="section-sub reveal reveal-delay-2">VortexDigitalAI works remotely with clients across the United States, Canada, Italy, United Kingdom, Australia, Germany, and beyond. Every project is managed with clear async communication, flexible scheduling across time zones, and the same quality standard regardless of where you're based.</p>
+      <div class="expertise-callout reveal">
+        <h3><i class="fas fa-globe"></i> Where We Work</h3>
+        <p>We regularly deliver AI websites, SEO, Google Merchant Center optimization, and automation projects for businesses in the <strong>United States, Canada, Italy, United Kingdom, and Australia</strong> — as well as clients across Europe and the Middle East. Whether you're a startup in Toronto, an e-commerce brand in Milan, or an agency in London, we adapt to your business hours and communicate on WhatsApp, email, or Google Meet.</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> United States — AI websites, SEO, Google Merchant Center</li>
+          <li><i class="fas fa-check-circle"></i> Canada — E-commerce & automation</li>
+          <li><i class="fas fa-check-circle"></i> Italy — Google Shopping & product feeds</li>
+          <li><i class="fas fa-check-circle"></i> United Kingdom — AI-powered growth marketing</li>
+          <li><i class="fas fa-check-circle"></i> Australia — App development & AI integrations</li>
+          <li><i class="fas fa-check-circle"></i> Germany & EU — Cloud infrastructure & ERP</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -1091,6 +1138,10 @@
         <details class="faq-item reveal reveal-delay-1">
           <summary>How can I contact VortexDigitalAI?</summary>
           <p>WhatsApp at +92 312 528 2051, email at info@vortexdigitalai.com, or book a free 30-minute Google Meet call directly from this site.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Does VortexDigitalAI work with clients in the USA, Canada, Italy, or UK?</summary>
+          <p>Yes — we work remotely with businesses across the United States, Canada, Italy, United Kingdom, Australia, Germany, and worldwide. We adapt to your time zone and communicate via WhatsApp, email, or Google Meet.</p>
         </details>
         <details class="faq-item reveal">
           <summary>Who founded VortexDigitalAI?</summary>
@@ -1220,7 +1271,7 @@
       <div class="footer-col">
         <h4>Platforms</h4>
         <ul>
-          <li><a href="wa.me/923125282051" target="_blank" rel="noopener noreferrer">Google</a></li>
+          <li><a href="https://wa.me/923125282051" target="_blank" rel="noopener noreferrer">Google</a></li>
           <li><a href="https://www.credly.com/users/naveed-ali-qureshi" target="_blank" rel="noopener noreferrer">Credly</a></li>
           <li><a href="https://kwork.ru/" target="_blank" rel="noopener noreferrer">Kwork</a></li>
           <li><a href="https://www.freelancer.com/u/Kulsoomumer1991" target="_blank" rel="noopener noreferrer">Freelancer</a></li>
@@ -1398,23 +1449,23 @@
 
   /* ---- Services data ---- */
   const SERVICES = [
-    {icon:'fa-code',       title:'AI Websites',         desc:'Custom, responsive sites enhanced with AI content and deep UX research.',        wa:'AI+Websites'},
-    {icon:'fa-search',     title:'AI SEO',               desc:'Searcher intent mapping, technical audits and programmatic content at scale.',    wa:'AI+SEO'},
-    {icon:'fa-robot',      title:'Automations',          desc:'Make.com, n8n, helpdesk and chat funnels that save hours every week.',            wa:'Automations'},
-    {icon:'fa-bullhorn',   title:'Growth Marketing',     desc:'Campaigns, landing pages and analytics — data-informed and conversion-focused.', wa:'Growth+Marketing'},
-    {icon:'fa-store',      title:'PrestaShop Migration', desc:'Seamlessly migrate your store with zero downtime and full data integrity.',       wa:'PrestaShop+Migration'},
-    {icon:'fa-headset',    title:'Zendesk Support',      desc:'AI-enhanced ticketing, macros, automations and deep analytics dashboards.',      wa:'Zendesk+Support'},
-    {icon:'fa-comments',   title:'Intercom Integration', desc:'Conversational funnels and lifecycle messaging with AI-assisted personalization.',wa:'Intercom+Integration'},
-    {icon:'fa-mobile-alt', title:'App Development',      desc:'Design → build → deploy: web and mobile apps, scalable and secure.',             wa:'App+Development'},
-    {icon:'fa-brain',      title:'Artificial Intelligence',desc:'Prediction, automation and decisioning with modern AI and LLM integrations.',  wa:'AI+solutions'},
-    {icon:'fa-cloud',      title:'NetSuite ERP',         desc:'ERP implementations, third-party integrations and workflow automation.',          wa:'NetSuite+ERP'},
-    {icon:'fab fa-microsoft',title:'Microsoft Dynamics', desc:'Dynamics 365 customization for operations and sales pipelines.',                  wa:'Microsoft+Dynamics'},
-    {icon:'fa-shopping-cart',title:'Ecommerce',          desc:'Store setup, CRO, Google Merchant Center feed optimization, and speed optimization that converts.',     wa:'Ecommerce'},
-    {icon:'fab fa-salesforce',title:'Salesforce',        desc:'CRM automation, flows and AI copilots built for growth-focused teams.',           wa:'Salesforce'},
-    {icon:'fa-leaf',       title:'AgTech',               desc:'IoT and AI for precision agriculture — yield optimization with real-time data.',  wa:'AgTech'},
-    {icon:'fa-heartbeat',  title:'Digital Health',       desc:'Telehealth platforms, EHR integrations, and data-driven patient care solutions.', wa:'Digital+Health'},
-    {icon:'fa-graduation-cap',title:'EdTech',            desc:'Adaptive learning platforms with built-in analytics and engagement tracking.',   wa:'EdTech'},
-    {icon:'fa-cloud-upload-alt',title:'Cloud Infrastructure',desc:'Cloud migration, infrastructure-as-code and full observability stacks.',    wa:'Cloud+Infrastructure'},
+    {icon:'fa-code',       title:'AI Websites',         desc:'Custom, responsive sites enhanced with AI content and deep UX research.',        wa:'AI+Websites', tag:'Core Service'},
+    {icon:'fa-search',     title:'AI SEO',               desc:'Searcher intent mapping, technical audits and programmatic content at scale.',    wa:'AI+SEO', tag:'Core Service'},
+    {icon:'fa-robot',      title:'Automations',          desc:'Make.com, n8n, helpdesk and chat funnels that save hours every week.',            wa:'Automations', tag:'Core Service'},
+    {icon:'fa-bullhorn',   title:'Growth Marketing',     desc:'Campaigns, landing pages and analytics — data-informed and conversion-focused.', wa:'Growth+Marketing', tag:'Core Service'},
+    {icon:'fa-store',      title:'PrestaShop Migration', desc:'Seamlessly migrate your store with zero downtime and full data integrity.',       wa:'PrestaShop+Migration', tag:'Specialty'},
+    {icon:'fa-headset',    title:'Zendesk Support',      desc:'AI-enhanced ticketing, macros, automations and deep analytics dashboards.',      wa:'Zendesk+Support', tag:'Specialty'},
+    {icon:'fa-comments',   title:'Intercom Integration', desc:'Conversational funnels and lifecycle messaging with AI-assisted personalization.',wa:'Intercom+Integration', tag:'Specialty'},
+    {icon:'fa-mobile-alt', title:'App Development',      desc:'Design → build → deploy: web and mobile apps, scalable and secure.',             wa:'App+Development', tag:'Core Service'},
+    {icon:'fa-brain',      title:'Artificial Intelligence',desc:'Prediction, automation and decisioning with modern AI and LLM integrations.',  wa:'AI+solutions', tag:'Core Service'},
+    {icon:'fa-cloud',      title:'NetSuite ERP',         desc:'ERP implementations, third-party integrations and workflow automation.',          wa:'NetSuite+ERP', tag:'Specialty'},
+    {icon:'fab fa-microsoft',title:'Microsoft Dynamics', desc:'Dynamics 365 customization for operations and sales pipelines.',                  wa:'Microsoft+Dynamics', tag:'Specialty'},
+    {icon:'fa-shopping-cart',title:'Ecommerce & Google Merchant Center',desc:'Store setup, CRO, Google Merchant Center feed optimization, and Shopping Ads readiness.', wa:'Ecommerce', tag:'Specialty', featured:true},
+    {icon:'fab fa-salesforce',title:'Salesforce',        desc:'CRM automation, flows and AI copilots built for growth-focused teams.',           wa:'Salesforce', tag:'Specialty'},
+    {icon:'fa-leaf',       title:'AgTech',               desc:'IoT and AI for precision agriculture — yield optimization with real-time data.',  wa:'AgTech', tag:'Industry'},
+    {icon:'fa-heartbeat',  title:'Digital Health',       desc:'Telehealth platforms, EHR integrations, and data-driven patient care solutions.', wa:'Digital+Health', tag:'Industry'},
+    {icon:'fa-graduation-cap',title:'EdTech',            desc:'Adaptive learning platforms with built-in analytics and engagement tracking.',   wa:'EdTech', tag:'Industry'},
+    {icon:'fa-cloud-upload-alt',title:'Cloud Infrastructure',desc:'Cloud migration, infrastructure-as-code and full observability stacks.',    wa:'Cloud+Infrastructure', tag:'Core Service'},
   ];
 
   const grid = document.getElementById('servicesGrid');
@@ -1424,9 +1475,10 @@
     const isFab = s.icon.startsWith('fab ');
     const iconClass = isFab ? s.icon : 'fas ' + s.icon;
     const card = document.createElement('article');
-    card.className = `service-card reveal ${d}`;
+    card.className = `service-card reveal ${d}${s.featured ? ' service-featured' : ''}`;
     card.tabIndex = 0;
     card.innerHTML = `
+      <div class="service-tag">${s.tag}</div>
       <div class="card-icon"><i class="${iconClass}"></i></div>
       <h3 class="card-title">${s.title}</h3>
       <p class="card-desc">${s.desc}</p>
@@ -1605,6 +1657,7 @@
       { kw: ['contact','reach','phone','number','whatsapp','email'], a: "You can reach us on WhatsApp at +92 312 528 2051 or email info@vortexdigitalai.com — or book a free 30-min Google Meet call.", link: WA_LINK, linkLabel: 'Chat on WhatsApp' },
       { kw: ['founder','who made','naveed','owner','ceo'], a: "VortexDigitalAI was founded by Naveed Ali. His certifications are verified on Credly.", link: 'https://www.credly.com/users/naveed-ali-qureshi', linkLabel: 'View Credly Profile' },
       { kw: ['website','web design','build a site'], a: "We build custom AI-enhanced websites with modern UX, fast load times, and SEO built in from day one. Want a quote?", link: WA_LINK, linkLabel: 'Get a Quote' },
+      { kw: ['usa','united states','canada','italy','uk','united kingdom','australia','germany','international','country','countries','abroad','overseas','timezone','time zone'], a: "Yes! We work remotely with clients across the United States, Canada, Italy, United Kingdom, Australia, Germany, and worldwide — adapting to your time zone and communicating via WhatsApp, email, or Google Meet." },
       { kw: ['merchant center','gmc','product feed','shopping ads','feed disapproved','google shopping'], a: "Yes! We specialize in Google Merchant Center — account setup, product feed optimization, fixing disapprovals/errors, category mapping, and getting stores ready for Google Shopping Ads." },
       { kw: ['seo'], a: "Our AI SEO service covers searcher intent mapping, technical audits, and programmatic content at scale to grow your organic traffic." },
       { kw: ['automation','automate','workflow'], a: "We build automations with Make.com and n8n, plus helpdesk and chat funnels that save teams hours every week." },
