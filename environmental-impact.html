@@ -16,8 +16,8 @@
 <title>Global Environmental Impact Tracker — Live Wildfire, Flood & Disaster Data | VortexDigitalAI</title>
 
 <!-- ===== SEO ===== -->
-<meta name="description" content="Live, real-time tracker of the world's environmental damage — wildfires, floods, and conflict-driven ecological loss. Updated automatically from satellite and disaster-monitoring data. Talk to VortexDigitalAI on WhatsApp or book a call to learn more.">
-<meta name="keywords" content="environmental impact tracker, live wildfire map, global disaster data, climate damage tracker, flood monitoring, environmental news live, wildfire impact today, VortexDigitalAI">
+<meta name="description" content="Live-updating tracker of the world's environmental damage — wildfires, floods, and conflict-driven ecological loss — plus live research charts on CO2 and greenhouse gas emissions from Our World in Data. Research and curation by Naveed Ali Qureshi, VortexDigitalAI.">
+<meta name="keywords" content="environmental impact tracker, live wildfire map, global disaster data, climate damage tracker, flood monitoring, CO2 emissions data, greenhouse gas emissions, Naveed Ali Qureshi, VortexDigitalAI">
 <link rel="canonical" href="https://vortexdigitalai.com/environmental-impact.html">
 
 <!-- ===== Open Graph (social + AEO/GEO surfaces read this) ===== -->
@@ -48,6 +48,19 @@
     "url": "https://vortexdigitalai.com/",
     "email": "naveedali01888@gmail.com"
   },
+  "author": {
+    "@type": "Person",
+    "name": "Naveed Ali Qureshi",
+    "jobTitle": "Founder & Researcher",
+    "worksFor": { "@type": "Organization", "name": "VortexDigitalAI" },
+    "sameAs": ["https://www.credly.com/users/naveed-ali-qureshi"]
+  },
+  "citation": [
+    "Hannah Ritchie, Pablo Rosado and Max Roser (2023) - \"CO2 and Greenhouse Gas Emissions\" - Our World in Data - https://ourworldindata.org/co2-and-greenhouse-gas-emissions",
+    "NASA FIRMS (Fire Information for Resource Management System) - https://firms.modaps.eosdis.nasa.gov/",
+    "GDACS (Global Disaster Alert and Coordination System) - https://www.gdacs.org/",
+    "Climate Impact Lab - https://impactlab.org/"
+  ],
   "temporalCoverage": "2026/..",
   "isAccessibleForFree": true
 }
@@ -71,6 +84,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Wildfire and disaster data refresh automatically at regular intervals directly from public monitoring feeds, without needing a page reload."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does the data and research on this page come from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Live incident data comes from NASA FIRMS and GDACS. The embedded research charts are sourced directly from Our World in Data's CO2 and Greenhouse Gas Emissions topic page, authored by Hannah Ritchie, Pablo Rosado and Max Roser, shown here for educational reference. Additional projections are available via the Climate Impact Lab map. Page research and curation by Naveed Ali Qureshi of VortexDigitalAI."
       }
     },
     {
@@ -277,9 +298,56 @@ section.cta{
 footer{padding:40px 0 60px; color:var(--text-dim); font-size:13px;}
 footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; border-top:1px solid var(--line); padding-top:24px;}
 
+/* ---------- Research charts (Our World in Data embeds) ---------- */
+section.research{padding:24px 0 64px;}
+.research h2{font-size:26px; margin-bottom:8px;}
+.research .research-sub{color:var(--text-dim); font-size:14px; max-width:640px; margin-bottom:8px;}
+.researcher-credit{
+  display:inline-flex; align-items:center; gap:8px; font-size:13px; color:var(--text-dim);
+  margin-bottom:28px; border:1px solid var(--line); padding:6px 12px; border-radius:999px;
+}
+.researcher-credit b{color:var(--text);}
+.chart-grid{display:grid; grid-template-columns:1fr; gap:24px;}
+.chart-card{
+  background:var(--bg-panel); border:1px solid var(--line); border-radius:6px; overflow:hidden;
+}
+.chart-card iframe{width:100%; height:420px; border:none; display:block; background:var(--bg-panel);}
+.chart-card .chart-caption{
+  padding:14px 20px; font-size:12px; color:var(--text-dim); border-top:1px solid var(--line);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+}
+.chart-card .chart-caption a{color:var(--flood); text-decoration:underline;}
+
+.sources-row{display:flex; gap:16px; flex-wrap:wrap; margin-top:28px;}
+.source-card{
+  flex:1 1 240px; background:var(--bg-panel); border:1px solid var(--line); border-radius:6px;
+  padding:20px; text-decoration:none; color:var(--text); transition:transform .18s ease, border-color .18s ease;
+  display:block;
+}
+.source-card:hover{transform:translateY(-3px); border-color:var(--text-dim);}
+.source-card h4{font-size:15px; margin-bottom:6px; font-family:'Orbitron', sans-serif;}
+.source-card p{font-size:12px; color:var(--text-dim); line-height:1.5;}
+.source-card .go{font-size:11px; color:var(--flood); margin-top:10px; display:inline-block; font-family:'JetBrains Mono', monospace;}
+
+/* ---------- Hover polish on interactive elements ---------- */
+.btn{transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;}
+.btn:hover{box-shadow:0 6px 20px rgba(0,212,255,0.15);}
+.btn-whatsapp:hover{box-shadow:0 6px 20px rgba(37,211,102,0.35); transform:translateY(-2px) scale(1.02);}
+.detail-btn{transition:transform .18s ease, border-color .18s ease, color .18s ease, background .18s ease;}
+.detail-btn:hover{transform:translateX(2px); background:rgba(255,255,255,0.03);}
+.card{transition:transform .22s ease, border-color .22s ease;}
+.card:hover{transform:translateY(-4px); border-color:var(--text-dim);}
+.topbar a.back{transition:transform .15s ease;}
+.topbar a.back:hover{transform:translateX(-3px);}
+.social-btn, .status-tag{transition:opacity .18s ease;}
+
+/* ---------- Scroll-reveal animation ---------- */
+.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
 @media (prefers-reduced-motion: reduce){
   .ticker-inner{animation:none;}
   .live-dot{animation:none;}
+  .reveal{opacity:1; transform:none; transition:none;}
 }
 </style>
 </head>
@@ -318,7 +386,7 @@ footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; g
   </div>
 </header>
 
-<section class="cards">
+<section class="cards reveal">
   <div class="wrap">
     <div class="cards-grid">
 
@@ -356,7 +424,7 @@ footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; g
   </div>
 </section>
 
-<section class="feed">
+<section class="feed reveal">
   <div class="wrap">
     <h2>Recent incidents</h2>
     <div class="feed-list" id="feedList">
@@ -365,7 +433,59 @@ footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; g
   </div>
 </section>
 
-<section class="cta">
+<section class="research reveal">
+  <div class="wrap">
+    <h2>Global emissions research, live from the data</h2>
+    <p class="research-sub">The charts below update automatically at the source — we don't host or alter this data. They're shown here for educational reference alongside the live incident tracker above.</p>
+    <div class="researcher-credit">
+      <span>📊</span> Research &amp; page curation by <b>Naveed Ali Qureshi</b>, VortexDigitalAI
+    </div>
+
+    <div class="chart-grid">
+      <div class="chart-card">
+        <iframe src="https://ourworldindata.org/grapher/annual-co2-emissions-per-country" loading="lazy" title="Annual CO2 emissions by country"></iframe>
+        <div class="chart-caption">
+          <span>Annual CO₂ emissions by country — interactive, updates automatically</span>
+          <a href="https://ourworldindata.org/co2-and-greenhouse-gas-emissions" target="_blank" rel="noopener">Source: Our World in Data ↗</a>
+        </div>
+      </div>
+      <div class="chart-card">
+        <iframe src="https://ourworldindata.org/grapher/temperature-anomaly" loading="lazy" title="Global temperature anomaly"></iframe>
+        <div class="chart-caption">
+          <span>Global temperature change vs. pre-industrial baseline</span>
+          <a href="https://ourworldindata.org/co2-and-greenhouse-gas-emissions" target="_blank" rel="noopener">Source: Our World in Data ↗</a>
+        </div>
+      </div>
+      <div class="chart-card">
+        <iframe src="https://ourworldindata.org/grapher/ghg-emissions-by-sector" loading="lazy" title="Greenhouse gas emissions by sector"></iframe>
+        <div class="chart-caption">
+          <span>Where global greenhouse gas emissions come from, by sector</span>
+          <a href="https://ourworldindata.org/co2-and-greenhouse-gas-emissions" target="_blank" rel="noopener">Source: Our World in Data ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sources-row">
+      <a class="source-card" href="https://ourworldindata.org/co2-and-greenhouse-gas-emissions" target="_blank" rel="noopener">
+        <h4>Our World in Data</h4>
+        <p>Open-access research on CO₂ and greenhouse gas emissions by Hannah Ritchie, Pablo Rosado and Max Roser — the full dataset and 150+ related charts.</p>
+        <span class="go">Explore the full topic page →</span>
+      </a>
+      <a class="source-card" href="https://impactlab.org/map/" target="_blank" rel="noopener">
+        <h4>Climate Impact Lab</h4>
+        <p>An interactive global map projecting local, long-term climate impacts — temperature, mortality, agriculture and more, county-by-county and country-by-country.</p>
+        <span class="go">Explore the impact map →</span>
+      </a>
+      <a class="source-card" href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" rel="noopener">
+        <h4>NASA FIRMS</h4>
+        <p>The satellite fire-detection feed powering the live Wildfires card above, refreshed directly from NASA's Fire Information for Resource Management System.</p>
+        <span class="go">View raw satellite data →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta reveal">
   <div class="wrap cta-inner">
     <div>
       <h2>Want the full picture for your region or sector?</h2>
@@ -515,21 +635,39 @@ document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeDetail
    Free API key required (instant signup, no cost):
    https://firms.modaps.eosdis.nasa.gov/api/map_key/
    Docs: https://firms.modaps.eosdis.nasa.gov/api/area/
+
+   Some browsers/networks block this endpoint via CORS. If the
+   direct request fails, we retry once through a public read-only
+   CORS proxy. If that also fails, we fall back to a small labeled
+   sample so the page never looks broken or stuck.
 ============================================================= */
+const CORS_PROXY = "https://corsproxy.io/?url=";
+
+async function fetchWithFallback(url){
+  try{
+    const res = await fetch(url);
+    if(!res.ok) throw new Error("bad status " + res.status);
+    return res;
+  }catch(e){
+    const res = await fetch(CORS_PROXY + encodeURIComponent(url));
+    if(!res.ok) throw new Error("proxy also failed");
+    return res;
+  }
+}
+
 async function fetchFires(){
   try{
     if(FIRMS_MAP_KEY === "YOUR_FIRMS_MAP_KEY") throw new Error("no key set");
     const url = `https://firms.modaps.eosdis.nasa.gov/api/area/csv/${FIRMS_MAP_KEY}/VIIRS_SNPP_NRT/world/1`;
-    const res = await fetch(url);
-    if(!res.ok) throw new Error("FIRMS request failed");
+    const res = await fetchWithFallback(url);
     const csv = await res.text();
-    const rows = csv.trim().split("\n").slice(1); // drop header
+    const rows = csv.trim().split("\n").slice(1).filter(Boolean); // drop header
     const count = rows.length;
+    if(count === 0) throw new Error("empty response");
 
     document.getElementById('fireCount').textContent = count.toLocaleString();
-    pushPoint(fireChart, count);
+    if(fireChart) pushPoint(fireChart, count);
 
-    // Sample a few rows into the incident feed
     rows.slice(0, 4).forEach(row => {
       const cols = row.split(",");
       const lat = parseFloat(cols[0]).toFixed(1);
@@ -538,28 +676,39 @@ async function fetchFires(){
     });
     return count;
   }catch(e){
-    document.getElementById('fireCount').textContent = "Add API key";
-    console.warn("FIRMS fetch skipped:", e.message);
-    return 0;
+    console.warn("FIRMS live fetch unavailable, showing sample data:", e.message);
+    return fireSampleFallback();
   }
+}
+
+function fireSampleFallback(){
+  const sample = [
+    { text:"Active fire cluster detected (sample)", loc:"38.9, 21.4" },
+    { text:"Active fire cluster detected (sample)", loc:"-3.1, -60.2" },
+    { text:"Active fire cluster detected (sample)", loc:"36.5, -119.8" }
+  ];
+  document.getElementById('fireCount').textContent = "~sample";
+  if(fireChart) pushPoint(fireChart, sample.length * 40);
+  sample.forEach(s => feedItems.unshift({ type:'fire', text:s.text, loc:s.loc, time:Date.now() }));
+  return sample.length * 40;
 }
 
 /* ============================================================
    LIVE DATA: GDACS (floods, storms, earthquakes, etc.)
-   Public JSON feed, no key required.
-   Docs: https://www.gdacs.org/xml/gdacs.xml (and REST API)
+   Public JSON feed, no key required. Same CORS-proxy + sample-data
+   fallback strategy as the wildfire feed above.
 ============================================================= */
 async function fetchDisasters(){
   try{
     const url = "https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?eventlist=EQ;TC;FL;VO;DR;WF&alertlevel=Orange;Red";
-    const res = await fetch(url);
-    if(!res.ok) throw new Error("GDACS request failed");
+    const res = await fetchWithFallback(url);
     const json = await res.json();
     const features = json.features || [];
     const count = features.length;
+    if(count === 0) throw new Error("empty response");
 
     document.getElementById('floodCount').textContent = count.toLocaleString();
-    pushPoint(floodChart, count);
+    if(floodChart) pushPoint(floodChart, count);
 
     features.slice(0, 4).forEach(f => {
       const p = f.properties || {};
@@ -572,10 +721,21 @@ async function fetchDisasters(){
     });
     return count;
   }catch(e){
-    document.getElementById('floodCount').textContent = "—";
-    console.warn("GDACS fetch skipped (may need a CORS proxy from your own server):", e.message);
-    return 0;
+    console.warn("GDACS live fetch unavailable, showing sample data:", e.message);
+    return floodSampleFallback();
   }
+}
+
+function floodSampleFallback(){
+  const sample = [
+    { text:"Flood alert — heavy monsoon rainfall (sample)", loc:"Pakistan" },
+    { text:"Tropical storm alert (sample)", loc:"Philippines" },
+    { text:"Flash flood warning (sample)", loc:"Spain" }
+  ];
+  document.getElementById('floodCount').textContent = "~sample";
+  if(floodChart) pushPoint(floodChart, sample.length);
+  sample.forEach(s => feedItems.unshift({ type:'flood', text:s.text, loc:s.loc, time:Date.now() }));
+  return sample.length;
 }
 
 /* ============================================================
@@ -591,16 +751,34 @@ const conflictData = [
 function loadConflictData(){
   document.getElementById('conflictCount').textContent = conflictData.length;
   conflictData.forEach(item => feedItems.push({ type:'conflict', text:item.text, loc:item.loc, time:Date.now() }));
-  pushPoint(conflictChart, conflictData.length);
+}
+
+function initScrollReveal(){
+  const els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){ els.forEach(el => el.classList.add('in')); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
 }
 
 /* ---------- Init ---------- */
 window.addEventListener('DOMContentLoaded', async () => {
-  fireChart = sparkline(document.getElementById('fireChart'), getComputedStyle(document.documentElement).getPropertyValue('--fire').trim(), [0,0,0,0,0,0]);
-  floodChart = sparkline(document.getElementById('floodChart'), getComputedStyle(document.documentElement).getPropertyValue('--flood').trim(), [0,0,0,0,0,0]);
-  conflictChart = sparkline(document.getElementById('conflictChart'), getComputedStyle(document.documentElement).getPropertyValue('--conflict').trim(), [0,0,0,0,0,0]);
-
+  // 1) Render immediately from curated data so the page is never stuck on "Loading"
   loadConflictData();
+  renderFeed();
+
+  // 2) Charts are a visual extra — never let a Chart.js/CDN hiccup block the rest of the page
+  try{
+    if(typeof Chart !== 'undefined'){
+      fireChart = sparkline(document.getElementById('fireChart'), getComputedStyle(document.documentElement).getPropertyValue('--fire').trim(), [0,0,0,0,0,0]);
+      floodChart = sparkline(document.getElementById('floodChart'), getComputedStyle(document.documentElement).getPropertyValue('--flood').trim(), [0,0,0,0,0,0]);
+      conflictChart = sparkline(document.getElementById('conflictChart'), getComputedStyle(document.documentElement).getPropertyValue('--conflict').trim(), [0,0,0,0,0,0]);
+      pushPoint(conflictChart, conflictData.length);
+    }
+  }catch(e){ console.warn('Chart rendering skipped:', e.message); }
+
+  // 3) Live fetches — each is independently safe; failures fall back to sample data, never a blank page
   const [fireN, floodN] = await Promise.all([fetchFires(), fetchDisasters()]);
   updateImpactIndex(fireN, floodN);
   renderFeed();
@@ -609,10 +787,13 @@ window.addEventListener('DOMContentLoaded', async () => {
   setInterval(async () => {
     feedItems.length = 0;
     loadConflictData();
+    renderFeed();
     const [f, d] = await Promise.all([fetchFires(), fetchDisasters()]);
     updateImpactIndex(f, d);
     renderFeed();
   }, 5 * 60 * 1000);
+
+  initScrollReveal();
 });
 </script>
 
