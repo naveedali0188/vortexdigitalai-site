@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+  ENVIRONMENTAL IMPACT TRACKER — standalone page
+  ------------------------------------------------------------
+  HOW TO SET THIS UP (5 things to edit — search for "EDIT ME"):
+    1. Brand colors        -> CSS variables in :root, top of <style>
+    2. WhatsApp number      -> const WHATSAPP_NUMBER (in <script>)
+    3. Google Meet link     -> const MEETING_LINK   (in <script>)
+    4. NASA FIRMS API key   -> const FIRMS_MAP_KEY   (free, instant,
+                               get one at https://firms.modaps.eosdis.nasa.gov/api/map_key/)
+    5. Business name/niche  -> meta tags + footer text
+  Everything else works out of the box once those are filled in.
+============================================================= -->
+
+<title>Global Environmental Impact Tracker — Live Wildfire, Flood & Disaster Data</title>
+
+<!-- ===== SEO ===== -->
+<meta name="description" content="Live, real-time tracker of the world's environmental damage — wildfires, floods, and conflict-driven ecological loss. Updated automatically from satellite and disaster-monitoring data. Talk to us on WhatsApp or book a call to learn more.">
+<meta name="keywords" content="environmental impact tracker, live wildfire map, global disaster data, climate damage tracker, flood monitoring, environmental news live, wildfire impact today">
+<link rel="canonical" href="https://YOURDOMAIN.com/environmental-impact.html">
+
+<!-- ===== Open Graph (social + AEO/GEO surfaces read this) ===== -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Global Environmental Impact Tracker — Live Data">
+<meta property="og:description" content="A live, continuously-updating view of wildfires, floods and disasters harming the planet right now, sourced from satellite and disaster-monitoring feeds.">
+<meta property="og:url" content="https://YOURDOMAIN.com/environmental-impact.html">
+<meta property="og:image" content="https://YOURDOMAIN.com/assets/environmental-impact-preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ===== AEO / GEO (Answer Engine / Generative Engine Optimization) =====
+     These help AI answer-engines (ChatGPT, Perplexity, Google AI Overviews,
+     Gemini) understand, quote and cite this page accurately. -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="ai-content-declaration" content="This page displays live third-party disaster-monitoring data (NASA FIRMS, GDACS) refreshed automatically; site-authored commentary is clearly separated from raw data.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Global Environmental Impact Tracker",
+  "description": "Live-updating dataset and visualization tracking wildfires, floods and other disaster-driven environmental damage worldwide.",
+  "keywords": ["wildfire", "flood", "environmental impact", "climate disaster", "live data"],
+  "creator": {
+    "@type": "Organization",
+    "name": "YOUR BUSINESS NAME"
+  },
+  "temporalCoverage": "2026/..",
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Global Environmental Impact Tracker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a live dashboard that pulls real-time wildfire and disaster data from satellite and monitoring sources to show how much environmental damage is happening around the world right now."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often does the data update?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wildfire and disaster data refresh automatically at regular intervals directly from public monitoring feeds, without needing a page reload."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I get more information or talk to someone about this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can message the team directly on WhatsApp or book a Google Meet call using the buttons on this page."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+
+<style>
+/* ============================================================
+   1) EDIT ME — BRAND COLORS
+   Swap these 6 values to match your existing site's palette.
+   Everything below references these variables only, so changing
+   them re-themes the whole page automatically.
+============================================================= */
+:root{
+  --bg:        #12161A;   /* page background — near-black, night/disaster feel */
+  --bg-panel:  #1B2127;   /* card background */
+  --line:      #2B333B;   /* hairline borders */
+  --text:      #EDEAE3;   /* primary text */
+  --text-dim:  #9AA5AD;   /* secondary text */
+  --fire:      #C1440E;   /* wildfire accent — burnt vermillion */
+  --flood:     #2A9D8F;   /* flood/water accent — teal */
+  --conflict:  #8A2F3B;   /* conflict accent — deep red */
+  --amber:     #E8B84B;   /* live-alert accent */
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter', system-ui, sans-serif;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; letter-spacing:-0.01em;}
+.mono{font-family:'JetBrains Mono', monospace;}
+a{color:inherit;}
+.wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+/* ---------- Live pulse ticker (signature element) ---------- */
+.ticker-bar{
+  background:var(--bg-panel);
+  border-bottom:1px solid var(--line);
+  padding:10px 0;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.ticker-inner{display:inline-flex; align-items:center; gap:40px; animation:scroll-left 40s linear infinite;}
+.ticker-bar:hover .ticker-inner{animation-play-state:paused;}
+@keyframes scroll-left{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+.live-dot{
+  display:inline-block; width:8px; height:8px; border-radius:50%;
+  background:var(--amber); margin-right:8px;
+  box-shadow:0 0 0 0 rgba(232,184,75,0.6);
+  animation:pulse 1.8s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(232,184,75,0.55);}
+  70%{box-shadow:0 0 0 8px rgba(232,184,75,0);}
+  100%{box-shadow:0 0 0 0 rgba(232,184,75,0);}
+}
+.ticker-item{font-size:13px; color:var(--text-dim);}
+.ticker-item b{color:var(--text); font-weight:600;}
+
+/* ---------- Header / hero ---------- */
+header.hero{padding:72px 0 48px; border-bottom:1px solid var(--line);}
+.eyebrow{
+  font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--amber); margin-bottom:18px; display:block;
+}
+h1.headline{font-size:clamp(32px, 5vw, 56px); line-height:1.05; max-width:820px;}
+.headline em{font-style:italic; color:var(--fire);}
+p.sub{color:var(--text-dim); font-size:17px; max-width:600px; margin-top:18px;}
+
+.impact-index{
+  margin-top:44px; display:flex; align-items:flex-end; gap:20px; flex-wrap:wrap;
+}
+.impact-number{font-family:'Fraunces', serif; font-size:clamp(56px,9vw,104px); font-weight:700; line-height:0.9; color:var(--fire);}
+.impact-label{color:var(--text-dim); font-size:14px; max-width:220px; padding-bottom:12px;}
+
+/* ---------- Data cards ---------- */
+section.cards{padding:56px 0;}
+.cards-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;}
+@media (max-width:860px){.cards-grid{grid-template-columns:1fr;}}
+.card{
+  background:var(--bg-panel); border:1px solid var(--line); border-radius:4px;
+  padding:24px; position:relative; overflow:hidden;
+}
+.card::before{
+  content:""; position:absolute; top:0; left:0; width:100%; height:3px;
+}
+.card.fire::before{background:var(--fire);}
+.card.flood::before{background:var(--flood);}
+.card.conflict::before{background:var(--conflict);}
+.card h3{font-size:20px; margin-bottom:4px;}
+.card .metric{font-family:'JetBrains Mono', monospace; font-size:34px; font-weight:600; margin:14px 0 2px;}
+.card.fire .metric{color:var(--fire);}
+.card.flood .metric{color:var(--flood);}
+.card.conflict .metric{color:var(--conflict);}
+.card .metric-label{color:var(--text-dim); font-size:12px; text-transform:uppercase; letter-spacing:0.06em;}
+.card canvas{margin-top:16px; max-height:80px;}
+.card .source{margin-top:14px; font-size:11px; color:var(--text-dim);}
+.card .source a{text-decoration:underline;}
+.status-tag{
+  display:inline-flex; align-items:center; gap:6px; font-size:11px;
+  color:var(--text-dim); margin-top:10px;
+}
+
+/* ---------- Incident feed ---------- */
+section.feed{padding:24px 0 64px;}
+.feed h2{font-size:26px; margin-bottom:20px;}
+.feed-list{border-top:1px solid var(--line);}
+.feed-row{
+  display:grid; grid-template-columns:110px 1fr 90px; gap:16px; align-items:center;
+  padding:16px 0; border-bottom:1px solid var(--line); font-size:14px;
+}
+.feed-row .tag{
+  font-family:'JetBrains Mono', monospace; font-size:11px; padding:4px 8px;
+  border-radius:2px; text-align:center; text-transform:uppercase; letter-spacing:0.04em;
+}
+.tag.fire{background:rgba(193,68,14,0.15); color:var(--fire);}
+.tag.flood{background:rgba(42,157,143,0.15); color:var(--flood);}
+.tag.conflict{background:rgba(138,47,59,0.15); color:var(--conflict);}
+.feed-row .loc{color:var(--text-dim); font-family:'JetBrains Mono', monospace; font-size:12px; text-align:right;}
+
+/* ---------- CTA (WhatsApp / Meet) ---------- */
+section.cta{
+  padding:64px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  background:var(--bg-panel);
+}
+.cta-inner{display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap;}
+.cta-inner h2{font-size:30px; max-width:480px;}
+.cta-inner p{color:var(--text-dim); margin-top:10px; max-width:440px;}
+.cta-buttons{display:flex; gap:14px; flex-wrap:wrap;}
+.btn{
+  display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:3px;
+  font-weight:600; font-size:14px; text-decoration:none; transition:transform .15s ease, opacity .15s ease;
+  border:1px solid transparent;
+}
+.btn:hover{transform:translateY(-1px);}
+.btn-whatsapp{background:#25D366; color:#0B1A10;}
+.btn-meet{background:transparent; color:var(--text); border-color:var(--line);}
+.btn svg{width:18px; height:18px;}
+
+/* ---------- Footer ---------- */
+footer{padding:40px 0 60px; color:var(--text-dim); font-size:13px;}
+footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; border-top:1px solid var(--line); padding-top:24px;}
+
+@media (prefers-reduced-motion: reduce){
+  .ticker-inner{animation:none;}
+  .live-dot{animation:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Live incident ticker ===== -->
+<div class="ticker-bar">
+  <div class="ticker-inner mono" id="tickerInner">
+    <span class="ticker-item"><span class="live-dot"></span><b>LIVE</b> — loading global incident feed…</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Environmental Impact — Updated Automatically</span>
+    <h1 class="headline">The planet is losing ground, <em>in real time.</em></h1>
+    <p class="sub">Every fire, flood and conflict leaves a mark on the environment. This page pulls live data from satellite and disaster-monitoring sources to show the scale of that damage — today, not last month.</p>
+
+    <div class="impact-index">
+      <div>
+        <div class="impact-number mono" id="impactIndex">—</div>
+      </div>
+      <div class="impact-label">Composite global impact index, calculated from active wildfire detections and reported disaster events in the last 24 hours.</div>
+    </div>
+  </div>
+</header>
+
+<section class="cards">
+  <div class="wrap">
+    <div class="cards-grid">
+
+      <div class="card fire">
+        <h3>Wildfires</h3>
+        <div class="metric mono" id="fireCount">—</div>
+        <div class="metric-label">Active fire detections · last 24h</div>
+        <canvas id="fireChart" height="60"></canvas>
+        <div class="status-tag"><span class="live-dot"></span>Live — NASA FIRMS satellite feed</div>
+        <div class="source">Source: <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" rel="noopener">NASA FIRMS</a></div>
+      </div>
+
+      <div class="card flood">
+        <h3>Floods &amp; Disasters</h3>
+        <div class="metric mono" id="floodCount">—</div>
+        <div class="metric-label">Active disaster alerts worldwide</div>
+        <canvas id="floodChart" height="60"></canvas>
+        <div class="status-tag"><span class="live-dot"></span>Live — GDACS monitoring feed</div>
+        <div class="source">Source: <a href="https://www.gdacs.org/" target="_blank" rel="noopener">GDACS</a></div>
+      </div>
+
+      <div class="card conflict">
+        <h3>Conflict-driven Loss</h3>
+        <div class="metric mono" id="conflictCount">—</div>
+        <div class="metric-label">Tracked ongoing conflict zones with reported environmental damage</div>
+        <canvas id="conflictChart" height="60"></canvas>
+        <div class="status-tag">Manually reviewed — updated periodically</div>
+        <div class="source">Curated by our team. No reliable free live API exists for this category yet.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="feed">
+  <div class="wrap">
+    <h2>Recent incidents</h2>
+    <div class="feed-list" id="feedList">
+      <div class="feed-row"><span class="tag fire">Loading</span><span>Fetching latest events…</span><span class="loc"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Want the full picture for your region or sector?</h2>
+      <p>Talk to us directly. We can walk you through the data, or set up custom monitoring for a specific location, industry or risk category.</p>
+    </div>
+    <div class="cta-buttons">
+      <!-- 2) EDIT ME — WhatsApp button is generated by JS below using WHATSAPP_NUMBER -->
+      <a class="btn btn-whatsapp" id="whatsappBtn" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27A8.9 8.9 0 0 0 12.05 21a8.94 8.94 0 0 0 5.55-15.68ZM12.05 19.4a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.77.75-2.2-.18-.29a7.44 7.44 0 1 1 5.72 2.92Zm4.08-5.57c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.58.73-.71.88-.13.15-.26.16-.48.05a6.1 6.1 0 0 1-1.8-1.11 6.7 6.7 0 0 1-1.24-1.54c-.13-.22 0-.34.1-.45.1-.1.22-.26.33-.4.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.4-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.4.06-.6.28-.2.22-.8.78-.8 1.9s.82 2.2.93 2.35c.11.15 1.6 2.45 3.89 3.43.54.23.97.37 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.5-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z"/></svg>
+        Chat on WhatsApp
+      </a>
+      <!-- 3) EDIT ME — Meet link is generated by JS below using MEETING_LINK -->
+      <a class="btn btn-meet" id="meetBtn" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4Z"/></svg>
+        Book a Google Meet
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <span>© <span id="year"></span> YOUR BUSINESS NAME — Global Environmental Impact Tracker. Wildfire and disaster data provided by NASA FIRMS and GDACS; refreshed automatically. Conflict-impact figures are reviewed manually and may lag real-world events.</span>
+      <span>Data for informational purposes only. Not a substitute for official emergency alerts.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   4) EDIT ME — fill these in
+============================================================= */
+const WHATSAPP_NUMBER = "923001234567";   // digits only, country code, no + or spaces
+const WHATSAPP_MESSAGE = "Hi! I'd like more information about the Environmental Impact Tracker.";
+const MEETING_LINK = "https://calendar.google.com/calendar/appointments/YOUR-BOOKING-LINK";
+const FIRMS_MAP_KEY = "YOUR_FIRMS_MAP_KEY"; // free key: https://firms.modaps.eosdis.nasa.gov/api/map_key/
+
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('whatsappBtn').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+document.getElementById('meetBtn').href = MEETING_LINK;
+
+/* ---------- Chart styling helper ---------- */
+function sparkline(ctx, color, data){
+  return new Chart(ctx, {
+    type:'line',
+    data:{ labels:data.map((_,i)=>i), datasets:[{
+      data, borderColor:color, borderWidth:2, pointRadius:0, tension:0.35,
+      fill:true, backgroundColor: color + '22'
+    }]},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{enabled:false} },
+      scales:{ x:{display:false}, y:{display:false} },
+      animation:{ duration:600 }
+    }
+  });
+}
+
+let fireChart, floodChart, conflictChart;
+
+function pushPoint(chart, value, cap=24){
+  const d = chart.data.datasets[0].data;
+  d.push(value);
+  if(d.length > cap) d.shift();
+  chart.data.labels = d.map((_,i)=>i);
+  chart.update('none');
+}
+
+/* ---------- Feed renderer ---------- */
+const feedItems = []; // {type, text, loc, time}
+function renderFeed(){
+  const list = document.getElementById('feedList');
+  const tickerInner = document.getElementById('tickerInner');
+  if(feedItems.length === 0) return;
+
+  list.innerHTML = feedItems.slice(0, 12).map(item => `
+    <div class="feed-row">
+      <span class="tag ${item.type}">${item.type}</span>
+      <span>${item.text}</span>
+      <span class="loc">${item.loc}</span>
+    </div>`).join('');
+
+  const tickerHtml = feedItems.slice(0, 10).map(item =>
+    `<span class="ticker-item"><span class="live-dot"></span><b>${item.type.toUpperCase()}</b> — ${item.text} (${item.loc})</span>`
+  ).join('');
+  tickerInner.innerHTML = tickerHtml + tickerHtml; // duplicated for seamless scroll
+}
+
+function updateImpactIndex(fireN, floodN){
+  const idx = Math.min(999, Math.round(fireN * 0.02 + floodN * 4));
+  document.getElementById('impactIndex').textContent = idx.toLocaleString();
+}
+
+/* ============================================================
+   LIVE DATA: NASA FIRMS (wildfires)
+   Free API key required (instant signup, no cost):
+   https://firms.modaps.eosdis.nasa.gov/api/map_key/
+   Docs: https://firms.modaps.eosdis.nasa.gov/api/area/
+============================================================= */
+async function fetchFires(){
+  try{
+    if(FIRMS_MAP_KEY === "YOUR_FIRMS_MAP_KEY") throw new Error("no key set");
+    const url = `https://firms.modaps.eosdis.nasa.gov/api/area/csv/${FIRMS_MAP_KEY}/VIIRS_SNPP_NRT/world/1`;
+    const res = await fetch(url);
+    if(!res.ok) throw new Error("FIRMS request failed");
+    const csv = await res.text();
+    const rows = csv.trim().split("\n").slice(1); // drop header
+    const count = rows.length;
+
+    document.getElementById('fireCount').textContent = count.toLocaleString();
+    pushPoint(fireChart, count);
+
+    // Sample a few rows into the incident feed
+    rows.slice(0, 4).forEach(row => {
+      const cols = row.split(",");
+      const lat = parseFloat(cols[0]).toFixed(1);
+      const lon = parseFloat(cols[1]).toFixed(1);
+      feedItems.unshift({ type:'fire', text:'New active fire detection', loc:`${lat}, ${lon}`, time:Date.now() });
+    });
+    return count;
+  }catch(e){
+    document.getElementById('fireCount').textContent = "Add API key";
+    console.warn("FIRMS fetch skipped:", e.message);
+    return 0;
+  }
+}
+
+/* ============================================================
+   LIVE DATA: GDACS (floods, storms, earthquakes, etc.)
+   Public JSON feed, no key required.
+   Docs: https://www.gdacs.org/xml/gdacs.xml (and REST API)
+============================================================= */
+async function fetchDisasters(){
+  try{
+    const url = "https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?eventlist=EQ;TC;FL;VO;DR;WF&alertlevel=Orange;Red";
+    const res = await fetch(url);
+    if(!res.ok) throw new Error("GDACS request failed");
+    const json = await res.json();
+    const features = json.features || [];
+    const count = features.length;
+
+    document.getElementById('floodCount').textContent = count.toLocaleString();
+    pushPoint(floodChart, count);
+
+    features.slice(0, 4).forEach(f => {
+      const p = f.properties || {};
+      feedItems.unshift({
+        type:'flood',
+        text: p.eventname || p.eventtype || 'Disaster alert',
+        loc: p.country || '—',
+        time: Date.now()
+      });
+    });
+    return count;
+  }catch(e){
+    document.getElementById('floodCount').textContent = "—";
+    console.warn("GDACS fetch skipped (may need a CORS proxy from your own server):", e.message);
+    return 0;
+  }
+}
+
+/* ============================================================
+   CONFLICT DATA — manually curated
+   No reliable free live API returns a clean environmental-impact
+   score for war/conflict zones. Update this array yourself, or
+   connect it to your own backend later.
+============================================================= */
+const conflictData = [
+  { text:"Ongoing conflict — agricultural land and water infrastructure damage reported", loc:"Region A" },
+  { text:"Ongoing conflict — deforestation linked to displacement", loc:"Region B" }
+];
+function loadConflictData(){
+  document.getElementById('conflictCount').textContent = conflictData.length;
+  conflictData.forEach(item => feedItems.push({ type:'conflict', text:item.text, loc:item.loc, time:Date.now() }));
+  pushPoint(conflictChart, conflictData.length);
+}
+
+/* ---------- Init ---------- */
+window.addEventListener('DOMContentLoaded', async () => {
+  fireChart = sparkline(document.getElementById('fireChart'), getComputedStyle(document.documentElement).getPropertyValue('--fire').trim(), [0,0,0,0,0,0]);
+  floodChart = sparkline(document.getElementById('floodChart'), getComputedStyle(document.documentElement).getPropertyValue('--flood').trim(), [0,0,0,0,0,0]);
+  conflictChart = sparkline(document.getElementById('conflictChart'), getComputedStyle(document.documentElement).getPropertyValue('--conflict').trim(), [0,0,0,0,0,0]);
+
+  loadConflictData();
+  const [fireN, floodN] = await Promise.all([fetchFires(), fetchDisasters()]);
+  updateImpactIndex(fireN, floodN);
+  renderFeed();
+
+  // Auto-refresh every 5 minutes
+  setInterval(async () => {
+    feedItems.length = 0;
+    loadConflictData();
+    const [f, d] = await Promise.all([fetchFires(), fetchDisasters()]);
+    updateImpactIndex(f, d);
+    renderFeed();
+  }, 5 * 60 * 1000);
+});
+</script>
+
+</body>
+</html>
