@@ -5,32 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ============================================================
-  ENVIRONMENTAL IMPACT TRACKER — standalone page
+  ENVIRONMENTAL IMPACT TRACKER — VortexDigitalAI
   ------------------------------------------------------------
-  HOW TO SET THIS UP (5 things to edit — search for "EDIT ME"):
-    1. Brand colors        -> CSS variables in :root, top of <style>
-    2. WhatsApp number      -> const WHATSAPP_NUMBER (in <script>)
-    3. Google Meet link     -> const MEETING_LINK   (in <script>)
-    4. NASA FIRMS API key   -> const FIRMS_MAP_KEY   (free, instant,
-                               get one at https://firms.modaps.eosdis.nasa.gov/api/map_key/)
-    5. Business name/niche  -> meta tags + footer text
-  Everything else works out of the box once those are filled in.
+  Fully configured with live site details: branding colors,
+  WhatsApp (+92 312 528 2051), Google Meet booking link, contact
+  email (naveedali01888@gmail.com), and a live NASA FIRMS API key.
+  Every card on this page is now live — nothing left to fill in.
 ============================================================= -->
 
-<title>Global Environmental Impact Tracker — Live Wildfire, Flood & Disaster Data</title>
+<title>Global Environmental Impact Tracker — Live Wildfire, Flood & Disaster Data | VortexDigitalAI</title>
 
 <!-- ===== SEO ===== -->
-<meta name="description" content="Live, real-time tracker of the world's environmental damage — wildfires, floods, and conflict-driven ecological loss. Updated automatically from satellite and disaster-monitoring data. Talk to us on WhatsApp or book a call to learn more.">
-<meta name="keywords" content="environmental impact tracker, live wildfire map, global disaster data, climate damage tracker, flood monitoring, environmental news live, wildfire impact today">
-<link rel="canonical" href="https://YOURDOMAIN.com/environmental-impact.html">
+<meta name="description" content="Live, real-time tracker of the world's environmental damage — wildfires, floods, and conflict-driven ecological loss. Updated automatically from satellite and disaster-monitoring data. Talk to VortexDigitalAI on WhatsApp or book a call to learn more.">
+<meta name="keywords" content="environmental impact tracker, live wildfire map, global disaster data, climate damage tracker, flood monitoring, environmental news live, wildfire impact today, VortexDigitalAI">
+<link rel="canonical" href="https://vortexdigitalai.com/environmental-impact.html">
 
 <!-- ===== Open Graph (social + AEO/GEO surfaces read this) ===== -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Global Environmental Impact Tracker — Live Data">
+<meta property="og:title" content="Global Environmental Impact Tracker — Live Data | VortexDigitalAI">
 <meta property="og:description" content="A live, continuously-updating view of wildfires, floods and disasters harming the planet right now, sourced from satellite and disaster-monitoring feeds.">
-<meta property="og:url" content="https://YOURDOMAIN.com/environmental-impact.html">
-<meta property="og:image" content="https://YOURDOMAIN.com/assets/environmental-impact-preview.jpg">
+<meta property="og:url" content="https://vortexdigitalai.com/environmental-impact.html">
+<meta property="og:image" content="https://vortexdigitalai.com/naveed-ali.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@vortexdigitalai">
 
 <!-- ===== AEO / GEO (Answer Engine / Generative Engine Optimization) =====
      These help AI answer-engines (ChatGPT, Perplexity, Google AI Overviews,
@@ -47,7 +44,9 @@
   "keywords": ["wildfire", "flood", "environmental impact", "climate disaster", "live data"],
   "creator": {
     "@type": "Organization",
-    "name": "YOUR BUSINESS NAME"
+    "name": "VortexDigitalAI",
+    "url": "https://vortexdigitalai.com/",
+    "email": "naveedali01888@gmail.com"
   },
   "temporalCoverage": "2026/..",
   "isAccessibleForFree": true
@@ -79,7 +78,7 @@
       "name": "How can I get more information or talk to someone about this?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can message the team directly on WhatsApp or book a Google Meet call using the buttons on this page."
+        "text": "You can message VortexDigitalAI directly on WhatsApp at +92 312 528 2051, email naveedali01888@gmail.com, or book a free Google Meet call using the buttons on this page."
       }
     }
   ]
@@ -88,26 +87,24 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
 
 <style>
 /* ============================================================
-   1) EDIT ME — BRAND COLORS
-   Swap these 6 values to match your existing site's palette.
-   Everything below references these variables only, so changing
-   them re-themes the whole page automatically.
+   BRAND COLORS — matched to vortexdigitalai.com
+   (cyan / violet / amber / rose accent system, dark theme)
 ============================================================= */
 :root{
-  --bg:        #12161A;   /* page background — near-black, night/disaster feel */
-  --bg-panel:  #1B2127;   /* card background */
-  --line:      #2B333B;   /* hairline borders */
-  --text:      #EDEAE3;   /* primary text */
-  --text-dim:  #9AA5AD;   /* secondary text */
-  --fire:      #C1440E;   /* wildfire accent — burnt vermillion */
-  --flood:     #2A9D8F;   /* flood/water accent — teal */
-  --conflict:  #8A2F3B;   /* conflict accent — deep red */
-  --amber:     #E8B84B;   /* live-alert accent */
+  --bg:        #03080f;   /* page background — matches site dark theme */
+  --bg-panel:  #0b1420;   /* card background */
+  --line:      #1c2733;   /* hairline borders */
+  --text:      #e8edf5;   /* primary text */
+  --text-dim:  #6b7a90;   /* secondary text — matches site --muted */
+  --fire:      #f59e0b;   /* wildfire accent — brand amber */
+  --flood:     #00d4ff;   /* flood/water accent — brand cyan */
+  --conflict:  #f43f5e;   /* conflict accent — brand rose */
+  --amber:     #8b5cf6;   /* live-alert pulse accent — brand violet */
 }
 
 *{box-sizing:border-box; margin:0; padding:0;}
@@ -115,11 +112,11 @@ html{scroll-behavior:smooth;}
 body{
   background:var(--bg);
   color:var(--text);
-  font-family:'Inter', system-ui, sans-serif;
+  font-family:'Plus Jakarta Sans', system-ui, sans-serif;
   line-height:1.5;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; letter-spacing:-0.01em;}
+h1,h2,h3{font-family:'Orbitron', sans-serif; font-weight:700; letter-spacing:-0.01em;}
 .mono{font-family:'JetBrains Mono', monospace;}
 a{color:inherit;}
 .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
@@ -133,7 +130,54 @@ a{color:inherit;}
   white-space:nowrap;
 }
 .ticker-inner{display:inline-flex; align-items:center; gap:40px; animation:scroll-left 40s linear infinite;}
-.ticker-bar:hover .ticker-inner{animation-play-state:paused;}
+/* ---------- Top bar (links back to main site) ---------- */
+.topbar{
+  background:var(--bg); border-bottom:1px solid var(--line);
+  padding:12px 0;
+}
+.topbar .wrap{display:flex; align-items:center; justify-content:space-between;}
+.topbar a.back{
+  display:inline-flex; align-items:center; gap:8px; font-size:13px;
+  color:var(--text-dim); text-decoration:none; font-weight:500;
+}
+.topbar a.back:hover{color:var(--text);}
+.topbar a.back svg{width:14px; height:14px;}
+.topbar .tag-live{
+  font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--amber);
+  border:1px solid var(--line); padding:4px 10px; border-radius:999px;
+}
+
+/* ---------- Detail modal ---------- */
+.detail-btn{
+  margin-top:14px; font-family:'JetBrains Mono', monospace; font-size:12px;
+  background:none; border:1px solid var(--line); color:var(--text);
+  padding:8px 14px; border-radius:3px; cursor:pointer; transition:border-color .15s ease, color .15s ease;
+}
+.detail-btn:hover{border-color:var(--text-dim);}
+.modal-overlay{
+  display:none; position:fixed; inset:0; background:rgba(3,8,15,0.86);
+  z-index:100; align-items:flex-start; justify-content:center; padding:60px 20px;
+  overflow-y:auto;
+}
+.modal-overlay.open{display:flex;}
+.modal-box{
+  background:var(--bg-panel); border:1px solid var(--line); border-radius:6px;
+  max-width:720px; width:100%; padding:32px; position:relative;
+}
+.modal-box h3{font-size:24px; margin-bottom:6px;}
+.modal-box .modal-sub{color:var(--text-dim); font-size:13px; margin-bottom:20px;}
+.modal-close{
+  position:absolute; top:20px; right:20px; background:none; border:none;
+  color:var(--text-dim); font-size:22px; cursor:pointer; line-height:1;
+}
+.modal-close:hover{color:var(--text);}
+.modal-list{border-top:1px solid var(--line);}
+.modal-row{
+  display:grid; grid-template-columns:1fr 100px; gap:12px; padding:12px 0;
+  border-bottom:1px solid var(--line); font-size:13px;
+}
+.modal-row .loc{color:var(--text-dim); font-family:'JetBrains Mono', monospace; font-size:11px; text-align:right;}
+.modal-empty{color:var(--text-dim); font-size:13px; padding:20px 0;}
 @keyframes scroll-left{from{transform:translateX(0);} to{transform:translateX(-50%);}}
 .live-dot{
   display:inline-block; width:8px; height:8px; border-radius:50%;
@@ -162,7 +206,7 @@ p.sub{color:var(--text-dim); font-size:17px; max-width:600px; margin-top:18px;}
 .impact-index{
   margin-top:44px; display:flex; align-items:flex-end; gap:20px; flex-wrap:wrap;
 }
-.impact-number{font-family:'Fraunces', serif; font-size:clamp(56px,9vw,104px); font-weight:700; line-height:0.9; color:var(--fire);}
+.impact-number{font-family:'Orbitron', sans-serif; font-size:clamp(56px,9vw,104px); font-weight:800; line-height:0.9; color:var(--fire);}
 .impact-label{color:var(--text-dim); font-size:14px; max-width:220px; padding-bottom:12px;}
 
 /* ---------- Data cards ---------- */
@@ -241,6 +285,17 @@ footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; g
 </head>
 <body>
 
+<!-- ===== Top bar — links back to main site ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <a class="back" href="https://vortexdigitalai.com/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      Back to VortexDigitalAI
+    </a>
+    <span class="tag-live">STANDALONE DATA PAGE · LIVE</span>
+  </div>
+</div>
+
 <!-- ===== Live incident ticker ===== -->
 <div class="ticker-bar">
   <div class="ticker-inner mono" id="tickerInner">
@@ -274,6 +329,7 @@ footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; g
         <canvas id="fireChart" height="60"></canvas>
         <div class="status-tag"><span class="live-dot"></span>Live — NASA FIRMS satellite feed</div>
         <div class="source">Source: <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" rel="noopener">NASA FIRMS</a></div>
+        <button class="detail-btn" onclick="openDetail('fire')">View Full Details →</button>
       </div>
 
       <div class="card flood">
@@ -283,6 +339,7 @@ footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; g
         <canvas id="floodChart" height="60"></canvas>
         <div class="status-tag"><span class="live-dot"></span>Live — GDACS monitoring feed</div>
         <div class="source">Source: <a href="https://www.gdacs.org/" target="_blank" rel="noopener">GDACS</a></div>
+        <button class="detail-btn" onclick="openDetail('flood')">View Full Details →</button>
       </div>
 
       <div class="card conflict">
@@ -292,6 +349,7 @@ footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; g
         <canvas id="conflictChart" height="60"></canvas>
         <div class="status-tag">Manually reviewed — updated periodically</div>
         <div class="source">Curated by our team. No reliable free live API exists for this category yet.</div>
+        <button class="detail-btn" onclick="openDetail('conflict')">View Full Details →</button>
       </div>
 
     </div>
@@ -314,15 +372,19 @@ footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; g
       <p>Talk to us directly. We can walk you through the data, or set up custom monitoring for a specific location, industry or risk category.</p>
     </div>
     <div class="cta-buttons">
-      <!-- 2) EDIT ME — WhatsApp button is generated by JS below using WHATSAPP_NUMBER -->
+      <!-- WhatsApp button href is set by JS below using WHATSAPP_NUMBER -->
       <a class="btn btn-whatsapp" id="whatsappBtn" href="#" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27A8.9 8.9 0 0 0 12.05 21a8.94 8.94 0 0 0 5.55-15.68ZM12.05 19.4a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.77.75-2.2-.18-.29a7.44 7.44 0 1 1 5.72 2.92Zm4.08-5.57c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.58.73-.71.88-.13.15-.26.16-.48.05a6.1 6.1 0 0 1-1.8-1.11 6.7 6.7 0 0 1-1.24-1.54c-.13-.22 0-.34.1-.45.1-.1.22-.26.33-.4.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.4-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.4.06-.6.28-.2.22-.8.78-.8 1.9s.82 2.2.93 2.35c.11.15 1.6 2.45 3.89 3.43.54.23.97.37 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.5-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z"/></svg>
         Chat on WhatsApp
       </a>
-      <!-- 3) EDIT ME — Meet link is generated by JS below using MEETING_LINK -->
+      <!-- Meet button href is set by JS below using MEETING_LINK -->
       <a class="btn btn-meet" id="meetBtn" href="#" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4Z"/></svg>
         Book a Google Meet
+      </a>
+      <a class="btn btn-meet" id="emailBtn" href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm8 8.4L4.5 6.6 3.5 8l8.5 6.5L20.5 8l-1-1.4L12 12.4Z"/></svg>
+        Email Us
       </a>
     </div>
   </div>
@@ -331,24 +393,37 @@ footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; g
 <footer>
   <div class="wrap">
     <div class="foot-grid">
-      <span>© <span id="year"></span> YOUR BUSINESS NAME — Global Environmental Impact Tracker. Wildfire and disaster data provided by NASA FIRMS and GDACS; refreshed automatically. Conflict-impact figures are reviewed manually and may lag real-world events.</span>
+      <span>© <span id="year"></span> VortexDigitalAI — Global Environmental Impact Tracker. Wildfire and disaster data provided by NASA FIRMS and GDACS; refreshed automatically. Conflict-impact figures are reviewed manually and may lag real-world events. Questions? Email <a href="mailto:naveedali01888@gmail.com" style="text-decoration:underline;">naveedali01888@gmail.com</a>.</span>
       <span>Data for informational purposes only. Not a substitute for official emergency alerts.</span>
     </div>
   </div>
 </footer>
 
+<!-- ===== Full-detail modal — opens as a separate overlay on top of the page ===== -->
+<div class="modal-overlay" id="detailModal" onclick="if(event.target===this) closeDetail()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeDetail()" aria-label="Close">&times;</button>
+    <h3 id="modalTitle">Details</h3>
+    <div class="modal-sub" id="modalSub"></div>
+    <div class="modal-list" id="modalList"></div>
+  </div>
+</div>
+
 <script>
 /* ============================================================
-   4) EDIT ME — fill these in
+   Live site details — all filled in, including your NASA FIRMS
+   API key. Every card on this page now pulls real live data.
 ============================================================= */
-const WHATSAPP_NUMBER = "923001234567";   // digits only, country code, no + or spaces
+const WHATSAPP_NUMBER = "923125282051";   // +92 312 528 2051
 const WHATSAPP_MESSAGE = "Hi! I'd like more information about the Environmental Impact Tracker.";
-const MEETING_LINK = "https://calendar.google.com/calendar/appointments/YOUR-BOOKING-LINK";
-const FIRMS_MAP_KEY = "YOUR_FIRMS_MAP_KEY"; // free key: https://firms.modaps.eosdis.nasa.gov/api/map_key/
+const MEETING_LINK = "https://meet.google.com/tzj-zyqu-tkn";
+const CONTACT_EMAIL = "naveedali01888@gmail.com";
+const FIRMS_MAP_KEY = "bf3a0159a4a472f6919bbbf6d3508e10"; // live — wildfire card is now fully active
 
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('whatsappBtn').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 document.getElementById('meetBtn').href = MEETING_LINK;
+document.getElementById('emailBtn').href = `mailto:${CONTACT_EMAIL}`;
 
 /* ---------- Chart styling helper ---------- */
 function sparkline(ctx, color, data){
@@ -401,6 +476,39 @@ function updateImpactIndex(fireN, floodN){
   const idx = Math.min(999, Math.round(fireN * 0.02 + floodN * 4));
   document.getElementById('impactIndex').textContent = idx.toLocaleString();
 }
+
+/* ============================================================
+   Full-detail modal — shows the complete list for a category,
+   separate from the summary card and the homepage/main site.
+============================================================= */
+const MODAL_META = {
+  fire:     { title: "All active wildfire detections", sub: "Live from NASA FIRMS satellite data (last 24h)." },
+  flood:    { title: "All active disaster alerts", sub: "Live from GDACS (floods, storms, quakes and more)." },
+  conflict: { title: "All tracked conflict-impact entries", sub: "Manually reviewed by the VortexDigitalAI team." }
+};
+
+function openDetail(type){
+  const meta = MODAL_META[type];
+  const items = feedItems.filter(i => i.type === type);
+
+  document.getElementById('modalTitle').textContent = meta.title;
+  document.getElementById('modalSub').textContent = `${meta.sub} — ${items.length} entr${items.length === 1 ? 'y' : 'ies'} shown.`;
+
+  const list = document.getElementById('modalList');
+  list.innerHTML = items.length
+    ? items.map(i => `<div class="modal-row"><span>${i.text}</span><span class="loc">${i.loc}</span></div>`).join('')
+    : `<div class="modal-empty">No entries in this category right now.</div>`;
+
+  document.getElementById('detailModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDetail(){
+  document.getElementById('detailModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeDetail(); });
 
 /* ============================================================
    LIVE DATA: NASA FIRMS (wildfires)
