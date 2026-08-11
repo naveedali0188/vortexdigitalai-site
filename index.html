@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="VortexDigitalAI: AI website development, SEO, marketing, automations & AI courses. Faster, smarter digital growth." />
   <title>VortexDigitalAI – AI Websites, Automations & Courses</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" href="/favicon.svg">
   <link rel="canonical" href="https://vortexdigitalai.com/" />
 
   <!-- Open Graph -->
@@ -390,7 +392,7 @@
        HEADER
     ============================ */
     .site-header {
-      position: sticky; top: 0; z-index: 100;
+      position: sticky; top: 0; z-index: 250;
       background: rgba(255,255,255,.85);
       backdrop-filter: blur(16px) saturate(140%);
       -webkit-backdrop-filter: blur(16px) saturate(140%);
@@ -1058,9 +1060,24 @@
     ============================ */
     @media (max-width: 900px) {
       .primary-nav { display: none; }
-      .primary-nav.open { display: flex; flex-direction: column; position: fixed; inset: 68px 0 0; background: rgba(255,255,255,.98); backdrop-filter: blur(20px); padding: 32px 24px; gap: 4px; z-index: 99; animation: fadeSlideUp .3s ease; }
-      [data-theme="light"] .primary-nav.open { background: rgba(240,244,248,.98); }
-      .primary-nav.open a { font-size: 1.2rem; padding: 12px 16px; }
+      .primary-nav.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 0; right: 0; bottom: 0;
+        width: min(320px, 84vw); height: 100vh;
+        background: #ffffff; opacity: 1;
+        box-shadow: -12px 0 40px rgba(0,0,0,.18);
+        padding: 88px 24px 32px; gap: 4px; z-index: 260;
+        overflow-y: auto;
+        animation: slideInRight .32s var(--ease-expo, ease);
+      }
+      .primary-nav.open a { font-size: 1.05rem; padding: 12px 16px; }
+      .nav-backdrop {
+        display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45);
+        z-index: 150; backdrop-filter: blur(2px);
+      }
+      .nav-backdrop.open { display: block; animation: fadeIn .25s ease; }
+      @keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
       .nav-toggle { display: flex; }
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
       .hero-content { text-align: center; }
@@ -1159,6 +1176,8 @@
       </div>
     </div>
   </header>
+
+  <div class="nav-backdrop" id="navBackdrop"></div>
 
   <!-- HERO -->
   <section id="hero" class="hero-section" aria-labelledby="heroHeading">
@@ -1695,15 +1714,27 @@
   /* ---- Mobile nav ---- */
   const navToggle  = document.getElementById('navToggle');
   const primaryNav = document.getElementById('primaryNav');
+  const navBackdrop = document.getElementById('navBackdrop');
   navToggle.addEventListener('click', () => {
     const o = primaryNav.classList.toggle('open');
     navToggle.classList.toggle('open', o);
     navToggle.setAttribute('aria-expanded', o);
+    navBackdrop.classList.toggle('open', o);
+    document.body.style.overflow = o ? 'hidden' : '';
+  });
+  navBackdrop.addEventListener('click', () => {
+    primaryNav.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
   });
   primaryNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
     primaryNav.classList.remove('open');
     navToggle.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
+    navBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
   }));
 
   /* ---- Services / Projects dropdown menus ---- */

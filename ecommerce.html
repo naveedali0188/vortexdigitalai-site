@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>PrestaShop to Shopify Migration: Step-by-Step Process & Checklist | VortexDigitalAI</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
 <!-- ===== SEO ===== -->
 <meta name="description" content="Migrate PrestaShop to Shopify with Vortex Digital AI. Get expert eCommerce migration, SEO preservation, 301 redirects, data transfer, performance optimization, and secure Shopify setup for businesses in Italy, Spain, Pakistan, UAE, USA, UK, and worldwide.">
@@ -98,15 +99,15 @@
 
 <style>
 :root{
-  --bg:        #03080f;
-  --bg-panel:  #0b1420;
-  --line:      #1c2733;
-  --text:      #e8edf5;
-  --text-dim:  #6b7a90;
-  --cyan:      #00d4ff;
-  --violet:    #8b5cf6;
-  --amber:     #f59e0b;
-  --rose:      #f43f5e;
+  --bg:        #ffffff;
+  --bg-panel:  #fafafa;
+  --line:      #e5e5e5;
+  --text:      #000000;
+  --text-dim:  #6b7280;
+  --cyan:      #059669;
+  --violet:    #000000;
+  --amber:     #000000;
+  --rose:      #000000;
 }
 *{box-sizing:border-box; margin:0; padding:0;}
 html{scroll-behavior:smooth;}
@@ -193,7 +194,7 @@ section.cta{background:var(--bg-panel); border-bottom:none;}
 .btn-whatsapp{background:#25D366; color:#0B1A10;}
 .btn-whatsapp:hover{box-shadow:0 6px 20px rgba(37,211,102,.35);}
 .btn-meet{background:transparent; color:var(--text); border:1px solid var(--line);}
-.btn-meet:hover{box-shadow:0 6px 20px rgba(0,212,255,.15);}
+.btn-meet:hover{box-shadow:0 6px 20px rgba(0,0,0,.12);}
 .btn svg{width:18px; height:18px;}
 
 /* ---- Footer ---- */
@@ -348,6 +349,78 @@ footer a{text-decoration:underline;}
       <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Speed &amp; image optimization</b> — compressed assets, lazy loading enabled</span></div>
       <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>SSL &amp; security settings</b> — verified before go-live</span></div>
       <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Post-launch monitoring</b> — rankings and traffic tracked for 30 days</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>What actually moves, and how</h2>
+    <p class="section-sub">"API-based migration" isn't just a buzzword — here's specifically what each API handles during a PrestaShop to Shopify move, so you know exactly what's being transferred and how.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="ic">🗂️</div>
+        <h3>PrestaShop Webservice API</h3>
+        <p>Reads your store's products, categories, combinations (variants), stock levels, customers, addresses, and order history directly from the database layer — not from an export file that can go stale mid-migration.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic">🛍️</div>
+        <h3>Shopify Admin API</h3>
+        <p>Writes products, variants, images, collections, and inventory into Shopify in the correct structure, including metafields for anything Shopify's default product model doesn't cover out of the box.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic">👥</div>
+        <h3>Customer & order endpoints</h3>
+        <p>Customer accounts and their order history are created in Shopify with matching emails, so returning customers can request a password reset and see their full order history — no re-registration needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>PrestaShop vs. Shopify after migration</h2>
+    <p class="section-sub">What changes for you day-to-day once the migration is complete.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Hosting &amp; maintenance</h3>
+        <p><b style="color:var(--text)">Before:</b> self-managed server, manual updates, module conflicts.<br><b style="color:var(--text)">After:</b> fully hosted by Shopify, automatic updates, 99.9% uptime SLA.</p>
+      </div>
+      <div class="why-card">
+        <h3>Checkout &amp; payments</h3>
+        <p><b style="color:var(--text)">Before:</b> payment module plugins configured per gateway.<br><b style="color:var(--text)">After:</b> Shopify Payments plus 100+ gateways available natively.</p>
+      </div>
+      <div class="why-card">
+        <h3>Security &amp; compliance</h3>
+        <p><b style="color:var(--text)">Before:</b> manual PCI compliance and SSL renewal.<br><b style="color:var(--text)">After:</b> PCI DSS Level 1 compliance and SSL handled automatically by Shopify.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>Frequently asked questions</h2>
+    <p class="section-sub">The questions we get asked most before starting a PrestaShop to Shopify project.</p>
+    <div class="steps-list" style="counter-reset:none;">
+      <div class="step-row" style="grid-template-columns:1fr;">
+        <div><h3>How long does a PrestaShop to Shopify migration take?</h3><p>Most migrations take 1 to 3 weeks depending on catalog size, number of customers, and how much custom design work the new Shopify theme needs.</p></div>
+      </div>
+      <div class="step-row" style="grid-template-columns:1fr;">
+        <div><h3>Will I lose my Google rankings when migrating?</h3><p>Not if 301 redirects are set up correctly. Every old PrestaShop URL is mapped to its new Shopify URL so search engines carry over existing rankings and backlinks instead of starting from zero.</p></div>
+      </div>
+      <div class="step-row" style="grid-template-columns:1fr;">
+        <div><h3>Is customer data safely transferred?</h3><p>Yes — customer accounts, order history and addresses are transferred via API rather than manual re-entry, keeping data accurate and avoiding disruption for returning customers.</p></div>
+      </div>
+      <div class="step-row" style="grid-template-columns:1fr;">
+        <div><h3>Do you migrate stores for businesses in Italy and Spain?</h3><p>Yes — VortexDigitalAI supports PrestaShop to Shopify migrations for businesses in Italy and Spain specifically, as well as Pakistan, UAE, USA, UK and worldwide.</p></div>
+      </div>
+      <div class="step-row" style="grid-template-columns:1fr;">
+        <div><h3>What happens to my existing product reviews?</h3><p>Product reviews are exported alongside product data and re-imported into a Shopify reviews app, so social proof built up on the old store isn't lost.</p></div>
+      </div>
+      <div class="step-row" style="grid-template-columns:1fr;">
+        <div><h3>Can the store stay live during migration?</h3><p>Yes — data is migrated to a staging Shopify store first, tested fully, and DNS is only switched over once everything is verified, keeping downtime to minutes, not days.</p></div>
+      </div>
     </div>
   </div>
 </section>

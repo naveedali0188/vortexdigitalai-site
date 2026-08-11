@@ -14,6 +14,7 @@
 ============================================================= -->
 
 <title>Global Environmental Impact Tracker — Live Wildfire, Flood & Disaster Data | VortexDigitalAI</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
 <!-- ===== SEO ===== -->
 <meta name="description" content="Live-updating tracker of the world's environmental damage — wildfires, floods, and conflict-driven ecological loss — plus live research charts on CO2 and greenhouse gas emissions from Our World in Data. Research and curation by Naveed Ali Qureshi, VortexDigitalAI.">
@@ -113,19 +114,20 @@
 
 <style>
 /* ============================================================
-   BRAND COLORS — matched to vortexdigitalai.com
-   (cyan / violet / amber / rose accent system, dark theme)
+   BRAND COLORS — matched to the live vortexdigitalai.com site
+   (monochrome black/white, emerald as the only accent — same
+   palette and fonts as the homepage, not a separate dark theme)
 ============================================================= */
 :root{
-  --bg:        #03080f;   /* page background — matches site dark theme */
-  --bg-panel:  #0b1420;   /* card background */
-  --line:      #1c2733;   /* hairline borders */
-  --text:      #e8edf5;   /* primary text */
-  --text-dim:  #6b7a90;   /* secondary text — matches site --muted */
-  --fire:      #f59e0b;   /* wildfire accent — brand amber */
-  --flood:     #00d4ff;   /* flood/water accent — brand cyan */
-  --conflict:  #f43f5e;   /* conflict accent — brand rose */
-  --amber:     #8b5cf6;   /* live-alert pulse accent — brand violet */
+  --bg:        #ffffff;   /* page background — matches site */
+  --bg-panel:  #fafafa;   /* card background */
+  --line:      #e5e5e5;   /* hairline borders */
+  --text:      #000000;   /* primary text — site --ink */
+  --text-dim:  #6b7280;   /* secondary text — site --muted */
+  --fire:      #000000;   /* wildfire accent */
+  --flood:     #404040;   /* flood/water accent */
+  --conflict:  #737373;   /* conflict accent */
+  --amber:     #059669;   /* live-alert pulse accent — site --emerald */
 }
 
 *{box-sizing:border-box; margin:0; padding:0;}
@@ -176,7 +178,7 @@ a{color:inherit;}
 }
 .detail-btn:hover{border-color:var(--text-dim);}
 .modal-overlay{
-  display:none; position:fixed; inset:0; background:rgba(3,8,15,0.86);
+  display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55);
   z-index:100; align-items:flex-start; justify-content:center; padding:60px 20px;
   overflow-y:auto;
 }
@@ -203,13 +205,13 @@ a{color:inherit;}
 .live-dot{
   display:inline-block; width:8px; height:8px; border-radius:50%;
   background:var(--amber); margin-right:8px;
-  box-shadow:0 0 0 0 rgba(232,184,75,0.6);
+  box-shadow:0 0 0 0 rgba(5,150,105,0.6);
   animation:pulse 1.8s infinite;
 }
 @keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(232,184,75,0.55);}
-  70%{box-shadow:0 0 0 8px rgba(232,184,75,0);}
-  100%{box-shadow:0 0 0 0 rgba(232,184,75,0);}
+  0%{box-shadow:0 0 0 0 rgba(5,150,105,0.55);}
+  70%{box-shadow:0 0 0 8px rgba(5,150,105,0);}
+  100%{box-shadow:0 0 0 0 rgba(5,150,105,0);}
 }
 .ticker-item{font-size:13px; color:var(--text-dim);}
 .ticker-item b{color:var(--text); font-weight:600;}
@@ -270,9 +272,9 @@ section.feed{padding:24px 0 64px;}
   font-family:'JetBrains Mono', monospace; font-size:11px; padding:4px 8px;
   border-radius:2px; text-align:center; text-transform:uppercase; letter-spacing:0.04em;
 }
-.tag.fire{background:rgba(193,68,14,0.15); color:var(--fire);}
-.tag.flood{background:rgba(42,157,143,0.15); color:var(--flood);}
-.tag.conflict{background:rgba(138,47,59,0.15); color:var(--conflict);}
+.tag.fire{background:rgba(0,0,0,0.06); color:var(--fire);}
+.tag.flood{background:rgba(0,0,0,0.06); color:var(--flood);}
+.tag.conflict{background:rgba(0,0,0,0.06); color:var(--conflict);}
 .feed-row .loc{color:var(--text-dim); font-family:'JetBrains Mono', monospace; font-size:12px; text-align:right;}
 
 /* ---------- CTA (WhatsApp / Meet) ---------- */
@@ -331,10 +333,10 @@ section.research{padding:24px 0 64px;}
 
 /* ---------- Hover polish on interactive elements ---------- */
 .btn{transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;}
-.btn:hover{box-shadow:0 6px 20px rgba(0,212,255,0.15);}
+.btn:hover{box-shadow:0 6px 20px rgba(0,0,0,0.12);}
 .btn-whatsapp:hover{box-shadow:0 6px 20px rgba(37,211,102,0.35); transform:translateY(-2px) scale(1.02);}
 .detail-btn{transition:transform .18s ease, border-color .18s ease, color .18s ease, background .18s ease;}
-.detail-btn:hover{transform:translateX(2px); background:rgba(255,255,255,0.03);}
+.detail-btn:hover{transform:translateX(2px); background:rgba(0,0,0,0.03);}
 .card{transition:transform .22s ease, border-color .22s ease;}
 .card:hover{transform:translateY(-4px); border-color:var(--text-dim);}
 .topbar a.back{transition:transform .15s ease;}
