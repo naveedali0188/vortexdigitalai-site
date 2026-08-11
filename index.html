@@ -423,6 +423,31 @@
     .primary-nav { display: flex; align-items: center; gap: 4px; }
     .primary-nav a { font-size: .88rem; font-weight: 500; color: var(--muted); padding: 6px 12px; border-radius: var(--r-sm); transition: color .2s, background .2s; }
     .primary-nav a:hover { color: var(--ink); background: var(--surface); }
+    /* ---- Dropdown menus (Services / Projects) ---- */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > .nav-drop-trigger { display: flex; align-items: center; gap: 5px; cursor: pointer; font: inherit; background: none; border: none; }
+    .nav-dropdown > .nav-drop-trigger i { font-size: .7rem; transition: transform .2s; }
+    .nav-dropdown.open > .nav-drop-trigger i { transform: rotate(180deg); }
+    .nav-drop-panel {
+      position: absolute; top: calc(100% + 8px); left: 0; min-width: 260px;
+      background: var(--surface, #fff); border: 1px solid var(--border, #e5e5e5); border-radius: var(--r-md, 10px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.12); padding: 10px; opacity: 0; visibility: hidden;
+      transform: translateY(6px); transition: opacity .18s ease, transform .18s ease, visibility .18s;
+      z-index: 200;
+    }
+    .nav-drop-group { padding: 6px 10px 4px; font-size: .68rem; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
+    .nav-drop-panel a { display: block; padding: 8px 10px; border-radius: 8px; font-size: .85rem; color: var(--ink); }
+    .nav-drop-panel a:hover { background: var(--bg-alt, rgba(0,0,0,.04)); }
+    .nav-drop-panel a small { display: block; color: var(--muted); font-size: .72rem; font-weight: 400; margin-top: 1px; }
+    @media (min-width: 901px) {
+      .nav-dropdown:hover .nav-drop-panel,
+      .nav-dropdown.open .nav-drop-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+    }
+    @media (max-width: 900px) {
+      .nav-drop-panel { position: static; box-shadow: none; border: none; opacity: 1; visibility: visible; transform: none; display: none; padding: 4px 0 4px 14px; }
+      .nav-dropdown.open .nav-drop-panel { display: block; }
+      .nav-dropdown > .nav-drop-trigger { width: 100%; justify-content: space-between; }
+    }
 
     .header-actions { display: flex; align-items: center; gap: 10px; }
     .btn-outline {
@@ -928,7 +953,7 @@
        FOOTER
     ============================ */
     .site-footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 60px 24px 32px; margin-top: 80px; }
-    .footer-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto auto; gap: 48px; align-items: start; }
+    .footer-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto auto auto; gap: 40px; align-items: start; }
     .footer-brand { max-width: 280px; }
     .footer-tagline { font-size: .87rem; color: var(--muted); line-height: 1.65; margin-top: 10px; }
     .footer-col h4 { font-family: var(--font-display); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
@@ -1079,7 +1104,41 @@
       </a>
       <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
         <a href="#hero">Home</a>
-        <a href="#services">Services</a>
+
+        <div class="nav-dropdown" data-dropdown="services">
+          <button class="nav-drop-trigger" type="button" aria-expanded="false">Services <i class="fas fa-chevron-down"></i></button>
+          <div class="nav-drop-panel">
+            <div class="nav-drop-group">Core Services</div>
+            <a href="/index.html#services">AI Websites <small>Custom AI-enhanced sites</small></a>
+            <a href="/index.html#services">AI SEO <small>Technical audits & content at scale</small></a>
+            <a href="/index.html#services">Automations <small>Make.com, n8n, helpdesk flows</small></a>
+            <a href="/index.html#services">Growth Marketing <small>Campaigns & conversion</small></a>
+            <a href="/index.html#services">App Development <small>Web & mobile, design to deploy</small></a>
+            <a href="/index.html#services">Artificial Intelligence <small>Prediction & LLM integrations</small></a>
+            <a href="/index.html#services">Cloud Infrastructure <small>Migration & IaC</small></a>
+            <div class="nav-drop-group">Specialty</div>
+            <a href="/index.html#services">PrestaShop Migration <small>Zero-downtime store moves</small></a>
+            <a href="/index.html#services">Ecommerce & Merchant Center <small>Store setup & Shopping Ads</small></a>
+            <a href="/index.html#services">Zendesk Support</a>
+            <a href="/index.html#services">Intercom Integration</a>
+            <a href="/index.html#services">NetSuite ERP</a>
+            <a href="/index.html#services">Microsoft Dynamics</a>
+            <a href="/index.html#services">Salesforce</a>
+            <div class="nav-drop-group">Industry</div>
+            <a href="/index.html#services">AgTech</a>
+            <a href="/index.html#services">Digital Health</a>
+            <a href="/index.html#services">EdTech</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown" data-dropdown="projects">
+          <button class="nav-drop-trigger" type="button" aria-expanded="false">Projects <i class="fas fa-chevron-down"></i></button>
+          <div class="nav-drop-panel">
+            <a href="/environmental-impact.html">Impact Tracker <small>Live wildfire & disaster data</small></a>
+            <a href="/ecommerce.html">eCommerce Migration <small>PrestaShop → Shopify, step-by-step</small></a>
+          </div>
+        </div>
+
         <a href="#expertise">Expertise</a>
         <a href="#technologies">Integrations</a>
         <a href="#courses">Courses</a>
@@ -1087,7 +1146,6 @@
         <a href="#global-reach">Global</a>
         <a href="#get-in-touch">Contact</a>
         <a href="#videos">Insights</a>
-        <a href="/environmental-impact.html">Impact Tracker</a>
         <a href="#deals">Platforms</a>
       </nav>
       <div class="header-actions">
@@ -1493,7 +1551,13 @@
           <li><a href="#courses">Courses</a></li>
           <li><a href="#get-in-touch">Contact</a></li>
           <li><a href="#videos">Insights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Projects</h4>
+        <ul>
           <li><a href="/environmental-impact.html">Impact Tracker</a></li>
+          <li><a href="/ecommerce.html">eCommerce Migration</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1641,6 +1705,26 @@
     navToggle.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
   }));
+
+  /* ---- Services / Projects dropdown menus ---- */
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(dd => {
+    const trigger = dd.querySelector('.nav-drop-trigger');
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dd.classList.contains('open');
+      dropdowns.forEach(other => { other.classList.remove('open'); other.querySelector('.nav-drop-trigger').setAttribute('aria-expanded','false'); });
+      if(!isOpen){ dd.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if(!e.target.closest('.nav-dropdown')){
+      dropdowns.forEach(dd => { dd.classList.remove('open'); dd.querySelector('.nav-drop-trigger').setAttribute('aria-expanded','false'); });
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape'){ dropdowns.forEach(dd => dd.classList.remove('open')); }
+  });
 
   /* ---- Reveal ---- */
   const revealObs = new IntersectionObserver(entries => {
