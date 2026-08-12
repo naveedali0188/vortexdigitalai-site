@@ -660,6 +660,8 @@
     .card-btn:hover { transform: translateY(-1px); filter: brightness(1.1); }
     .card-btn-meet { background: linear-gradient(135deg, var(--cyan), var(--cyan-dim, #1a1a1a)); color: #fff; box-shadow: 0 3px 10px rgba(0,0,0,.18); }
     .card-btn-wa { background: linear-gradient(135deg, #25d366, #1aab52); color: #fff; box-shadow: 0 3px 12px rgba(37,211,102,.25); }
+    .card-btn-learn { background: none; border: 1px solid var(--border); color: var(--ink); }
+    .card-btn-learn:hover { background: var(--surface); }
 
     /* ============================
        COURSES SECTION
@@ -955,7 +957,7 @@
        FOOTER
     ============================ */
     .site-footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 60px 24px 32px; margin-top: 80px; }
-    .footer-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto auto auto; gap: 40px; align-items: start; }
+    .footer-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr auto auto auto auto; gap: 36px; align-items: start; }
     .footer-brand { max-width: 280px; }
     .footer-tagline { font-size: .87rem; color: var(--muted); line-height: 1.65; margin-top: 10px; }
     .footer-col h4 { font-family: var(--font-display); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
@@ -1136,6 +1138,7 @@
             <div class="nav-drop-group">Specialty</div>
             <a href="/index.html#services">PrestaShop Migration <small>Zero-downtime store moves</small></a>
             <a href="/index.html#services">Ecommerce & Merchant Center <small>Store setup & Shopping Ads</small></a>
+            <a href="/order-fulfillment.html">Order Fulfillment <small>DSers, Zendrop, Spocket, AutoDS, Printful/Printify</small></a>
             <a href="/index.html#services">Zendesk Support</a>
             <a href="/index.html#services">Intercom Integration</a>
             <a href="/index.html#services">NetSuite ERP</a>
@@ -1573,6 +1576,15 @@
         </ul>
       </div>
       <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">All Services</a></li>
+          <li><a href="/order-fulfillment.html">Order Fulfillment</a></li>
+          <li><a href="#services">AI Websites</a></li>
+          <li><a href="#services">AI SEO</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
         <h4>Projects</h4>
         <ul>
           <li><a href="/environmental-impact.html">Impact Tracker</a></li>
@@ -1803,7 +1815,8 @@
     {icon:'fa-brain',      title:'Artificial Intelligence',desc:'Prediction, automation and decisioning with modern AI and LLM integrations.',  wa:'AI+solutions', tag:'Core Service'},
     {icon:'fa-cloud',      title:'NetSuite ERP',         desc:'ERP implementations, third-party integrations and workflow automation.',          wa:'NetSuite+ERP', tag:'Specialty'},
     {icon:'fab fa-microsoft',title:'Microsoft Dynamics', desc:'Dynamics 365 customization for operations and sales pipelines.',                  wa:'Microsoft+Dynamics', tag:'Specialty'},
-    {icon:'fa-shopping-cart',title:'Ecommerce & Google Merchant Center',desc:'Store setup, CRO, Google Merchant Center feed optimization, and Shopping Ads readiness.', wa:'Ecommerce', tag:'Specialty', featured:true},
+    {icon:'fa-shopping-cart',title:'Ecommerce & Google Merchant Center',desc:'Store setup, CRO, Google Merchant Center feed optimization, and Shopping Ads readiness.', wa:'Ecommerce', tag:'Specialty', featured:true, link:'/ecommerce.html'},
+    {icon:'fa-truck',       title:'Order Fulfillment',    desc:'End-to-end order processing across DSers, Zendrop, Spocket, AutoDS, Printful and Printify for any Shopify store.', wa:'Order+Fulfillment', tag:'Specialty', link:'/order-fulfillment.html'},
     {icon:'fab fa-salesforce',title:'Salesforce',        desc:'CRM automation, flows and AI copilots built for growth-focused teams.',           wa:'Salesforce', tag:'Specialty'},
     {icon:'fa-leaf',       title:'AgTech',               desc:'IoT and AI for precision agriculture — yield optimization with real-time data.',  wa:'AgTech', tag:'Industry'},
     {icon:'fa-heartbeat',  title:'Digital Health',       desc:'Telehealth platforms, EHR integrations, and data-driven patient care solutions.', wa:'Digital+Health', tag:'Industry'},
@@ -1828,6 +1841,7 @@
       <div class="card-actions">
         <a class="card-btn card-btn-meet" href="https://meet.google.com/tzj-zyqu-tkn" target="_blank" rel="noopener noreferrer"><i class="fas fa-video"></i> Book Meeting</a>
         <a class="card-btn card-btn-wa" href="https://wa.me/923125282051?text=Hi%2C%20I%27m%20interested%20in%20${s.wa}%20service" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Get Quote</a>
+        ${s.link ? `<a class="card-btn card-btn-learn" href="${s.link}"><i class="fas fa-arrow-right"></i> Learn More</a>` : ''}
       </div>`;
     grid.appendChild(card);
     revealObs.observe(card);
