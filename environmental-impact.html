@@ -354,14 +354,183 @@ section.research{padding:24px 0 64px;}
 </style>
 </head>
 <body>
+<!-- ============================================================
+   SHARED SITE NAV — self-contained, namespaced (vx- prefix) so it
+   never collides with a page's own CSS. Paste right after <body>.
+   Requires Font Awesome (already loaded on every page) for icons.
+============================================================= -->
+<style>
+.vx-header{position:sticky; top:0; z-index:300; background:rgba(255,255,255,.92); backdrop-filter:blur(14px) saturate(140%); -webkit-backdrop-filter:blur(14px) saturate(140%); border-bottom:1px solid #e5e5e5; font-family:'Plus Jakarta Sans', system-ui, sans-serif;}
+.vx-header-inner{max-width:1180px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
+.vx-logo{display:flex; align-items:center; gap:10px; text-decoration:none; color:#000;}
+.vx-logo-icon{width:34px; height:34px; border-radius:9px; background:#000; color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0;}
+.vx-logo-text{font-family:'Orbitron', sans-serif; font-weight:700; font-size:1rem; letter-spacing:-.01em;}
+.vx-nav{display:flex; align-items:center; gap:4px;}
+.vx-nav a{font-size:.86rem; font-weight:500; color:#4b5563; padding:8px 12px; border-radius:8px; text-decoration:none; transition:color .2s, background .2s; white-space:nowrap;}
+.vx-nav a:hover{color:#000; background:#f5f5f5;}
+.vx-actions{display:flex; align-items:center; gap:10px;}
+.vx-btn-cta{display:inline-flex; align-items:center; gap:8px; background:#000; color:#fff; font-size:.85rem; font-weight:600; padding:10px 18px; border-radius:999px; text-decoration:none; white-space:nowrap; transition:transform .15s ease;}
+.vx-btn-cta:hover{transform:translateY(-1px);}
+.vx-toggle{display:none; flex-direction:column; gap:4px; width:38px; height:38px; align-items:center; justify-content:center; border:1px solid #e5e5e5; border-radius:8px; background:none; cursor:pointer;}
+.vx-toggle span{display:block; width:18px; height:2px; background:#000; border-radius:2px; transition:transform .3s, opacity .3s;}
+.vx-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.vx-toggle.open span:nth-child(2){opacity:0;}
+.vx-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
 
-<!-- ===== Top bar — links back to main site ===== -->
-<div class="topbar">
-  <div class="wrap">
-    <a class="back" href="https://vortexdigitalai.com/">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-      Back to VortexDigitalAI
+.vx-dropdown{position:relative;}
+.vx-drop-trigger{display:flex; align-items:center; gap:5px; cursor:pointer; font:inherit; background:none; border:none; color:#4b5563; padding:8px 12px; border-radius:8px; font-size:.86rem; font-weight:500;}
+.vx-drop-trigger:hover{color:#000; background:#f5f5f5;}
+.vx-drop-trigger i{font-size:.65rem; transition:transform .2s;}
+.vx-dropdown.open .vx-drop-trigger i{transform:rotate(180deg);}
+.vx-drop-panel{position:absolute; top:calc(100% + 8px); left:0; min-width:260px; background:#fff; border:1px solid #e5e5e5; border-radius:10px; box-shadow:0 16px 40px rgba(0,0,0,.12); padding:10px; opacity:0; visibility:hidden; transform:translateY(6px); transition:opacity .18s ease, transform .18s ease, visibility .18s; z-index:310;}
+.vx-drop-group{padding:6px 10px 4px; font-size:.65rem; text-transform:uppercase; letter-spacing:.07em; color:#9ca3af;}
+.vx-drop-panel a{display:block; padding:8px 10px; border-radius:8px; font-size:.84rem; color:#000; white-space:normal;}
+.vx-drop-panel a:hover{background:#f5f5f5;}
+.vx-drop-panel a small{display:block; color:#9ca3af; font-size:.7rem; font-weight:400; margin-top:1px;}
+
+.vx-backdrop{display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:290; backdrop-filter:blur(2px);}
+.vx-backdrop.open{display:block;}
+
+@media (min-width:901px){
+  .vx-dropdown:hover .vx-drop-panel, .vx-dropdown.open .vx-drop-panel{opacity:1; visibility:visible; transform:translateY(0);}
+}
+@media (max-width:900px){
+  .vx-nav{display:none;}
+  .vx-nav.open{
+    display:flex; flex-direction:column; align-items:stretch;
+    position:fixed; top:0; right:0; bottom:0; width:min(320px,84vw); height:100vh;
+    background:#fff; box-shadow:-12px 0 40px rgba(0,0,0,.18);
+    padding:88px 24px 32px; gap:4px; z-index:320; overflow-y:auto;
+    animation:vxSlideIn .3s ease;
+  }
+  .vx-nav.open a{font-size:1rem; padding:12px 14px;}
+  @keyframes vxSlideIn{from{transform:translateX(100%);} to{transform:translateX(0);}}
+  .vx-toggle{display:flex;}
+  .vx-drop-panel{position:static; box-shadow:none; border:none; opacity:1; visibility:visible; transform:none; display:none; padding:4px 0 4px 14px;}
+  .vx-dropdown.open .vx-drop-panel{display:block;}
+  .vx-drop-trigger{width:100%; justify-content:space-between;}
+  .vx-actions .vx-btn-cta{display:none;}
+}
+</style>
+
+<header class="vx-header">
+  <div class="vx-header-inner">
+    <a class="vx-logo" href="/index.html">
+      <div class="vx-logo-icon"><i class="fas fa-bolt"></i></div>
+      <span class="vx-logo-text">VortexDigitalAI</span>
     </a>
+
+    <nav class="vx-nav" id="vxNav">
+      <a href="/index.html#hero">Home</a>
+
+      <div class="vx-dropdown" data-vx-dropdown="services">
+        <button class="vx-drop-trigger" type="button" aria-expanded="false">Services <i class="fas fa-chevron-down"></i></button>
+        <div class="vx-drop-panel">
+          <div class="vx-drop-group">Core Services</div>
+          <a href="/index.html#services">AI Websites</a>
+          <a href="/index.html#services">AI SEO</a>
+          <a href="/index.html#services">Automations</a>
+          <a href="/index.html#services">Growth Marketing</a>
+          <a href="/index.html#services">App Development</a>
+          <a href="/index.html#services">Artificial Intelligence</a>
+          <a href="/index.html#services">Cloud Infrastructure</a>
+          <div class="vx-drop-group">Specialty</div>
+          <a href="/index.html#services">PrestaShop Migration</a>
+          <a href="/index.html#services">Ecommerce & Merchant Center</a>
+          <a href="/order-fulfillment.html">Order Fulfillment <small>DSers, Zendrop, Spocket, AutoDS, Printful/Printify</small></a>
+          <a href="/index.html#services">Zendesk Support</a>
+          <a href="/index.html#services">Intercom Integration</a>
+          <a href="/index.html#services">NetSuite ERP</a>
+          <a href="/index.html#services">Microsoft Dynamics</a>
+          <a href="/index.html#services">Salesforce</a>
+        </div>
+      </div>
+
+      <div class="vx-dropdown" data-vx-dropdown="projects">
+        <button class="vx-drop-trigger" type="button" aria-expanded="false">Projects <i class="fas fa-chevron-down"></i></button>
+        <div class="vx-drop-panel">
+          <a href="/environmental-impact.html">Impact Tracker <small>Live wildfire & disaster data</small></a>
+          <a href="/ecommerce.html">eCommerce Migration <small>PrestaShop → Shopify, step-by-step</small></a>
+        </div>
+      </div>
+
+      <div class="vx-dropdown" data-vx-dropdown="courses">
+        <button class="vx-drop-trigger" type="button" aria-expanded="false">Courses <i class="fas fa-chevron-down"></i></button>
+        <div class="vx-drop-panel">
+          <a href="/courses/ai-financial-analyst.html">AI Financial Analyst</a>
+          <a href="/courses/ai-for-everyone.html">AI for Everyone</a>
+          <a href="/courses/ai-powered-ecommerce.html">AI Powered E-Commerce</a>
+          <a href="/courses/earning-through-freelancing.html">Earning Through Freelancing</a>
+          <a href="/courses/ai-graphic-design-video-editing.html">AI Graphic Design & Video Editing</a>
+          <a href="/courses/ai-digital-marketing-seo.html">AI Digital Marketing & SEO</a>
+          <a href="/courses/ai-resume-writing-hr-counseling.html">AI Resume Writing + HR Counseling</a>
+          <a href="/courses/ai-augmented-hr-training.html">AI Augmented HR Training</a>
+        </div>
+      </div>
+
+      <a href="/index.html#faq">FAQ</a>
+      <a href="/index.html#get-in-touch">Contact</a>
+    </nav>
+
+    <div class="vx-actions">
+      <a class="vx-btn-cta" href="https://wa.me/923125282051" target="_blank" rel="noopener">Get In Touch</a>
+      <button class="vx-toggle" id="vxToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="vx-backdrop" id="vxBackdrop"></div>
+
+<script>
+(function(){
+  var toggle = document.getElementById('vxToggle');
+  var nav = document.getElementById('vxNav');
+  var backdrop = document.getElementById('vxBackdrop');
+
+  function closeNav(){
+    nav.classList.remove('open'); toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false'); backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click', function(){
+    var isOpen = nav.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen);
+    backdrop.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  backdrop.addEventListener('click', closeNav);
+  nav.querySelectorAll('a').forEach(function(l){ l.addEventListener('click', closeNav); });
+
+  var dropdowns = document.querySelectorAll('.vx-dropdown');
+  dropdowns.forEach(function(dd){
+    var trigger = dd.querySelector('.vx-drop-trigger');
+    trigger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = dd.classList.contains('open');
+      dropdowns.forEach(function(o){ o.classList.remove('open'); o.querySelector('.vx-drop-trigger').setAttribute('aria-expanded','false'); });
+      if(!isOpen){ dd.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.vx-dropdown')){
+      dropdowns.forEach(function(dd){ dd.classList.remove('open'); dd.querySelector('.vx-drop-trigger').setAttribute('aria-expanded','false'); });
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ dropdowns.forEach(function(dd){ dd.classList.remove('open'); }); closeNav(); }
+  });
+})();
+</script>
+<!-- ============================================================
+   END SHARED SITE NAV
+============================================================= -->
+
+
+<!-- ===== Page context bar ===== -->
+<div class="topbar">
+  <div class="wrap" style="justify-content:flex-end;">
     <span class="tag-live">STANDALONE DATA PAGE · LIVE</span>
   </div>
 </div>

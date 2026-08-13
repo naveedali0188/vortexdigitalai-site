@@ -957,7 +957,7 @@
        FOOTER
     ============================ */
     .site-footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 60px 24px 32px; margin-top: 80px; }
-    .footer-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr auto auto auto auto; gap: 36px; align-items: start; }
+    .footer-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr repeat(5, auto); gap: 32px; align-items: start; }
     .footer-brand { max-width: 280px; }
     .footer-tagline { font-size: .87rem; color: var(--muted); line-height: 1.65; margin-top: 10px; }
     .footer-col h4 { font-family: var(--font-display); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
@@ -1161,7 +1161,22 @@
 
         <a href="#expertise">Expertise</a>
         <a href="#technologies">Integrations</a>
-        <a href="#courses">Courses</a>
+
+        <div class="nav-dropdown" data-dropdown="courses">
+          <button class="nav-drop-trigger" type="button" aria-expanded="false">Courses <i class="fas fa-chevron-down"></i></button>
+          <div class="nav-drop-panel">
+            <a href="#courses">All Courses (overview)</a>
+            <a href="/courses/ai-financial-analyst.html">AI Financial Analyst</a>
+            <a href="/courses/ai-for-everyone.html">AI for Everyone</a>
+            <a href="/courses/ai-powered-ecommerce.html">AI Powered E-Commerce</a>
+            <a href="/courses/earning-through-freelancing.html">Earning Through Freelancing</a>
+            <a href="/courses/ai-graphic-design-video-editing.html">AI Graphic Design & Video Editing</a>
+            <a href="/courses/ai-digital-marketing-seo.html">AI Digital Marketing & SEO</a>
+            <a href="/courses/ai-resume-writing-hr-counseling.html">AI Resume Writing + HR Counseling</a>
+            <a href="/courses/ai-augmented-hr-training.html">AI Augmented HR Training</a>
+          </div>
+        </div>
+
         <a href="#faq">FAQ</a>
         <a href="#global-reach">Global</a>
         <a href="#get-in-touch">Contact</a>
@@ -1585,6 +1600,15 @@
         </ul>
       </div>
       <div class="footer-col">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="#courses">All Courses</a></li>
+          <li><a href="/courses/ai-financial-analyst.html">AI Financial Analyst</a></li>
+          <li><a href="/courses/ai-powered-ecommerce.html">AI Powered E-Commerce</a></li>
+          <li><a href="/courses/ai-digital-marketing-seo.html">AI Digital Marketing & SEO</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
         <h4>Projects</h4>
         <ul>
           <li><a href="/environmental-impact.html">Impact Tracker</a></li>
@@ -1929,14 +1953,14 @@
 
   /* ---- Courses data ---- */
   const COURSES = [
-    { n:1,  icon:'fa-chart-line',    title:'AI Financial Analyst',           duration:'3 Months',  color:'#000000', bg:'rgba(0,0,0,.04)',  border:'rgba(0,0,0,.15)',  btn:'linear-gradient(135deg,#000,#333)', accent:'#000' },
-    { n:2,  icon:'fa-users',         title:'AI for Everyone',                duration:'2 Months',  color:'#000000', bg:'rgba(0,0,0,.04)', border:'rgba(0,0,0,.15)', btn:'linear-gradient(135deg,#000,#333)', accent:'#000' },
-    { n:3,  icon:'fa-shopping-bag',  title:'AI Powered E-Commerce',          duration:'3 Months',  color:'#000000', bg:'rgba(0,0,0,.04)', border:'rgba(0,0,0,.15)', btn:'linear-gradient(135deg,#000,#333)', accent:'#000' },
-    { n:4,  icon:'fa-laptop-code',   title:'Earning Through Freelancing',    duration:'2 Months',  color:'#000000', bg:'rgba(0,0,0,.04)', border:'rgba(0,0,0,.15)', btn:'linear-gradient(135deg,#000,#333)', accent:'#000' },
-    { n:5,  icon:'fa-paint-brush',   title:'AI Graphic Design & Video Editing', duration:'3 Months', color:'#000000', bg:'rgba(0,0,0,.04)',  border:'rgba(0,0,0,.15)',  btn:'linear-gradient(135deg,#000,#333)', accent:'#000' },
-    { n:6,  icon:'fa-search-plus',   title:'AI Digital Marketing & SEO',    duration:'3 Months',  color:'#000000', bg:'rgba(0,0,0,.04)',  border:'rgba(0,0,0,.15)',  btn:'linear-gradient(135deg,#000,#333)', accent:'#000' },
-    { n:7,  icon:'fa-file-alt',      title:'AI Resume Writing + HR Counseling', duration:'Self-paced', color:'#000000', bg:'rgba(0,0,0,.04)', border:'rgba(0,0,0,.15)', btn:'linear-gradient(135deg,#000,#333)', accent:'#000' },
-    { n:8,  icon:'fa-users-cog',     title:'AI Augmented HR Training',       duration:'Self-paced', color:'#000000', bg:'rgba(0,0,0,.04)', border:'rgba(0,0,0,.15)', btn:'linear-gradient(135deg,#000,#333)', accent:'#000' },
+    { n:1,  icon:'fa-chart-line',    title:'AI Financial Analyst',           duration:'3 Months',  color:'#000000', bg:'rgba(0,0,0,.04)',  border:'rgba(0,0,0,.15)',  btn:'linear-gradient(135deg,#000,#333)', accent:'#000', link:'/courses/ai-financial-analyst.html' },
+    { n:2,  icon:'fa-users',         title:'AI for Everyone',                duration:'2 Months',  color:'#000000', bg:'rgba(0,0,0,.04)', border:'rgba(0,0,0,.15)', btn:'linear-gradient(135deg,#000,#333)', accent:'#000', link:'/courses/ai-for-everyone.html' },
+    { n:3,  icon:'fa-shopping-bag',  title:'AI Powered E-Commerce',          duration:'3 Months',  color:'#000000', bg:'rgba(0,0,0,.04)', border:'rgba(0,0,0,.15)', btn:'linear-gradient(135deg,#000,#333)', accent:'#000', link:'/courses/ai-powered-ecommerce.html' },
+    { n:4,  icon:'fa-laptop-code',   title:'Earning Through Freelancing',    duration:'2 Months',  color:'#000000', bg:'rgba(0,0,0,.04)', border:'rgba(0,0,0,.15)', btn:'linear-gradient(135deg,#000,#333)', accent:'#000', link:'/courses/earning-through-freelancing.html' },
+    { n:5,  icon:'fa-paint-brush',   title:'AI Graphic Design & Video Editing', duration:'3 Months', color:'#000000', bg:'rgba(0,0,0,.04)',  border:'rgba(0,0,0,.15)',  btn:'linear-gradient(135deg,#000,#333)', accent:'#000', link:'/courses/ai-graphic-design-video-editing.html' },
+    { n:6,  icon:'fa-search-plus',   title:'AI Digital Marketing & SEO',    duration:'3 Months',  color:'#000000', bg:'rgba(0,0,0,.04)',  border:'rgba(0,0,0,.15)',  btn:'linear-gradient(135deg,#000,#333)', accent:'#000', link:'/courses/ai-digital-marketing-seo.html' },
+    { n:7,  icon:'fa-file-alt',      title:'AI Resume Writing + HR Counseling', duration:'Self-paced', color:'#000000', bg:'rgba(0,0,0,.04)', border:'rgba(0,0,0,.15)', btn:'linear-gradient(135deg,#000,#333)', accent:'#000', link:'/courses/ai-resume-writing-hr-counseling.html' },
+    { n:8,  icon:'fa-users-cog',     title:'AI Augmented HR Training',       duration:'Self-paced', color:'#000000', bg:'rgba(0,0,0,.04)', border:'rgba(0,0,0,.15)', btn:'linear-gradient(135deg,#000,#333)', accent:'#000', link:'/courses/ai-augmented-hr-training.html' },
     { n:9,  icon:'fa-briefcase',     title:'AI Portfolio Building',          duration:'Self-paced', color:'#000000', bg:'rgba(0,0,0,.04)', border:'rgba(0,0,0,.15)', btn:'linear-gradient(135deg,#000,#333)', accent:'#000' },
     { n:10, icon:'fa-pen-nib',       title:'AI Content Writing & Blogging',  duration:'Self-paced', color:'#000000', bg:'rgba(0,0,0,.04)',  border:'rgba(0,0,0,.15)',  btn:'linear-gradient(135deg,#000,#333)', accent:'#000' },
     { n:11, icon:'fa-code',          title:'AI Coding & No-Code Development',duration:'Self-paced', color:'#000000', bg:'rgba(0,0,0,.04)',  border:'rgba(0,0,0,.15)',  btn:'linear-gradient(135deg,#000,#333)', accent:'#000' },
@@ -1959,7 +1983,8 @@
       ${c.duration !== 'Self-paced' ? `<div class="course-duration"><i class="fas fa-clock"></i> ${c.duration}</div>` : `<div class="course-duration"><i class="fas fa-infinity"></i> Self-paced</div>`}
       <a class="course-cta" href="https://wa.me/923125282051?text=Hi%2C%20I%27m%20interested%20in%20the%20${encodeURIComponent(c.title)}%20course" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-paper-plane"></i> Enroll via WhatsApp
-      </a>`;
+      </a>
+      ${c.link ? `<a class="course-cta" style="background:none;border:1px solid var(--course-border);color:var(--course-accent);margin-top:8px;" href="${c.link}"><i class="fas fa-arrow-right"></i> Course Details & FAQs</a>` : ''}`;
     cgrid.appendChild(card);
     revealObs.observe(card);
   });
