@@ -1,0 +1,100 @@
+[
+  {
+    "id": "course-ai-financial-analyst",
+    "name": "AI Financial Analyst",
+    "duration": "3 Months",
+    "description": "Build financial models, automate reporting, and forecast with AI-assisted tools.",
+    "url": "/courses/ai-financial-analyst.html"
+  },
+  {
+    "id": "course-ai-for-everyone",
+    "name": "AI for Everyone",
+    "duration": "2 Months",
+    "description": "A non-technical, hands-on introduction to using AI tools effectively in everyday work.",
+    "url": "/courses/ai-for-everyone.html"
+  },
+  {
+    "id": "course-ai-powered-ecommerce",
+    "name": "AI Powered E-Commerce",
+    "duration": "3 Months",
+    "description": "Launch and grow a real online store using AI tools for content, support, and marketing.",
+    "url": "/courses/ai-powered-ecommerce.html"
+  },
+  {
+    "id": "course-earning-through-freelancing",
+    "name": "Earning Through Freelancing",
+    "duration": "2 Months",
+    "description": "Go from zero to your first paid freelance clients using AI tools to work faster.",
+    "url": "/courses/earning-through-freelancing.html"
+  },
+  {
+    "id": "course-ai-graphic-design-video-editing",
+    "name": "AI Graphic Design & Video Editing",
+    "duration": "3 Months",
+    "description": "Design and video editing fundamentals alongside AI tools that speed up production.",
+    "url": "/courses/ai-graphic-design-video-editing.html"
+  },
+  {
+    "id": "course-ai-digital-marketing-seo",
+    "name": "AI Digital Marketing & SEO",
+    "duration": "3 Months",
+    "description": "SEO and digital marketing fundamentals paired with AI tools for research, content, and reporting.",
+    "url": "/courses/ai-digital-marketing-seo.html"
+  },
+  {
+    "id": "course-ai-resume-writing-hr-counseling",
+    "name": "AI Resume Writing + HR Counseling",
+    "duration": "Self-paced",
+    "description": "Optimize your resume and LinkedIn profile with AI tools, plus real interview preparation.",
+    "url": "/courses/ai-resume-writing-hr-counseling.html"
+  },
+  {
+    "id": "course-ai-augmented-hr-training",
+    "name": "AI Augmented HR Training",
+    "duration": "Self-paced",
+    "description": "Bring AI tools responsibly into recruitment, onboarding, and HR analytics.",
+    "url": "/courses/ai-augmented-hr-training.html"
+  },
+  {
+    "id": "course-ai-portfolio-building",
+    "name": "AI Portfolio Building",
+    "duration": "Self-paced",
+    "description": "Build a professional portfolio using AI-assisted tools.",
+    "url": "/courses/ai-portfolio-building.html"
+  },
+  {
+    "id": "course-ai-content-writing-blogging",
+    "name": "AI Content Writing & Blogging",
+    "duration": "Self-paced",
+    "description": "Write and publish content faster using AI writing tools.",
+    "url": "/courses/ai-content-writing-blogging.html"
+  },
+  {
+    "id": "course-ai-coding-no-code",
+    "name": "AI Coding & No-Code Development",
+    "duration": "Self-paced",
+    "description": "Build software using AI-assisted coding and no-code tools.",
+    "url": "/courses/ai-coding-no-code-development.html"
+  },
+  {
+    "id": "course-ai-customer-support-chatbots",
+    "name": "AI Customer Support & Chatbots",
+    "duration": "Self-paced",
+    "description": "Build and deploy AI-powered customer support chatbots.",
+    "url": "/courses/ai-customer-support-chatbots.html"
+  },
+  {
+    "id": "course-ai-business-automation",
+    "name": "AI Business Automation",
+    "duration": "Self-paced",
+    "description": "Automate business processes using AI tools.",
+    "url": "/courses/ai-business-automation.html"
+  },
+  {
+    "id": "course-ai-data-analysis-reporting",
+    "name": "AI Data Analysis & Reporting",
+    "duration": "Self-paced",
+    "description": "Analyze data and build reports faster using AI tools.",
+    "url": "/courses/ai-data-analysis-reporting.html"
+  }
+]
