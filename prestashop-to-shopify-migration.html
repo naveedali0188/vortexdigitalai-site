@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PrestaShop to Shopify Migration Interview with Naveed Ali Qureshi | Vortex Digital AI</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<meta name="description" content="An illustrative client consultation about migrating a Spain-based PrestaShop store to Shopify — covering product, customer and order migration, SEO preservation, and Vortex Digital AI's API + Python + SQL migration approach.">
+<meta name="keywords" content="PrestaShop to Shopify migration, PrestaShop to Shopify migration service, migrate PrestaShop to Shopify, PrestaShop to Shopify expert, PrestaShop Shopify migration Spain, PrestaShop data migration, PrestaShop customer migration, PrestaShop product migration, PrestaShop SEO migration">
+<link rel="canonical" href="https://vortexdigitalai.com/talk/prestashop-to-shopify-migration.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Talk: A Real PrestaShop to Shopify Migration Journey">
+<meta property="og:description" content="An illustrative consultation between Naveed Ali Qureshi of Vortex Digital AI and a Spain-based eCommerce client planning a PrestaShop to Shopify migration.">
+<meta property="og:url" content="https://vortexdigitalai.com/talk/prestashop-to-shopify-migration.html">
+<meta property="og:image" content="https://vortexdigitalai.com/naveed-ali.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PrestaShop to Shopify Migration Interview | Vortex Digital AI">
+<meta name="twitter:description" content="An illustrative client consultation on migrating from PrestaShop to Shopify, covering data, design, SEO and the technical approach.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "PrestaShop to Shopify Migration Interview",
+  "description": "An illustrative client consultation scenario about migrating a PrestaShop store to Shopify, covering data migration, design, SEO, and technical approach.",
+  "url": "https://vortexdigitalai.com/talk/prestashop-to-shopify-migration.html",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": "VortexDigitalAI", "url": "https://vortexdigitalai.com/" },
+  "about": { "@type": "Thing", "name": "PrestaShop to Shopify Migration" },
+  "author": { "@type": "Person", "name": "Naveed Ali Qureshi", "jobTitle": "Founder", "worksFor": { "@type": "Organization", "name": "Vortex Digital AI" } },
+  "publisher": { "@type": "Organization", "name": "Vortex Digital AI", "url": "https://vortexdigitalai.com/", "email": "naveedali01888@gmail.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vortexdigitalai.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Talk", "item": "https://vortexdigitalai.com/talk/prestashop-to-shopify-migration.html" },
+    { "@type": "ListItem", "position": 3, "name": "PrestaShop to Shopify Migration Interview" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Naveed Ali Qureshi",
+  "jobTitle": "Founder",
+  "worksFor": { "@type": "Organization", "name": "Vortex Digital AI", "url": "https://vortexdigitalai.com/" },
+  "email": "naveedali01888@gmail.com"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I migrate PrestaShop to Shopify?", "acceptedAnswer": { "@type": "Answer", "text": "The process combines API-based data extraction from PrestaShop, Python scripts to clean and map that data, and the Shopify API to create the equivalent products, customers and orders in Shopify — followed by manual quality checks before launch." } },
+    { "@type": "Question", "name": "Can PrestaShop products be migrated to Shopify?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Products, categories, variants, images and descriptions can be migrated, then verified manually against the source store." } },
+    { "@type": "Question", "name": "Can PrestaShop customers be migrated?", "acceptedAnswer": { "@type": "Answer", "text": "Customer records can be migrated where the target platform supports it. Authentication details such as passwords have platform-specific limitations and are never migrated in plaintext — customers may need to reset their password after migration." } },
+    { "@type": "Question", "name": "Can PrestaShop orders be migrated?", "acceptedAnswer": { "@type": "Answer", "text": "Order history can be mapped and migrated where supported, with totals, statuses, customers and products manually validated afterward." } },
+    { "@type": "Question", "name": "Can PrestaShop images be migrated?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, product images, additional images and description images can be transferred and then checked manually for accuracy." } },
+    { "@type": "Question", "name": "Can PrestaShop URLs be redirected to Shopify?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Old PrestaShop URLs are mapped to their new Shopify equivalents using 301 redirects, which is a core part of preserving existing SEO value." } },
+    { "@type": "Question", "name": "Will migration affect SEO?", "acceptedAnswer": { "@type": "Answer", "text": "Careful migration planning — URL mapping, 301 redirects, and metadata preservation — is aimed at protecting existing SEO equity and minimizing avoidable ranking and traffic loss. It is not possible to guarantee identical rankings after any platform migration." } },
+    { "@type": "Question", "name": "How long does migration take?", "acceptedAnswer": { "@type": "Answer", "text": "Timelines depend on catalog size, customer/order volume, and how much custom design work is involved — this is scoped individually per project rather than fixed." } },
+    { "@type": "Question", "name": "Can the PrestaShop design be recreated in Shopify?", "acceptedAnswer": { "@type": "Answer", "text": "The PrestaShop theme cannot be technically copied into Shopify — the two platforms use different theming systems. Instead, the visual identity, layout and branding are recreated or customized using an appropriate Shopify theme and development work." } },
+    { "@type": "Question", "name": "How much does PrestaShop to Shopify migration cost?", "acceptedAnswer": { "@type": "Answer", "text": "Cost depends on catalog size, data complexity, and design requirements. Contact us with your store details for a scoped quote." } },
+    { "@type": "Question", "name": "Should I use automation or a migration expert?", "acceptedAnswer": { "@type": "Answer", "text": "Automation (APIs, Python, SQL processing) handles the bulk of data transfer efficiently, but manual quality assurance is still needed to catch edge cases automation alone can miss — the two work best together, not as alternatives." } }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root{ --bg:#ffffff; --bg-panel:#fafafa; --line:#e5e5e5; --text:#000000; --text-dim:#6b7280; --accent:#059669; }
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg); color:var(--text); font-family:'Plus Jakarta Sans', system-ui, sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Orbitron', sans-serif; font-weight:700; letter-spacing:-0.01em;}
+a{color:inherit;}
+.wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+img{max-width:100%; height:auto;}
+
+.topbar{background:var(--bg); border-bottom:1px solid var(--line); padding:12px 0;}
+.topbar .wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+.topbar .tag-live{font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--accent); border:1px solid var(--line); padding:4px 10px; border-radius:999px;}
+.breadcrumb{font-size:12px; color:var(--text-dim);}
+.breadcrumb a{text-decoration:underline;}
+
+header.hero{padding:56px 0 40px; border-bottom:1px solid var(--line);}
+.eyebrow{font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-bottom:18px; display:block;}
+h1.headline{font-size:clamp(28px,5vw,46px); line-height:1.15; max-width:820px;}
+p.sub{color:var(--text-dim); font-size:16px; max-width:700px; margin-top:16px;}
+.disclaimer{
+  margin-top:24px; padding:14px 18px; background:var(--bg-panel); border:1px solid var(--line);
+  border-radius:6px; font-size:13px; color:var(--text-dim); max-width:700px;
+}
+.migration-badge-row{display:flex; align-items:center; gap:16px; margin-top:36px; flex-wrap:wrap;}
+.platform-badge{
+  font-family:'Orbitron', sans-serif; font-weight:700; font-size:14px; padding:10px 20px;
+  border:1px solid var(--line); border-radius:6px; background:var(--bg-panel);
+}
+.migration-arrow{font-size:22px; color:var(--accent);}
+
+section{padding:52px 0; border-bottom:1px solid var(--line);}
+section h2{font-size:26px; margin-bottom:12px;}
+section .section-sub{color:var(--text-dim); font-size:15px; max-width:680px; margin-bottom:32px;}
+
+.goal-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:14px;}
+@media (max-width:860px){.goal-grid{grid-template-columns:repeat(2,1fr);}}
+.goal-item{background:var(--bg-panel); border:1px solid var(--line); border-radius:6px; padding:16px; text-align:center; font-size:13px; font-weight:600;}
+.goal-item .ic{font-size:20px; display:block; margin-bottom:8px;}
+
+/* ---- Interview ---- */
+.qa-pair{margin-bottom:28px;}
+.qa-bubble{max-width:80%; padding:16px 18px; border-radius:10px; margin-bottom:10px; font-size:14px;}
+.qa-bubble p{margin-top:6px;}
+.qa-label{font-family:'JetBrains Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--text-dim);}
+.qa-tag{font-weight:400; text-transform:none; letter-spacing:0;}
+.qa-client{background:var(--bg-panel); border:1px solid var(--line); margin-right:auto;}
+.qa-naveed{background:#000; color:#fff; margin-left:auto;}
+.qa-naveed .qa-label{color:#9ca3af;}
+
+/* ---- Workflow diagram (original SVG, no logos) ---- */
+.workflow-svg-wrap{background:var(--bg-panel); border:1px solid var(--line); border-radius:8px; padding:24px; overflow-x:auto;}
+.workflow-svg-wrap svg{display:block; margin:0 auto; min-width:640px;}
+
+/* ---- Service checklist ---- */
+.check-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px 28px;}
+@media (max-width:700px){.check-grid{grid-template-columns:1fr;}}
+.check-item{display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--text-dim); padding:6px 0;}
+.check-item svg{width:16px; height:16px; flex-shrink:0; margin-top:3px; color:var(--accent);}
+.check-item b{color:var(--text); font-weight:600;}
+
+/* ---- Guarantee ---- */
+.guarantee-box{background:var(--bg-panel); border:2px solid var(--accent); border-radius:8px; padding:28px;}
+.guarantee-cols{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:20px;}
+@media (max-width:700px){.guarantee-cols{grid-template-columns:1fr;}}
+.guarantee-cols h4{font-size:13px; text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px; font-family:'JetBrains Mono', monospace;}
+.guarantee-cols ul{list-style:none; font-size:13px; color:var(--text-dim);}
+.guarantee-cols li{padding:5px 0;}
+
+.faq-list{border-top:1px solid var(--line);}
+.faq-row{padding:20px 0; border-bottom:1px solid var(--line);}
+.faq-row h3{font-size:15px; margin-bottom:6px;}
+.faq-row p{font-size:14px; color:var(--text-dim);}
+
+/* ---- Form ---- */
+.talk-form{background:var(--bg-panel); border:1px solid var(--line); border-radius:8px; padding:28px;}
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+@media (max-width:700px){.form-grid{grid-template-columns:1fr;}}
+.form-field{display:flex; flex-direction:column; gap:6px;}
+.form-field.full{grid-column:1 / -1;}
+.form-field label{font-size:12px; font-weight:600; color:var(--text-dim);}
+.form-field input, .form-field select, .form-field textarea{
+  padding:10px 12px; border:1px solid var(--line); border-radius:6px; font-family:inherit; font-size:14px; background:#fff;
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus{outline:none; border-color:var(--accent);}
+.radio-row{display:flex; gap:16px; align-items:center;}
+.radio-row label{font-size:13px; font-weight:400; display:flex; align-items:center; gap:6px; color:var(--text);}
+.form-submit-row{display:flex; gap:12px; margin-top:20px; flex-wrap:wrap;}
+.form-note{font-size:12px; color:var(--text-dim); margin-top:12px;}
+/* honeypot field, hidden from real users */
+.vx-hp{position:absolute; left:-9999px; top:-9999px;}
+
+section.cta{background:var(--bg-panel); border-bottom:none;}
+.cta-inner{display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap;}
+.cta-inner h2{font-size:26px; max-width:480px;}
+.cta-inner p{color:var(--text-dim); margin-top:10px; max-width:440px;}
+.cta-buttons{display:flex; gap:14px; flex-wrap:wrap;}
+.btn{display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:3px; font-weight:600; font-size:14px; text-decoration:none; border:none; cursor:pointer; transition:transform .18s ease, box-shadow .18s ease;}
+.btn:hover{transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.12);}
+.btn-whatsapp{background:#25D366; color:#0B1A10;}
+.btn-whatsapp:hover{box-shadow:0 6px 20px rgba(37,211,102,.35);}
+.btn-meet{background:transparent; color:var(--text); border:1px solid var(--line);}
+.btn-primary{background:#000; color:#fff;}
+.btn svg{width:18px; height:18px;}
+
+.internal-links{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;}
+.internal-links a{
+  font-size:13px; padding:8px 14px; border:1px solid var(--line); border-radius:999px; text-decoration:none; transition:border-color .15s ease;
+}
+.internal-links a:hover{border-color:var(--accent);}
+
+footer{padding:40px 0 60px; color:var(--text-dim); font-size:13px;}
+footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; border-top:1px solid var(--line); padding-top:24px;}
+footer a{text-decoration:underline;}
+
+.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} }
+@media (max-width:600px){ .cta-inner{flex-direction:column; align-items:flex-start;} .qa-bubble{max-width:94%;} }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4019508926348026" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://vortexdigitalai.com/#organization",
+  "name": "VortexDigitalAI",
+  "alternateName": "Vortex Digital AI",
+  "url": "https://vortexdigitalai.com/",
+  "logo": "https://vortexdigitalai.com/favicon.svg",
+  "email": "naveedali01888@gmail.com",
+  "description": "AI-powered digital agency offering website development, automation, SEO, ecommerce migration, order fulfillment, and AI-focused online courses.",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://vortexdigitalai.com/#naveed-ali-qureshi",
+    "name": "Naveed Ali Qureshi",
+    "jobTitle": "Founder",
+    "email": "naveedali01888@gmail.com"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "telephone": "+92-312-528-2051",
+    "email": "naveedali01888@gmail.com",
+    "availableLanguage": ["English"]
+  },
+  "areaServed": ["Worldwide", "Italy", "Spain", "Pakistan", "United Arab Emirates", "United States", "United Kingdom"],
+  "knowsAbout": [
+    "AI-powered website development", "PrestaShop to Shopify migration", "eCommerce order fulfillment",
+    "AI SEO", "Business automation", "Cloud infrastructure", "AI education and online courses"
+  ]
+}
+</script>
+</head>
+<body>
+<!-- ============================================================
+   SHARED SITE NAV — self-contained, namespaced (vx- prefix) so it
+   never collides with a page's own CSS. Insert right after the
+   opening body tag.
+============================================================= -->
+<style>
+.vx-header{position:sticky; top:0; z-index:300; background:rgba(255,255,255,.92); backdrop-filter:blur(14px) saturate(140%); -webkit-backdrop-filter:blur(14px) saturate(140%); border-bottom:1px solid #e5e5e5; font-family:'Plus Jakarta Sans', system-ui, sans-serif;}
+.vx-header-inner{max-width:1180px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
+.vx-logo{display:flex; align-items:center; gap:10px; text-decoration:none; color:#000;}
+.vx-logo-icon{width:34px; height:34px; border-radius:9px; background:#000; color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0;}
+.vx-logo-text{font-family:'Orbitron', sans-serif; font-weight:700; font-size:1rem; letter-spacing:-.01em;}
+.vx-nav{display:flex; align-items:center; gap:4px;}
+.vx-nav a{font-size:.86rem; font-weight:500; color:#4b5563; padding:8px 12px; border-radius:8px; text-decoration:none; transition:color .2s, background .2s; white-space:nowrap;}
+.vx-nav a:hover{color:#000; background:#f5f5f5;}
+.vx-actions{display:flex; align-items:center; gap:10px;}
+.vx-btn-cta{display:inline-flex; align-items:center; gap:8px; background:#000; color:#fff; font-size:.85rem; font-weight:600; padding:10px 18px; border-radius:999px; text-decoration:none; white-space:nowrap; transition:transform .15s ease;}
+.vx-btn-cta:hover{transform:translateY(-1px);}
+.vx-toggle{display:none; flex-direction:column; gap:4px; width:38px; height:38px; align-items:center; justify-content:center; border:1px solid #e5e5e5; border-radius:8px; background:none; cursor:pointer;}
+.vx-toggle span{display:block; width:18px; height:2px; background:#000; border-radius:2px; transition:transform .3s, opacity .3s;}
+.vx-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.vx-toggle.open span:nth-child(2){opacity:0;}
+.vx-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+.vx-dropdown{position:relative;}
+.vx-drop-trigger{display:flex; align-items:center; gap:5px; cursor:pointer; font:inherit; background:none; border:none; color:#4b5563; padding:8px 12px; border-radius:8px; font-size:.86rem; font-weight:500;}
+.vx-drop-trigger:hover{color:#000; background:#f5f5f5;}
+.vx-drop-trigger i{font-size:.65rem; transition:transform .2s;}
+.vx-dropdown.open .vx-drop-trigger i{transform:rotate(180deg);}
+.vx-drop-panel{position:absolute; top:calc(100% + 8px); left:0; min-width:260px; background:#fff; border:1px solid #e5e5e5; border-radius:10px; box-shadow:0 16px 40px rgba(0,0,0,.12); padding:10px; opacity:0; visibility:hidden; transform:translateY(6px); transition:opacity .18s ease, transform .18s ease, visibility .18s; z-index:310;}
+.vx-drop-group{padding:6px 10px 4px; font-size:.65rem; text-transform:uppercase; letter-spacing:.07em; color:#9ca3af;}
+.vx-drop-panel a{display:block; padding:8px 10px; border-radius:8px; font-size:.84rem; color:#000; white-space:normal;}
+.vx-drop-panel a:hover{background:#f5f5f5;}
+.vx-drop-panel a small{display:block; color:#9ca3af; font-size:.7rem; font-weight:400; margin-top:1px;}
+
+.vx-backdrop{display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:290; backdrop-filter:blur(2px);}
+.vx-backdrop.open{display:block;}
+
+@media (min-width:901px){
+  .vx-dropdown:hover .vx-drop-panel, .vx-dropdown.open .vx-drop-panel{opacity:1; visibility:visible; transform:translateY(0);}
+}
+@media (max-width:900px){
+  .vx-nav{display:none;}
+  .vx-nav.open{
+    display:flex; flex-direction:column; align-items:stretch;
+    position:fixed; top:0; right:0; bottom:0; width:min(320px,84vw); height:100vh;
+    background:#fff; box-shadow:-12px 0 40px rgba(0,0,0,.18);
+    padding:88px 24px 32px; gap:4px; z-index:320; overflow-y:auto;
+    animation:vxSlideIn .3s ease;
+  }
+  .vx-nav.open a{font-size:1rem; padding:12px 14px;}
+  @keyframes vxSlideIn{from{transform:translateX(100%);} to{transform:translateX(0);}}
+  .vx-toggle{display:flex;}
+  .vx-drop-panel{position:static; box-shadow:none; border:none; opacity:1; visibility:visible; transform:none; display:none; padding:4px 0 4px 14px;}
+  .vx-dropdown.open .vx-drop-panel{display:block;}
+  .vx-drop-trigger{width:100%; justify-content:space-between;}
+  .vx-actions .vx-btn-cta{display:none;}
+}
+</style>
+
+<header class="vx-header">
+  <div class="vx-header-inner">
+    <a class="vx-logo" href="/index.html">
+      <div class="vx-logo-icon"><i class="fas fa-bolt"></i></div>
+      <span class="vx-logo-text">VortexDigitalAI</span>
+    </a>
+
+    <nav class="vx-nav" id="vxNav">
+      <a href="/index.html#hero">Home</a>
+
+      <div class="vx-dropdown" data-vx-dropdown="services">
+        <button class="vx-drop-trigger" type="button" aria-expanded="false">Services <i class="fas fa-chevron-down"></i></button>
+        <div class="vx-drop-panel">
+          <div class="vx-drop-group">Core Services</div>
+          <a href="/services/ai-websites.html">AI Websites</a>
+          <a href="/services/ai-seo.html">AI SEO</a>
+          <a href="/services/automations.html">Automations</a>
+          <a href="/services/growth-marketing.html">Growth Marketing</a>
+          <a href="/services/app-development.html">App Development</a>
+          <a href="/services/artificial-intelligence.html">Artificial Intelligence</a>
+          <a href="/services/cloud-infrastructure.html">Cloud Infrastructure</a>
+          <div class="vx-drop-group">Specialty</div>
+          <a href="/ecommerce.html">PrestaShop Migration</a>
+          <a href="/services/ecommerce-merchant-center.html">Ecommerce & Merchant Center</a>
+          <a href="/order-fulfillment.html">Order Fulfillment <small>DSers, Zendrop, Spocket, AutoDS, Printful/Printify</small></a>
+          <a href="/services/zendesk-support.html">Zendesk Support</a>
+          <a href="/services/intercom-integration.html">Intercom Integration</a>
+          <a href="/services/netsuite-erp.html">NetSuite ERP</a>
+          <a href="/services/microsoft-dynamics.html">Microsoft Dynamics</a>
+          <a href="/services/salesforce.html">Salesforce</a>
+          <div class="vx-drop-group">Industry</div>
+          <a href="/services/agtech.html">AgTech</a>
+          <a href="/services/digital-health.html">Digital Health</a>
+          <a href="/services/hipaa-compliance.html">HIPAA-Aligned Confidentiality</a>
+          <a href="/services/edtech.html">EdTech</a>
+        </div>
+      </div>
+
+      <div class="vx-dropdown" data-vx-dropdown="projects">
+        <button class="vx-drop-trigger" type="button" aria-expanded="false">Projects <i class="fas fa-chevron-down"></i></button>
+        <div class="vx-drop-panel">
+          <a href="/environmental-impact.html">Impact Tracker <small>Live wildfire & disaster data</small></a>
+          <a href="/ecommerce.html">eCommerce Migration <small>PrestaShop → Shopify, step-by-step</small></a>
+        </div>
+      </div>
+
+      <div class="vx-dropdown" data-vx-dropdown="courses">
+        <button class="vx-drop-trigger" type="button" aria-expanded="false">Courses <i class="fas fa-chevron-down"></i></button>
+        <div class="vx-drop-panel">
+          <a href="/courses/ai-financial-analyst.html">AI Financial Analyst</a>
+          <a href="/courses/ai-for-everyone.html">AI for Everyone</a>
+          <a href="/courses/ai-powered-ecommerce.html">AI Powered E-Commerce</a>
+          <a href="/courses/earning-through-freelancing.html">Earning Through Freelancing</a>
+          <a href="/courses/ai-graphic-design-video-editing.html">AI Graphic Design & Video Editing</a>
+          <a href="/courses/ai-digital-marketing-seo.html">AI Digital Marketing & SEO</a>
+          <a href="/courses/ai-resume-writing-hr-counseling.html">AI Resume Writing + HR Counseling</a>
+          <a href="/courses/ai-augmented-hr-training.html">AI Augmented HR Training</a>
+          <a href="/courses/ai-portfolio-building.html">AI Portfolio Building</a>
+          <a href="/courses/ai-content-writing-blogging.html">AI Content Writing & Blogging</a>
+          <a href="/courses/ai-coding-no-code-development.html">AI Coding & No-Code Development</a>
+          <a href="/courses/ai-customer-support-chatbots.html">AI Customer Support & Chatbots</a>
+          <a href="/courses/ai-business-automation.html">AI Business Automation</a>
+          <a href="/courses/ai-data-analysis-reporting.html">AI Data Analysis & Reporting</a>
+        </div>
+      </div>
+
+      <div class="vx-dropdown" data-vx-dropdown="talk">
+        <button class="vx-drop-trigger" type="button" aria-expanded="false">Talk <i class="fas fa-chevron-down"></i></button>
+        <div class="vx-drop-panel">
+          <a href="/talk/prestashop-to-shopify-migration.html">PrestaShop to Shopify Migration</a>
+          <a href="/talk/intercom-hipaa-setup.html">Intercom for HIPAA Setup</a>
+          <a href="/talk/why-is-my-google-merchant-center-suspended.html">Why Is My GMC Suspended?</a>
+        </div>
+      </div>
+      <a href="/index.html#faq">FAQ</a>
+      <a href="/index.html#get-in-touch">Contact</a>
+    </nav>
+
+    <div class="vx-actions">
+      <a class="vx-btn-cta" href="https://wa.me/923125282051" target="_blank" rel="noopener">Get In Touch</a>
+      <button class="vx-toggle" id="vxToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="vx-backdrop" id="vxBackdrop"></div>
+
+<script>
+(function(){
+  var toggle = document.getElementById('vxToggle');
+  var nav = document.getElementById('vxNav');
+  var backdrop = document.getElementById('vxBackdrop');
+
+  function closeNav(){
+    nav.classList.remove('open'); toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false'); backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click', function(){
+    var isOpen = nav.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen);
+    backdrop.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  backdrop.addEventListener('click', closeNav);
+  nav.querySelectorAll('a').forEach(function(l){ l.addEventListener('click', closeNav); });
+
+  var dropdowns = document.querySelectorAll('.vx-dropdown');
+  dropdowns.forEach(function(dd){
+    var trigger = dd.querySelector('.vx-drop-trigger');
+    trigger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = dd.classList.contains('open');
+      dropdowns.forEach(function(o){ o.classList.remove('open'); o.querySelector('.vx-drop-trigger').setAttribute('aria-expanded','false'); });
+      if(!isOpen){ dd.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.vx-dropdown')){
+      dropdowns.forEach(function(dd){ dd.classList.remove('open'); dd.querySelector('.vx-drop-trigger').setAttribute('aria-expanded','false'); });
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ dropdowns.forEach(function(dd){ dd.classList.remove('open'); }); closeNav(); }
+  });
+})();
+</script>
+<!-- ============================================================
+   END SHARED SITE NAV
+============================================================= -->
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="breadcrumb"><a href="/index.html">Home</a> / Talk / PrestaShop to Shopify Migration Interview</span>
+    <span class="tag-live">TALK · CLIENT CONSULTATION</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Talk — Client Consultation Interview</span>
+    <h1 class="headline">Talk: A Real PrestaShop to Shopify Migration Journey</h1>
+    <p class="sub">A Spain-based eCommerce business is considering moving from PrestaShop to Shopify. Here's how that conversation goes with Naveed Ali Qureshi of Vortex Digital AI — covering data, design, SEO, and the technical approach behind the migration.</p>
+    <div class="disclaimer">
+      <strong>About this page:</strong> This is an illustrative client consultation scenario written to explain how a PrestaShop to Shopify migration project is approached at Vortex Digital AI — not a published interview, media appearance, or real customer testimonial. Specific figures like product counts or revenue are not disclosed here because they vary per project.
+    </div>
+    <div class="migration-badge-row">
+      <span class="platform-badge">PrestaShop</span>
+      <span class="migration-arrow">→</span>
+      <span class="platform-badge">Shopify</span>
+    </div>
+  </div>
+</header>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>It's not just about copying data</h2>
+    <p class="section-sub">A migration that only moves data but breaks design, SEO, or performance isn't really finished. The goal covers all of it together.</p>
+    <div class="goal-grid">
+      <div class="goal-item"><span class="ic">🗂️</span>Data</div>
+      <div class="goal-item"><span class="ic">🎨</span>Design</div>
+      <div class="goal-item"><span class="ic">🔍</span>SEO</div>
+      <div class="goal-item"><span class="ic">⚡</span>Performance</div>
+      <div class="goal-item"><span class="ic">🔒</span>Security</div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>The conversation</h2>
+    <p class="section-sub">A question-and-answer walkthrough of what a PrestaShop to Shopify migration project actually involves.</p>
+
+      <div class="qa-pair">
+        <div class="qa-bubble qa-client">
+          <div class="qa-label">Client <span class="qa-tag">Spain-based eCommerce business</span></div>
+          <p>Why should we consider moving our PrestaShop store to Shopify?</p>
+        </div>
+        <div class="qa-bubble qa-naveed">
+          <div class="qa-label">Naveed Ali Qureshi <span class="qa-tag">Vortex Digital AI</span></div>
+          <p>Shopify is a fully managed platform — hosting, security patching and PCI compliance are handled for you, which removes a lot of the server-management overhead that comes with self-hosted PrestaShop. It also has a large app ecosystem for extending functionality without custom development every time. That said, the right platform depends on your specific operational needs — Shopify isn't automatically the better fit for every business, but for teams that want less infrastructure to manage, it's a common and reasonable move.</p>
+        </div>
+      </div>
+      <div class="qa-pair">
+        <div class="qa-bubble qa-client">
+          <div class="qa-label">Client <span class="qa-tag">Spain-based eCommerce business</span></div>
+          <p>Can you migrate our products and customer data?</p>
+        </div>
+        <div class="qa-bubble qa-naveed">
+          <div class="qa-label">Naveed Ali Qureshi <span class="qa-tag">Vortex Digital AI</span></div>
+          <p>Yes. Products, categories, variants, images, descriptions, customers and order history can all be migrated where the platforms support equivalent structures. We extract the data via PrestaShop's API and database layer, clean and map it with Python, then push it into Shopify through Shopify's API. Each entity type gets checked manually afterward, not just trusted to have transferred correctly.</p>
+        </div>
+      </div>
+      <div class="qa-pair">
+        <div class="qa-bubble qa-client">
+          <div class="qa-label">Client <span class="qa-tag">Spain-based eCommerce business</span></div>
+          <p>What about our existing design?</p>
+        </div>
+        <div class="qa-bubble qa-naveed">
+          <div class="qa-label">Naveed Ali Qureshi <span class="qa-tag">Vortex Digital AI</span></div>
+          <p>This is one of the most misunderstood parts of a migration. Your PrestaShop theme can't be technically copied over — PrestaShop and Shopify use completely different theming systems under the hood. What we do instead is recreate your visual identity, layout and branding using an appropriate Shopify theme as a starting point, then customize it through development so the finished store looks and feels like your brand, not a generic template.</p>
+        </div>
+      </div>
+      <div class="qa-pair">
+        <div class="qa-bubble qa-client">
+          <div class="qa-label">Client <span class="qa-tag">Spain-based eCommerce business</span></div>
+          <p>What happens to our SEO?</p>
+        </div>
+        <div class="qa-bubble qa-naveed">
+          <div class="qa-label">Naveed Ali Qureshi <span class="qa-tag">Vortex Digital AI</span></div>
+          <p>We map every existing URL to its new Shopify equivalent with 301 redirects, migrate metadata, preserve image alt text and canonical URLs, update the sitemap, and check internal linking and structured data. After launch, we monitor Search Console for crawl errors or unexpected drops. Our goal is to protect existing SEO equity and minimize avoidable ranking and traffic loss through careful migration planning — no one can honestly guarantee your Google rankings will stay exactly identical, since ranking algorithms account for many factors beyond the site itself.</p>
+        </div>
+      </div>
+      <div class="qa-pair">
+        <div class="qa-bubble qa-client">
+          <div class="qa-label">Client <span class="qa-tag">Spain-based eCommerce business</span></div>
+          <p>Will the old PrestaShop store go offline?</p>
+        </div>
+        <div class="qa-bubble qa-naveed">
+          <div class="qa-label">Naveed Ali Qureshi <span class="qa-tag">Vortex Digital AI</span></div>
+          <p>Migration is planned so your existing PrestaShop store keeps running normally while we extract and test data in the background. The cutover — pointing your domain at the new Shopify store — happens once everything is validated, which keeps disruption to a minimum. I wouldn't promise zero downtime in every possible scenario, since DNS propagation and final cutover timing can vary, but the goal is to keep any disruption as small as realistically possible.</p>
+        </div>
+      </div>
+      <div class="qa-pair">
+        <div class="qa-bubble qa-client">
+          <div class="qa-label">Client <span class="qa-tag">Spain-based eCommerce business</span></div>
+          <p>How will you migrate the data?</p>
+        </div>
+        <div class="qa-bubble qa-naveed">
+          <div class="qa-label">Naveed Ali Qureshi <span class="qa-tag">Vortex Digital AI</span></div>
+          <p>It's a hybrid approach: APIs plus Python plus SQL/database processing, with automation handling the bulk of the work and manual verification catching what automation can't. Roughly: PrestaShop → database/API extraction → Python migration layer → data cleaning and mapping → Shopify API → Shopify store → automated validation → manual QA → SEO verification → launch.</p>
+        </div>
+      </div>
+      <div class="qa-pair">
+        <div class="qa-bubble qa-client">
+          <div class="qa-label">Client <span class="qa-tag">Spain-based eCommerce business</span></div>
+          <p>Why use Python?</p>
+        </div>
+        <div class="qa-bubble qa-naveed">
+          <div class="qa-label">Naveed Ali Qureshi <span class="qa-tag">Vortex Digital AI</span></div>
+          <p>Python is well suited to the actual work involved — transforming data between two different schemas, automating repetitive migration steps, validating that nothing got dropped or corrupted, handling API integration with both platforms, and building custom logic for edge cases that a generic migration tool wouldn't handle correctly.</p>
+        </div>
+      </div>
+      <div class="qa-pair">
+        <div class="qa-bubble qa-client">
+          <div class="qa-label">Client <span class="qa-tag">Spain-based eCommerce business</span></div>
+          <p>Why use SQL?</p>
+        </div>
+        <div class="qa-bubble qa-naveed">
+          <div class="qa-label">Naveed Ali Qureshi <span class="qa-tag">Vortex Digital AI</span></div>
+          <p>Direct SQL queries let us inspect the PrestaShop database structure, clean up inconsistent or legacy data, and validate relationships between tables — like which images belong to which product variant — before that data ever reaches Shopify. We always work from backups; production data is never modified destructively.</p>
+        </div>
+      </div>
+      <div class="qa-pair">
+        <div class="qa-bubble qa-client">
+          <div class="qa-label">Client <span class="qa-tag">Spain-based eCommerce business</span></div>
+          <p>Can customer data be migrated?</p>
+        </div>
+        <div class="qa-bubble qa-naveed">
+          <div class="qa-label">Naveed Ali Qureshi <span class="qa-tag">Vortex Digital AI</span></div>
+          <p>Customer records — names, emails, addresses, order history — can be migrated where the platforms support equivalent structures. Passwords are a different story: we never migrate plaintext passwords, and password/authentication handling depends on what each platform actually allows. In most cases, customers will need to reset their password once on the new store.</p>
+        </div>
+      </div>
+      <div class="qa-pair">
+        <div class="qa-bubble qa-client">
+          <div class="qa-label">Client <span class="qa-tag">Spain-based eCommerce business</span></div>
+          <p>What about orders and order history?</p>
+        </div>
+        <div class="qa-bubble qa-naveed">
+          <div class="qa-label">Naveed Ali Qureshi <span class="qa-tag">Vortex Digital AI</span></div>
+          <p>Order data can be mapped and migrated where supported — order totals, line items, statuses and associated customers. After the automated transfer, we manually validate a sample (and often the full set, depending on volume) to confirm totals and statuses match the source store correctly.</p>
+        </div>
+      </div>
+      <div class="qa-pair">
+        <div class="qa-bubble qa-client">
+          <div class="qa-label">Client <span class="qa-tag">Spain-based eCommerce business</span></div>
+          <p>Can you migrate product images and descriptions?</p>
+        </div>
+        <div class="qa-bubble qa-naveed">
+          <div class="qa-label">Naveed Ali Qureshi <span class="qa-tag">Vortex Digital AI</span></div>
+          <p>Yes — product images, additional gallery images, and description content can all be transferred where supported, then checked manually for anything that didn't map correctly, like broken image links or formatting issues in descriptions.</p>
+        </div>
+      </div>
+      <div class="qa-pair">
+        <div class="qa-bubble qa-client">
+          <div class="qa-label">Client <span class="qa-tag">Spain-based eCommerce business</span></div>
+          <p>What happens after migration?</p>
+        </div>
+        <div class="qa-bubble qa-naveed">
+          <div class="qa-label">Naveed Ali Qureshi <span class="qa-tag">Vortex Digital AI</span></div>
+          <p>There's a full post-migration checklist: auditing products, customers and orders; verifying images, variants and pricing; testing every redirect and checking for broken links; testing checkout, payment and shipping configuration; confirming analytics and Search Console are connected; checking the sitemap; and testing mobile layout and page speed. Migration isn't considered done until that checklist is clear.</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>How the migration actually works</h2>
+    <p class="section-sub">APIs, Python, and SQL handle the bulk transfer — manual QA catches what automation can't.</p>
+    <div class="workflow-svg-wrap">
+      <svg viewBox="0 0 1000 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Migration workflow: PrestaShop to database and API extraction, to Python migration layer, to data cleaning and mapping, to Shopify API, to Shopify store, to automated validation, to manual QA, to SEO verification, to launch">
+        <defs>
+          <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#000"/></marker>
+        </defs>
+        <g font-family="JetBrains Mono, monospace" font-size="11" fill="#000">
+          <!-- 9 steps -->
+          <g>
+            <rect x="0" y="50" width="98" height="40" rx="6" fill="#fafafa" stroke="#e5e5e5"/>
+            <text x="49" y="74" text-anchor="middle">PrestaShop</text>
+          </g>
+          <line x1="98" y1="70" x2="120" y2="70" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <g>
+            <rect x="122" y="50" width="98" height="40" rx="6" fill="#fafafa" stroke="#e5e5e5"/>
+            <text x="171" y="68" text-anchor="middle">DB / API</text>
+            <text x="171" y="80" text-anchor="middle">extraction</text>
+          </g>
+          <line x1="220" y1="70" x2="242" y2="70" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <g>
+            <rect x="244" y="50" width="98" height="40" rx="6" fill="#fafafa" stroke="#e5e5e5"/>
+            <text x="293" y="68" text-anchor="middle">Python</text>
+            <text x="293" y="80" text-anchor="middle">migration layer</text>
+          </g>
+          <line x1="342" y1="70" x2="364" y2="70" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <g>
+            <rect x="366" y="50" width="98" height="40" rx="6" fill="#fafafa" stroke="#e5e5e5"/>
+            <text x="415" y="68" text-anchor="middle">Data cleaning</text>
+            <text x="415" y="80" text-anchor="middle">& mapping</text>
+          </g>
+          <line x1="464" y1="70" x2="486" y2="70" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <g>
+            <rect x="488" y="50" width="98" height="40" rx="6" fill="#fafafa" stroke="#e5e5e5"/>
+            <text x="537" y="74" text-anchor="middle">Shopify API</text>
+          </g>
+          <line x1="586" y1="70" x2="608" y2="70" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <g>
+            <rect x="610" y="50" width="98" height="40" rx="6" fill="#000" stroke="#000"/>
+            <text x="659" y="74" text-anchor="middle" fill="#fff">Shopify Store</text>
+          </g>
+          <line x1="708" y1="70" x2="730" y2="70" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <g>
+            <rect x="732" y="50" width="98" height="40" rx="6" fill="#fafafa" stroke="#e5e5e5"/>
+            <text x="781" y="68" text-anchor="middle">Automated</text>
+            <text x="781" y="80" text-anchor="middle">validation</text>
+          </g>
+          <line x1="830" y1="70" x2="852" y2="70" stroke="#000" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <g>
+            <rect x="854" y="50" width="70" height="40" rx="6" fill="#fafafa" stroke="#e5e5e5"/>
+            <text x="889" y="74" text-anchor="middle">Manual QA</text>
+          </g>
+          <line x1="924" y1="70" x2="946" y2="70" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <g>
+            <rect x="948" y="45" width="50" height="50" rx="6" fill="#059669" stroke="#059669"/>
+            <text x="973" y="74" text-anchor="middle" fill="#fff">Live</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <p class="section-sub" style="margin-top:16px; margin-bottom:0;">SEO verification (redirects, metadata, sitemap) happens alongside automated validation and manual QA, before launch — not as an afterthought once the store is already live.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>Our PrestaShop to Shopify Migration Service</h2>
+    <p class="section-sub">A customized migration combining automation, APIs, Python, SQL, Shopify development, and manual QA.</p>
+    <div class="check-grid">
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>PrestaShop audit</b> — full review of current store structure and data</span></div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Shopify setup</b> — store configuration from scratch</span></div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Product & category migration</b> — via API</span></div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Customer & order migration</b> — where platform-supported</span></div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Variant & image migration</b> — verified manually</span></div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Content migration</b> — pages, blog content where applicable</span></div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>SEO migration & URL mapping</b> — with 301 redirects</span></div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Shopify theme setup & design recreation</b> — custom development</span></div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Responsive optimization</b> — tested across devices</span></div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Python migration scripts & SQL data processing</b></span></div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Manual QA & security checks</b></span></div>
+      <div class="check-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><b>Analytics, Search Console & post-launch monitoring</b></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>1-Year Migration Support & Guarantee</h2>
+    <p class="section-sub">Vortex Digital AI provides 1-year migration support according to the agreed project scope and service terms — not unlimited free development.</p>
+    <div class="guarantee-box">
+      <div class="guarantee-cols">
+        <div>
+          <h4>Covered</h4>
+          <ul>
+            <li>Migration-related issue investigation</li>
+            <li>Bug fixing related to delivered migration work</li>
+            <li>Data mapping corrections</li>
+            <li>Redirect issues caused by the delivered migration</li>
+            <li>Technical assistance related to the migration</li>
+            <li>Reasonable post-launch support</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Not covered</h4>
+          <ul>
+            <li>New features outside the agreed scope</li>
+            <li>Third-party service failures</li>
+            <li>Shopify platform changes</li>
+            <li>Client-side modifications after delivery</li>
+            <li>Unrelated website problems</li>
+            <li>New custom development requests</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>Direct answers</h2>
+    <p class="section-sub">Quick answers to the questions we get asked most about PrestaShop to Shopify migration.</p>
+    <div class="faq-list">
+      <div class="faq-row"><h3>How do I migrate PrestaShop to Shopify?</h3><p>The process combines API-based data extraction from PrestaShop, Python scripts to clean and map that data, and the Shopify API to create the equivalent products, customers and orders in Shopify — followed by manual quality checks before launch.</p></div>
+      <div class="faq-row"><h3>Can PrestaShop products be migrated to Shopify?</h3><p>Yes. Products, categories, variants, images and descriptions can be migrated, then verified manually against the source store.</p></div>
+      <div class="faq-row"><h3>Can PrestaShop customers be migrated?</h3><p>Customer records can be migrated where the target platform supports it. Authentication details such as passwords have platform-specific limitations and are never migrated in plaintext — customers may need to reset their password after migration.</p></div>
+      <div class="faq-row"><h3>Can PrestaShop orders be migrated?</h3><p>Order history can be mapped and migrated where supported, with totals, statuses, customers and products manually validated afterward.</p></div>
+      <div class="faq-row"><h3>Can PrestaShop images be migrated?</h3><p>Yes, product images, additional images and description images can be transferred and then checked manually for accuracy.</p></div>
+      <div class="faq-row"><h3>Can PrestaShop URLs be redirected to Shopify?</h3><p>Yes. Old PrestaShop URLs are mapped to their new Shopify equivalents using 301 redirects, which is a core part of preserving existing SEO value.</p></div>
+      <div class="faq-row"><h3>Will migration affect SEO?</h3><p>Careful migration planning — URL mapping, 301 redirects, and metadata preservation — is aimed at protecting existing SEO equity and minimizing avoidable ranking and traffic loss. It is not possible to guarantee identical rankings after any platform migration.</p></div>
+      <div class="faq-row"><h3>How long does migration take?</h3><p>Timelines depend on catalog size, customer/order volume, and how much custom design work is involved — this is scoped individually per project rather than fixed.</p></div>
+      <div class="faq-row"><h3>Can the PrestaShop design be recreated in Shopify?</h3><p>The PrestaShop theme cannot be technically copied into Shopify — the two platforms use different theming systems. Instead, the visual identity, layout and branding are recreated or customized using an appropriate Shopify theme and development work.</p></div>
+      <div class="faq-row"><h3>How much does PrestaShop to Shopify migration cost?</h3><p>Cost depends on catalog size, data complexity, and design requirements. Contact us with your store details for a scoped quote.</p></div>
+      <div class="faq-row"><h3>Should I use automation or a migration expert?</h3><p>Automation (APIs, Python, SQL processing) handles the bulk of data transfer efficiently, but manual quality assurance is still needed to catch edge cases automation alone can miss — the two work best together, not as alternatives.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>Request a Migration Consultation</h2>
+    <p class="section-sub">Tell us about your store and we'll follow up with a scoped plan and timeline.</p>
+    <form class="talk-form" id="migrationForm">
+      <input type="text" name="company_website" class="vx-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-grid">
+        <div class="form-field"><label for="f-name">Name *</label><input type="text" id="f-name" name="name" required></div>
+        <div class="form-field"><label for="f-email">Email *</label><input type="email" id="f-email" name="email" required></div>
+        <div class="form-field"><label for="f-country">Country *</label><input type="text" id="f-country" name="country" required></div>
+        <div class="form-field"><label for="f-current-url">Current Store URL (PrestaShop) *</label><input type="url" id="f-current-url" name="current_url" required placeholder="https://"></div>
+        <div class="form-field"><label for="f-shopify-url">Shopify Store URL (if available)</label><input type="url" id="f-shopify-url" name="shopify_url" placeholder="https://"></div>
+        <div class="form-field"><label for="f-products">Approx. Product Count</label><input type="text" id="f-products" name="product_count" placeholder="e.g. 500"></div>
+        <div class="form-field"><label for="f-customers">Approx. Customer Count</label><input type="text" id="f-customers" name="customer_count" placeholder="e.g. 2,000"></div>
+        <div class="form-field"><label for="f-orders">Approx. Order Count</label><input type="text" id="f-orders" name="order_count" placeholder="e.g. 3,000"></div>
+        <div class="form-field"><label for="f-version">Current PrestaShop Version</label><input type="text" id="f-version" name="prestashop_version" placeholder="e.g. 1.7"></div>
+        <div class="form-field"><label for="f-timeline">Preferred Timeline</label><input type="text" id="f-timeline" name="timeline" placeholder="e.g. within 6 weeks"></div>
+        <div class="form-field full"><label>Design Migration Required?</label>
+          <div class="radio-row">
+            <label><input type="radio" name="design_migration" value="Yes" checked> Yes</label>
+            <label><input type="radio" name="design_migration" value="No"> No</label>
+          </div>
+        </div>
+        <div class="form-field full"><label>SEO Migration Required?</label>
+          <div class="radio-row">
+            <label><input type="radio" name="seo_migration" value="Yes" checked> Yes</label>
+            <label><input type="radio" name="seo_migration" value="No"> No</label>
+          </div>
+        </div>
+        <div class="form-field full"><label for="f-services">Required Migration Services</label><input type="text" id="f-services" name="required_services" placeholder="e.g. products, customers, orders, SEO"></div>
+        <div class="form-field full"><label for="f-message">Message</label><textarea id="f-message" name="message" rows="4"></textarea></div>
+      </div>
+      <div class="form-submit-row">
+        <button type="submit" class="btn btn-primary">Request a Migration Consultation</button>
+      </div>
+      <p class="form-note" id="formNote">Submitting opens your email client with the details pre-filled, addressed to naveedali01888@gmail.com — nothing is stored or sent to a third-party server. Fields marked * are required.</p>
+    </form>
+  </div>
+</section>
+
+<section class="cta reveal">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>Discuss Your PrestaShop to Shopify Migration</h2>
+      <p>Talk to Naveed Ali Qureshi directly — WhatsApp is usually the fastest way to get a scoped answer.</p>
+    </div>
+    <div class="cta-buttons">
+      <a class="btn btn-whatsapp" href="https://wa.me/923125282051?text=Hi!%20I%27d%20like%20to%20discuss%20a%20PrestaShop%20to%20Shopify%20migration." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27A8.9 8.9 0 0 0 12.05 21a8.94 8.94 0 0 0 5.55-15.68ZM12.05 19.4a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.24.77.75-2.2-.18-.29a7.44 7.44 0 1 1 5.72 2.92Zm4.08-5.57c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.58.73-.71.88-.13.15-.26.16-.48.05a6.1 6.1 0 0 1-1.8-1.11 6.7 6.7 0 0 1-1.24-1.54c-.13-.22 0-.34.1-.45.1-.1.22-.26.33-.4.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.4-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.4.06-.6.28-.2.22-.8.78-.8 1.9s.82 2.2.93 2.35c.11.15 1.6 2.45 3.89 3.43.54.23.97.37 1.3.48.55.17 1.05.15 1.44.09.44-.07 1.32-.54 1.5-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z"/></svg>
+        Talk to Naveed Ali Qureshi
+      </a>
+      <a class="btn btn-meet" href="https://meet.google.com/tzj-zyqu-tkn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4Z"/></svg>
+        Book a Google Meet
+      </a>
+      <a class="btn btn-meet" href="mailto:naveedali01888@gmail.com">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm8 8.4L4.5 6.6 3.5 8l8.5 6.5L20.5 8l-1-1.4L12 12.4Z"/></svg>
+        Email Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <h2>Related pages</h2>
+    <div class="internal-links">
+      <a href="/ecommerce.html">PrestaShop Migration — full process & checklist</a>
+      <a href="/services/ecommerce-merchant-center.html">Ecommerce & Merchant Center</a>
+      <a href="/services/ai-seo.html">AI SEO</a>
+      <a href="/services/artificial-intelligence.html">Artificial Intelligence</a>
+      <a href="/order-fulfillment.html">Order Fulfillment</a>
+      <a href="/index.html#get-in-touch">Contact</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <span>© <span id="year"></span> VortexDigitalAI — PrestaShop to Shopify Migration interview page. This is an illustrative client consultation scenario, not a published interview or customer testimonial. Questions? Email <a href="mailto:naveedali01888@gmail.com">naveedali01888@gmail.com</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+function initScrollReveal(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(el){ el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){ if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(function(el){ io.observe(el); });
+}
+window.addEventListener('DOMContentLoaded', initScrollReveal);
+
+// ---- Migration inquiry form: client-side only, opens mailto (no backend needed, no third-party form service) ----
+var form = document.getElementById('migrationForm');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  // Honeypot spam check — bots tend to fill every field, real users never see this one
+  if(form.company_website.value.trim() !== ''){
+    return;
+  }
+
+  var required = ['name','email','country','current_url'];
+  for(var i=0; i<required.length; i++){
+    var field = form[required[i]];
+    if(!field.value.trim()){
+      field.focus();
+      document.getElementById('formNote').textContent = 'Please fill in all required fields marked *.';
+      return;
+    }
+  }
+  var emailVal = form.email.value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)){
+    form.email.focus();
+    document.getElementById('formNote').textContent = 'Please enter a valid email address.';
+    return;
+  }
+
+  var lines = [
+    'Name: ' + form.name.value,
+    'Email: ' + form.email.value,
+    'Country: ' + form.country.value,
+    'Current Store URL: ' + form.current_url.value,
+    'Shopify Store URL: ' + (form.shopify_url.value || 'N/A'),
+    'Approx. Product Count: ' + (form.product_count.value || 'N/A'),
+    'Approx. Customer Count: ' + (form.customer_count.value || 'N/A'),
+    'Approx. Order Count: ' + (form.order_count.value || 'N/A'),
+    'Current PrestaShop Version: ' + (form.prestashop_version.value || 'N/A'),
+    'Required Migration Services: ' + (form.required_services.value || 'N/A'),
+    'Design Migration Required: ' + form.design_migration.value,
+    'SEO Migration Required: ' + form.seo_migration.value,
+    'Preferred Timeline: ' + (form.timeline.value || 'N/A'),
+    '',
+    'Message:',
+    form.message.value || '(none)'
+  ];
+
+  var subject = encodeURIComponent('PrestaShop to Shopify Migration Consultation Request');
+  var body = encodeURIComponent(lines.join('\n'));
+  window.location.href = 'mailto:naveedali01888@gmail.com?subject=' + subject + '&body=' + body;
+  document.getElementById('formNote').textContent = 'Opening your email client with these details filled in — send the email to complete your request.';
+});
+</script>
+
+
+<!-- ===== AI Customer Support Chatbot ===== -->
+<link rel="stylesheet" href="/chatbot/chatbot.css">
+<script src="/chatbot/chatbot-config.js"></script>
+<script src="/chatbot/chatbot.js"></script>
+</body>
+</html>
