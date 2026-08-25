@@ -199,6 +199,7 @@ footer a{text-decoration:underline;}
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4019508926348026" crossorigin="anonymous"></script>
+<script src="/chatbot/gform.js" defer></script>
 </head>
 <body>
 <!-- ============================================================
@@ -332,6 +333,8 @@ footer a{text-decoration:underline;}
           <a href="/talk/prestashop-to-shopify-migration.html">PrestaShop to Shopify Migration</a>
           <a href="/talk/intercom-hipaa-setup.html">Intercom for HIPAA Setup</a>
           <a href="/talk/why-is-my-google-merchant-center-suspended.html">Why Is My GMC Suspended?</a>
+          <a href="/talk/research-data-analysis.html">Research & Data Analysis</a>
+          <a href="/talk/naveed-ali-qureshi-ecommerce-interview-spain.html">Shopify vs WooCommerce vs PrestaShop vs Wix (Spain)</a>
         </div>
       </div>
       <a href="/index.html#faq">FAQ</a>
@@ -543,6 +546,40 @@ footer a{text-decoration:underline;}
   </div>
 </section>
 
+<section class="reveal" style="padding:48px 0; border-bottom:1px solid var(--line);">
+  <div class="wrap" style="max-width:1080px; margin:0 auto; padding:0 24px;">
+    <h2 style="font-family:'Orbitron',sans-serif; font-size:24px; margin-bottom:8px;">Get in Touch</h2>
+    <p style="color:var(--text-dim); font-size:14px; margin-bottom:20px;">Send us a message directly — no signup needed.</p>
+    <form id="vxContactForm" style="background:var(--bg-panel); border:1px solid var(--line); border-radius:8px; padding:22px; max-width:560px;">
+      <input type="text" name="hp" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div style="display:grid; gap:12px;">
+        <input type="text" name="name" placeholder="Name *" required style="padding:10px 12px; border:1px solid var(--line); border-radius:6px; font-family:inherit; font-size:14px;">
+        <input type="email" name="email" placeholder="Email *" required style="padding:10px 12px; border:1px solid var(--line); border-radius:6px; font-family:inherit; font-size:14px;">
+        <textarea name="message" placeholder="Message" rows="3" style="padding:10px 12px; border:1px solid var(--line); border-radius:6px; font-family:inherit; font-size:14px;"></textarea>
+      </div>
+      <button type="submit" style="margin-top:14px; padding:12px 22px; background:#000; color:#fff; border:none; border-radius:4px; font-weight:600; font-size:14px; cursor:pointer;">Send Message</button>
+      <p id="vxContactNote" style="font-size:12px; color:var(--text-dim); margin-top:10px;">Opens your email client with the message pre-filled — nothing stored on a third-party server unless Google Sheets is connected.</p>
+    </form>
+  </div>
+</section>
+<script>
+(function(){
+  var f = document.getElementById('vxContactForm');
+  if(!f) return;
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(f.hp.value.trim() !== '') return;
+    if(!f.name.value.trim() || !f.email.value.trim()){ document.getElementById('vxContactNote').textContent = 'Please fill in name and email.'; return; }
+    var data = {name:f.name.value, email:f.email.value, message:f.message.value, page: document.title};
+    if(typeof vxSubmitToSheet === 'function'){ vxSubmitToSheet(data); }
+    var subject = encodeURIComponent('Website Contact — ' + document.title);
+    var body = encodeURIComponent('Name: ' + f.name.value + '\nEmail: ' + f.email.value + '\nMessage: ' + f.message.value);
+    window.location.href = 'mailto:naveedali01888@gmail.com?subject=' + subject + '&body=' + body;
+    document.getElementById('vxContactNote').textContent = 'Opening your email client to send this message.';
+  });
+})();
+</script>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -564,5 +601,10 @@ function initScrollReveal(){
 window.addEventListener('DOMContentLoaded', initScrollReveal);
 </script>
 
+
+<!-- ===== AI Customer Support Chatbot ===== -->
+<link rel="stylesheet" href="/chatbot/chatbot.css">
+<script src="/chatbot/chatbot-config.js" defer></script>
+<script src="/chatbot/chatbot.js" defer></script>
 </body>
 </html>

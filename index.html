@@ -1109,6 +1109,7 @@
     }
   </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4019508926348026" crossorigin="anonymous"></script>
+<script src="/chatbot/gform.js" defer></script>
 </head>
 
 <body>
@@ -1191,6 +1192,8 @@
             <a href="/talk/prestashop-to-shopify-migration.html">PrestaShop to Shopify Migration</a>
             <a href="/talk/intercom-hipaa-setup.html">Intercom for HIPAA Setup</a>
             <a href="/talk/why-is-my-google-merchant-center-suspended.html">Why Is My GMC Suspended?</a>
+            <a href="/talk/research-data-analysis.html">Research & Data Analysis</a>
+            <a href="/talk/naveed-ali-qureshi-ecommerce-interview-spain.html">Shopify vs WooCommerce vs PrestaShop vs Wix (Spain)</a>
           </div>
         </div>
         <a href="#faq">FAQ</a>
@@ -1213,6 +1216,7 @@
 
   <div class="nav-backdrop" id="navBackdrop"></div>
 
+  <main>
   <!-- HERO -->
   <section id="hero" class="hero-section" aria-labelledby="heroHeading">
     <div class="hero-inner">
@@ -1590,7 +1594,43 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
+  <section class="reveal" style="padding:48px 0; border-bottom:1px solid var(--line);">
+  <div class="wrap" style="max-width:1080px; margin:0 auto; padding:0 24px;">
+    <h2 style="font-family:'Orbitron',sans-serif; font-size:24px; margin-bottom:8px;">Get in Touch</h2>
+    <p style="color:var(--text-dim); font-size:14px; margin-bottom:20px;">Send us a message directly — no signup needed.</p>
+    <form id="vxContactForm" style="background:var(--bg-panel); border:1px solid var(--line); border-radius:8px; padding:22px; max-width:560px;">
+      <input type="text" name="hp" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div style="display:grid; gap:12px;">
+        <input type="text" name="name" placeholder="Name *" required style="padding:10px 12px; border:1px solid var(--line); border-radius:6px; font-family:inherit; font-size:14px;">
+        <input type="email" name="email" placeholder="Email *" required style="padding:10px 12px; border:1px solid var(--line); border-radius:6px; font-family:inherit; font-size:14px;">
+        <textarea name="message" placeholder="Message" rows="3" style="padding:10px 12px; border:1px solid var(--line); border-radius:6px; font-family:inherit; font-size:14px;"></textarea>
+      </div>
+      <button type="submit" style="margin-top:14px; padding:12px 22px; background:#000; color:#fff; border:none; border-radius:4px; font-weight:600; font-size:14px; cursor:pointer;">Send Message</button>
+      <p id="vxContactNote" style="font-size:12px; color:var(--text-dim); margin-top:10px;">Opens your email client with the message pre-filled — nothing stored on a third-party server unless Google Sheets is connected.</p>
+    </form>
+  </div>
+</section>
+<script>
+(function(){
+  var f = document.getElementById('vxContactForm');
+  if(!f) return;
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(f.hp.value.trim() !== '') return;
+    if(!f.name.value.trim() || !f.email.value.trim()){ document.getElementById('vxContactNote').textContent = 'Please fill in name and email.'; return; }
+    var data = {name:f.name.value, email:f.email.value, message:f.message.value, page: document.title};
+    if(typeof vxSubmitToSheet === 'function'){ vxSubmitToSheet(data); }
+    var subject = encodeURIComponent('Website Contact — ' + document.title);
+    var body = encodeURIComponent('Name: ' + f.name.value + '\nEmail: ' + f.email.value + '\nMessage: ' + f.message.value);
+    window.location.href = 'mailto:naveedali01888@gmail.com?subject=' + subject + '&body=' + body;
+    document.getElementById('vxContactNote').textContent = 'Opening your email client to send this message.';
+  });
+})();
+</script>
+
+  </main>
+
+<footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-brand">
         <span class="logo-text" style="display:block;margin-bottom:4px;">VortexDigitalAI</span>
@@ -1880,9 +1920,9 @@
       <h3 class="card-title">${s.title}</h3>
       <p class="card-desc">${s.desc}</p>
       <div class="card-actions">
-        <a class="card-btn card-btn-meet" href="https://meet.google.com/tzj-zyqu-tkn" target="_blank" rel="noopener noreferrer"><i class="fas fa-video"></i> Book Meeting</a>
-        <a class="card-btn card-btn-wa" href="https://wa.me/923125282051?text=Hi%2C%20I%27m%20interested%20in%20${s.wa}%20service" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Get Quote</a>
-        ${s.link ? `<a class="card-btn card-btn-learn" href="${s.link}"><i class="fas fa-arrow-right"></i> Learn More</a>` : ''}
+        <a class="card-btn card-btn-meet" href="https://meet.google.com/tzj-zyqu-tkn" target="_blank" rel="noopener noreferrer" aria-label="Book a meeting about ${s.title}"><i class="fas fa-video" aria-hidden="true"></i> Book Meeting</a>
+        <a class="card-btn card-btn-wa" href="https://wa.me/923125282051?text=Hi%2C%20I%27m%20interested%20in%20${s.wa}%20service" target="_blank" rel="noopener noreferrer" aria-label="Get a WhatsApp quote for ${s.title}"><i class="fab fa-whatsapp" aria-hidden="true"></i> Get Quote</a>
+        ${s.link ? `<a class="card-btn card-btn-learn" href="${s.link}" aria-label="Learn more about ${s.title}"><i class="fas fa-arrow-right" aria-hidden="true"></i> Learn More</a>` : ''}
       </div>`;
     grid.appendChild(card);
     revealObs.observe(card);
@@ -1998,10 +2038,10 @@
       <div class="course-icon"><i class="fas ${c.icon}"></i></div>
       <div class="course-title">${c.title}</div>
       ${c.duration !== 'Self-paced' ? `<div class="course-duration"><i class="fas fa-clock"></i> ${c.duration}</div>` : `<div class="course-duration"><i class="fas fa-infinity"></i> Self-paced</div>`}
-      <a class="course-cta" href="https://wa.me/923125282051?text=Hi%2C%20I%27m%20interested%20in%20the%20${encodeURIComponent(c.title)}%20course" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-paper-plane"></i> Enroll via WhatsApp
+      <a class="course-cta" href="https://wa.me/923125282051?text=Hi%2C%20I%27m%20interested%20in%20the%20${encodeURIComponent(c.title)}%20course" target="_blank" rel="noopener noreferrer" aria-label="Enroll in ${c.title} via WhatsApp">
+        <i class="fas fa-paper-plane" aria-hidden="true"></i> Enroll via WhatsApp
       </a>
-      ${c.link ? `<a class="course-cta" style="background:none;border:1px solid var(--course-border);color:var(--course-accent);margin-top:8px;" href="${c.link}"><i class="fas fa-arrow-right"></i> Course Details & FAQs</a>` : ''}`;
+      ${c.link ? `<a class="course-cta" style="background:none;border:1px solid var(--course-border);color:var(--course-accent);margin-top:8px;" href="${c.link}" aria-label="View details and FAQs for ${c.title}"><i class="fas fa-arrow-right" aria-hidden="true"></i> Course Details & FAQs</a>` : ''}`;
     cgrid.appendChild(card);
     revealObs.observe(card);
   });
@@ -2180,5 +2220,10 @@
     chatForm.addEventListener('submit', (e) => { e.preventDefault(); handleUserMessage(chatInput.value); });
   })();
   </script>
+
+<!-- ===== AI Customer Support Chatbot ===== -->
+<link rel="stylesheet" href="/chatbot/chatbot.css">
+<script src="/chatbot/chatbot-config.js" defer></script>
+<script src="/chatbot/chatbot.js" defer></script>
 </body>
 </html>
