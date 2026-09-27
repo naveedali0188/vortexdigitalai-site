@@ -1,0 +1,40 @@
+ADD THIS ONE LINE TO index.html
+--------------------------------
+File: index.html
+Find this block (search for "primary-nav" — it's the main menu):
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#technologies">Integrations</a>
+        <a href="#courses">Courses</a>
+        <a href="#faq">FAQ</a>
+        <a href="#global-reach">Global</a>
+        <a href="#get-in-touch">Contact</a>
+        <a href="#videos">Insights</a>
+        <a href="#deals">Platforms</a>
+      </nav>
+
+Add one new line anywhere in that list, e.g. right after "Insights":
+
+        <a href="/environmental-impact.html">Impact Tracker</a>
+
+So it looks like:
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#technologies">Integrations</a>
+        <a href="#courses">Courses</a>
+        <a href="#faq">FAQ</a>
+        <a href="#global-reach">Global</a>
+        <a href="#get-in-touch">Contact</a>
+        <a href="#videos">Insights</a>
+        <a href="/environmental-impact.html">Impact Tracker</a>
+        <a href="#deals">Platforms</a>
+      </nav>
+
+That's the only change needed in index.html. Everything else on your
+existing site stays exactly the same.

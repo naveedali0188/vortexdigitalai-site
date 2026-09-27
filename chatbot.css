@@ -1,0 +1,108 @@
+/* ============================================================
+   CHATBOT WIDGET — CSS
+   Namespaced with vxc- prefix so it never collides with any
+   page's own styles. Uses the site's actual brand tokens
+   (black/white/emerald, Orbitron + Plus Jakarta Sans).
+============================================================= */
+
+#vxc-launcher{
+  position: fixed; right: 20px; bottom: 20px; z-index: 9999;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: #000; color: #fff; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  transition: transform .2s ease, box-shadow .2s ease;
+  font-size: 22px;
+}
+#vxc-launcher:hover{ transform: translateY(-2px) scale(1.04); box-shadow: 0 12px 30px rgba(0,0,0,.32); }
+#vxc-launcher:focus-visible{ outline: 3px solid #059669; outline-offset: 3px; }
+#vxc-launcher .vxc-badge{
+  position: absolute; top: -2px; right: -2px; width: 12px; height: 12px; border-radius: 50%;
+  background: #059669; border: 2px solid #fff;
+}
+#vxc-launcher svg{ width: 26px; height: 26px; }
+#vxc-launcher .vxc-icon-close{ display: none; }
+#vxc-launcher.vxc-open .vxc-icon-chat{ display: none; }
+#vxc-launcher.vxc-open .vxc-icon-close{ display: block; }
+
+#vxc-window{
+  position: fixed; right: 20px; bottom: 92px; z-index: 9999;
+  width: min(390px, calc(100vw - 32px));
+  height: min(620px, calc(100vh - 140px));
+  background: #fff; border: 1px solid #e5e5e5; border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.22);
+  display: none; flex-direction: column; overflow: hidden;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  animation: vxc-pop .22s ease;
+}
+#vxc-window.vxc-open{ display: flex; }
+@keyframes vxc-pop{ from{ opacity:0; transform: translateY(12px) scale(.98);} to{ opacity:1; transform: translateY(0) scale(1);} }
+
+#vxc-header{
+  background: #000; color: #fff; padding: 16px 18px;
+  display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+}
+#vxc-header .vxc-title{ font-family:'Orbitron', sans-serif; font-size: 14px; font-weight: 700; }
+#vxc-header .vxc-subtitle{ font-size: 11px; color: #9ca3af; margin-top: 2px; }
+#vxc-header .vxc-status{ display:flex; align-items:center; gap:6px; font-size:11px; color:#9ca3af; margin-top:4px; }
+#vxc-header .vxc-status-dot{ width:6px; height:6px; border-radius:50%; background:#059669; }
+#vxc-header-actions{ display:flex; gap:6px; }
+#vxc-header-actions button{
+  background: rgba(255,255,255,.08); border: none; color: #fff; width: 30px; height: 30px;
+  border-radius: 8px; cursor: pointer; display:flex; align-items:center; justify-content:center;
+  transition: background .15s ease;
+}
+#vxc-header-actions button:hover{ background: rgba(255,255,255,.18); }
+#vxc-header-actions button:focus-visible{ outline: 2px solid #059669; outline-offset: 2px; }
+#vxc-header-actions svg{ width: 15px; height: 15px; }
+
+#vxc-messages{
+  flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px;
+  background: #fafafa;
+}
+.vxc-msg{ max-width: 84%; font-size: 13.5px; line-height: 1.5; padding: 10px 13px; border-radius: 12px; word-wrap: break-word; }
+.vxc-msg a{ color: inherit; text-decoration: underline; }
+.vxc-msg-user{ align-self: flex-end; background: #000; color: #fff; border-bottom-right-radius: 3px; }
+.vxc-msg-bot{ align-self: flex-start; background: #fff; border: 1px solid #e5e5e5; color: #000; border-bottom-left-radius: 3px; }
+.vxc-msg-bot.vxc-error{ border-color: rgba(244,63,94,.35); background: rgba(244,63,94,.05); }
+
+.vxc-typing{ align-self:flex-start; display:flex; gap:4px; padding: 12px 14px; background:#fff; border:1px solid #e5e5e5; border-radius:12px; border-bottom-left-radius:3px; }
+.vxc-typing span{ width:6px; height:6px; border-radius:50%; background:#9ca3af; animation: vxc-bounce 1.2s infinite ease-in-out; }
+.vxc-typing span:nth-child(2){ animation-delay: .15s; }
+.vxc-typing span:nth-child(3){ animation-delay: .3s; }
+@keyframes vxc-bounce{ 0%,60%,100%{ transform: translateY(0); opacity:.5; } 30%{ transform: translateY(-4px); opacity:1; } }
+
+#vxc-quick{ padding: 0 16px 12px; display: flex; flex-wrap: wrap; gap: 6px; flex-shrink: 0; background:#fafafa; }
+.vxc-quick-btn{
+  font-size: 11.5px; padding: 7px 12px; border-radius: 999px; border: 1px solid #e5e5e5;
+  background: #fff; cursor: pointer; color: #000; transition: border-color .15s ease, transform .15s ease;
+}
+.vxc-quick-btn:hover{ border-color: #059669; transform: translateY(-1px); }
+.vxc-quick-btn:focus-visible{ outline: 2px solid #059669; outline-offset: 1px; }
+
+#vxc-inputbar{
+  display: flex; align-items: flex-end; gap: 8px; padding: 12px; border-top: 1px solid #e5e5e5;
+  background: #fff; flex-shrink: 0; padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+#vxc-input{
+  flex: 1; resize: none; border: 1px solid #e5e5e5; border-radius: 10px; padding: 10px 12px;
+  font-family: inherit; font-size: 13.5px; max-height: 90px; line-height: 1.4;
+}
+#vxc-input:focus{ outline: none; border-color: #059669; }
+#vxc-send{
+  width: 38px; height: 38px; border-radius: 10px; background: #000; color: #fff; border: none;
+  cursor: pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  transition: opacity .15s ease;
+}
+#vxc-send:disabled{ opacity: .4; cursor: not-allowed; }
+#vxc-send:focus-visible{ outline: 2px solid #059669; outline-offset: 2px; }
+#vxc-send svg{ width: 16px; height: 16px; }
+
+#vxc-fallback{ display:none; padding: 14px 16px; background: #fff9f0; border-top: 1px solid #f0e0c0; font-size: 12px; }
+#vxc-fallback.vxc-show{ display:block; }
+#vxc-fallback a{ display:inline-block; margin: 3px 6px 0 0; padding: 5px 10px; border-radius: 999px; background:#fff; border:1px solid #e5e5e5; color:#000; text-decoration:none; font-size: 11.5px; }
+
+@media (max-width: 480px){
+  #vxc-window{ right: 8px; left: 8px; width: auto; bottom: 84px; height: min(75vh, calc(100vh - 120px)); }
+  #vxc-launcher{ right: 16px; bottom: 16px; }
+}
