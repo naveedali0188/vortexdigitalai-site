@@ -27,301 +27,567 @@
   <meta name="twitter:site" content="@vortexdigitalai" />
 
   <!-- Structured data: Organization + Person + Services + FAQ (AEO/GEO) -->
-  <script type="application/ld+json" id="siteSchema">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://vortexdigitalai.com/#organization",
-        "name": "VortexDigitalAI",
-        "url": "https://vortexdigitalai.com/",
-        "logo": "https://vortexdigitalai.com/naveed-ali.jpg",
-        "email": "naveedali01888@gmail.com",
+  <script type="application/ld+json" id="siteSchema">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://vortexdigitalai.com/#organization",
+      "name": "VortexDigitalAI",
+      "url": "https://vortexdigitalai.com/",
+      "logo": "https://vortexdigitalai.com/naveed-ali.jpg",
+      "email": "naveedali01888@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/company/vortexdigitalai",
+        "https://twitter.com/vortexdigitalai",
+        "https://www.youtube.com/@vortexdigitalai",
+        "https://www.instagram.com/vortexdigitalai",
+        "https://github.com/vortexdigitalai",
+        "https://www.tiktok.com/@vortexdigitalai"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Naveed Ali",
+        "jobTitle": "Founder",
         "sameAs": [
-          "https://www.linkedin.com/company/vortexdigitalai",
-          "https://twitter.com/vortexdigitalai",
-          "https://www.youtube.com/@vortexdigitalai",
-          "https://www.instagram.com/vortexdigitalai",
-          "https://github.com/vortexdigitalai",
-          "https://www.tiktok.com/@vortexdigitalai"
-        ],
-        "founder": {
-          "@type": "Person",
-          "name": "Naveed Ali",
-          "jobTitle": "Founder",
-          "sameAs": ["https://www.credly.com/users/naveed-ali-qureshi"]
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "email": "naveedali01888@gmail.com",
-          "telephone": "+92-312-528-2051",
-          "areaServed": ["US", "CA", "IT", "GB", "AU", "DE", "PK", "Worldwide"],
-          "availableLanguage": ["English", "Urdu"]
-        },
-        "knowsAbout": ["AI Website Development", "Google Merchant Center", "Google SEO", "AI Automation", "Google Shopping Ads", "E-commerce Development"],
+          "https://www.credly.com/users/naveed-ali-qureshi"
+        ]
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "naveedali01888@gmail.com",
+        "telephone": "+92-312-528-2051",
         "areaServed": [
-          { "@type": "Country", "name": "United States" },
-          { "@type": "Country", "name": "Canada" },
-          { "@type": "Country", "name": "Italy" },
-          { "@type": "Country", "name": "United Kingdom" },
-          { "@type": "Country", "name": "Australia" },
-          { "@type": "Country", "name": "Germany" }
+          "US",
+          "CA",
+          "IT",
+          "GB",
+          "AU",
+          "DE",
+          "PK",
+          "Worldwide"
+        ],
+        "availableLanguage": [
+          "English",
+          "Urdu"
         ]
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://vortexdigitalai.com/#website",
-        "url": "https://vortexdigitalai.com/",
-        "name": "VortexDigitalAI",
-        "publisher": { "@id": "https://vortexdigitalai.com/#organization" }
+      "knowsAbout": [
+        "AI Website Development",
+        "Google Merchant Center",
+        "Google SEO",
+        "AI Automation",
+        "Google Shopping Ads",
+        "E-commerce Development"
+      ],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        },
+        {
+          "@type": "Country",
+          "name": "Italy"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Germany"
+        }
+      ],
+      "description": "VortexDigitalAI builds AI-ready websites, improves search visibility, automates business operations, and delivers practical AI training for teams worldwide."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vortexdigitalai.com/#website",
+      "url": "https://vortexdigitalai.com/",
+      "name": "VortexDigitalAI",
+      "publisher": {
+        "@id": "https://vortexdigitalai.com/#organization"
       },
-      {
-        "@type": "Service",
-        "name": "AI Websites, SEO, Automations & AI Courses",
-        "provider": { "@id": "https://vortexdigitalai.com/#organization" },
-        "areaServed": ["United States", "Canada", "Italy", "United Kingdom", "Australia", "Germany", "Worldwide"],
-        "description": "AI-powered website development, SEO, growth marketing, business automations, and 14 practical AI courses for clients in the US, Canada, Italy, UK, Australia, and worldwide."
+      "description": "VortexDigitalAI helps businesses build AI-ready websites, improve Google and AI search visibility, automate operations, and develop practical AI skills."
+    },
+    {
+      "@type": "Service",
+      "name": "AI Websites, Technical SEO, Automation & AI Training",
+      "provider": {
+        "@id": "https://vortexdigitalai.com/#organization"
       },
-      {
-        "@type": "Service",
-        "name": "Google Merchant Center Setup & Product Feed Optimization",
-        "provider": { "@id": "https://vortexdigitalai.com/#organization" },
-        "areaServed": ["United States", "Canada", "Italy", "United Kingdom", "Australia", "Germany", "Worldwide"],
-        "serviceType": "Google Merchant Center Expert",
-        "description": "Google Merchant Center account setup, product feed creation and optimization, feed error and disapproval fixes, category mapping, and Shopping Ads readiness for e-commerce stores in the US, Canada, Italy, and other developed markets."
+      "areaServed": [
+        "United States",
+        "Canada",
+        "Italy",
+        "United Kingdom",
+        "Australia",
+        "Germany",
+        "Worldwide"
+      ],
+      "description": "Search-ready AI website development, technical SEO, AEO/GEO content strategy, business automation, and practical AI training for growing teams worldwide."
+    },
+    {
+      "@type": "Service",
+      "name": "Google Merchant Center & Product Feed Optimization",
+      "provider": {
+        "@id": "https://vortexdigitalai.com/#organization"
       },
-      {
-        "@type": "Service",
-        "name": "Business Automation & AI Integration",
-        "provider": { "@id": "https://vortexdigitalai.com/#organization" },
-        "areaServed": ["United States", "Canada", "Italy", "United Kingdom", "Australia", "Germany", "Worldwide"],
-        "description": "Workflow automation using Make.com, n8n, and Zapier, plus AI chatbot and LLM integration using OpenAI, Claude, and Gemini APIs, connecting websites, CRMs, and helpdesks without manual data entry."
+      "areaServed": [
+        "United States",
+        "Canada",
+        "Italy",
+        "United Kingdom",
+        "Australia",
+        "Germany",
+        "Worldwide"
+      ],
+      "serviceType": "Google Merchant Center Expert",
+      "description": "Google Merchant Center setup, product feed optimization, policy and disapproval fixes, category mapping, and Shopping Ads readiness for e-commerce stores worldwide."
+    },
+    {
+      "@type": "Service",
+      "name": "Business Automation & AI Integration",
+      "provider": {
+        "@id": "https://vortexdigitalai.com/#organization"
       },
-      {
-        "@type": "Service",
-        "name": "Enterprise Systems: NetSuite, Salesforce & Microsoft Dynamics",
-        "provider": { "@id": "https://vortexdigitalai.com/#organization" },
-        "areaServed": ["United States", "Canada", "Italy", "United Kingdom", "Australia", "Germany", "Worldwide"],
-        "description": "Implementation and customization of NetSuite ERP, Salesforce CRM, and Microsoft Dynamics 365, including data migration and third-party API integrations."
+      "areaServed": [
+        "United States",
+        "Canada",
+        "Italy",
+        "United Kingdom",
+        "Australia",
+        "Germany",
+        "Worldwide"
+      ],
+      "description": "Reliable workflow automation with Make, n8n, and Zapier, plus AI chatbot and LLM integrations that connect websites, CRMs, helpdesks, messaging, and spreadsheets."
+    },
+    {
+      "@type": "Service",
+      "name": "CRM, ERP & Operational Integrations",
+      "provider": {
+        "@id": "https://vortexdigitalai.com/#organization"
       },
-      {
-        "@type": "Service",
-        "name": "Zendesk & Intercom Customer Support Setup",
-        "provider": { "@id": "https://vortexdigitalai.com/#organization" },
-        "areaServed": ["United States", "Canada", "Italy", "United Kingdom", "Australia", "Germany", "Worldwide"],
-        "description": "Zendesk and Intercom setup, macros, ticket automation, AI-assisted ticket routing, and support analytics dashboards, integrated with website chatbots and WhatsApp."
+      "areaServed": [
+        "United States",
+        "Canada",
+        "Italy",
+        "United Kingdom",
+        "Australia",
+        "Germany",
+        "Worldwide"
+      ],
+      "description": "NetSuite ERP, Salesforce CRM, and Microsoft Dynamics 365 integrations, data migration, API connections, and workflow automation for growing and enterprise teams."
+    },
+    {
+      "@type": "Service",
+      "name": "Zendesk & Intercom Customer Support Systems",
+      "provider": {
+        "@id": "https://vortexdigitalai.com/#organization"
       },
-      {
-        "@type": "Course",
-        "name": "VortexDigitalAI AI Courses",
-        "provider": { "@id": "https://vortexdigitalai.com/#organization" },
-        "description": "14 practitioner-led, project-based AI courses covering financial analysis, e-commerce, freelancing, graphic design, digital marketing, coding, customer support, and business automation, from beginner to advanced."
+      "areaServed": [
+        "United States",
+        "Canada",
+        "Italy",
+        "United Kingdom",
+        "Australia",
+        "Germany",
+        "Worldwide"
+      ],
+      "description": "Zendesk and Intercom setup, support automation, AI-assisted routing, analytics, conversational funnels, and WhatsApp-connected customer service workflows."
+    },
+    {
+      "@type": "Course",
+      "name": "VortexDigitalAI AI Courses",
+      "provider": {
+        "@id": "https://vortexdigitalai.com/#organization"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What services does VortexDigitalAI offer?",
-            "acceptedAnswer": { "@type": "Answer", "text": "AI-powered websites, AI SEO, automations, growth marketing, e-commerce, app development, ERP/CRM integrations (NetSuite, Salesforce, Microsoft Dynamics), cloud infrastructure, and industry solutions for AgTech, EdTech, and digital health." }
-          },
-          {
-            "@type": "Question",
-            "name": "What AI courses does VortexDigitalAI teach?",
-            "acceptedAnswer": { "@type": "Answer", "text": "14 practical, industry-certified AI courses covering financial analysis, e-commerce, freelancing, graphic design, digital marketing/SEO, resume writing, content writing, coding, customer support, business automation, and data analysis." }
-          },
-          {
-            "@type": "Question",
-            "name": "How can I contact VortexDigitalAI?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Via WhatsApp at +92 312 528 2051, email at naveedali01888@gmail.com, or by booking a free 30-minute Google Meet call." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI offer Google Merchant Center services?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. VortexDigitalAI specializes in Google Merchant Center account setup, product feed creation and optimization, fixing feed errors and disapprovals, category mapping, and preparing stores for Google Shopping Ads." }
-          },
-          {
-            "@type": "Question",
-            "name": "Why is my Google Merchant Center product feed disapproved?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Common causes include missing GTIN/brand data, incorrect pricing or availability, policy violations, or image quality issues. VortexDigitalAI audits your feed, identifies the exact cause, and fixes it so products stay approved and eligible for ads." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI work with clients in the USA, Canada, Italy, or UK?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. VortexDigitalAI works remotely with businesses in the United States, Canada, Italy, United Kingdom, Australia, Germany, and worldwide, delivering AI websites, SEO, Google Merchant Center optimization, and automation with flexible scheduling across time zones." }
-          },
-          {
-            "@type": "Question",
-            "name": "What does VortexDigitalAI's AI website development service include?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Custom responsive website design, AI-enhanced content, deep UX research, technical SEO built in from day one, Core Web Vitals optimization, and structured data for search and AI engines." }
-          },
-          {
-            "@type": "Question",
-            "name": "How does VortexDigitalAI approach AI SEO differently from traditional SEO?",
-            "acceptedAnswer": { "@type": "Answer", "text": "AI SEO combines traditional Google ranking factors with Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) — structuring content so it can be understood and cited by ChatGPT, Gemini, and Perplexity, not just Google's algorithm." }
-          },
-          {
-            "@type": "Question",
-            "name": "What automation platforms does VortexDigitalAI use?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Make.com, n8n, and Zapier for workflow automation, connecting websites, CRMs, helpdesks, and messaging tools without manual data entry." }
-          },
-          {
-            "@type": "Question",
-            "name": "Can VortexDigitalAI build a custom AI chatbot for my website?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build chatbots ranging from lightweight keyword-matching assistants (no API cost) to full LLM-powered chatbots using OpenAI, Claude, or Gemini, with WhatsApp handoff for unanswered questions." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI offer PrestaShop migration services?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We migrate PrestaShop stores with zero downtime and full data integrity, preserving product catalogs, customer data, and order history." }
-          },
-          {
-            "@type": "Question",
-            "name": "Can VortexDigitalAI set up Zendesk for my support team?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We handle full Zendesk setup including macros, triggers, ticket automation, and analytics dashboards for response time and CSAT tracking." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI integrate Intercom for customer messaging?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build Intercom conversational funnels and lifecycle messaging with AI-assisted personalization for customer support and lead qualification." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI build mobile apps?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We handle app development end-to-end — design, build, and deploy — for both web and mobile platforms, built to be scalable and secure." }
-          },
-          {
-            "@type": "Question",
-            "name": "What AI solutions does VortexDigitalAI implement for businesses?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Prediction models, automation workflows, and decisioning systems using modern AI and LLM integrations tailored to the specific business process." }
-          },
-          {
-            "@type": "Question",
-            "name": "Can VortexDigitalAI implement NetSuite ERP?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We handle NetSuite ERP implementation, third-party integrations, and workflow automation for growing businesses." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI work with Microsoft Dynamics 365?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We customize Microsoft Dynamics 365 for operations and sales pipeline management." }
-          },
-          {
-            "@type": "Question",
-            "name": "What ecommerce services does VortexDigitalAI provide?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Store setup, conversion rate optimization (CRO), Google Merchant Center feed optimization, and speed optimization to improve conversion rates." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI offer Salesforce CRM services?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build Salesforce CRM automation, custom flows, and AI copilots for growth-focused teams." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI work with AgTech (agriculture technology) companies?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build IoT and AI solutions for precision agriculture, focused on yield optimization using real-time data." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI build digital health platforms?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build telehealth platforms, EHR integrations, and data-driven patient care solutions." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI build EdTech (education technology) platforms?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build adaptive learning platforms with built-in analytics and engagement tracking." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI provide cloud infrastructure services?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. We handle cloud migration, infrastructure-as-code setup, and full observability stacks." }
-          },
-          {
-            "@type": "Question",
-            "name": "How much does a website from VortexDigitalAI cost?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Pricing depends on project scope, ranging from under $500 for simple projects to $10,000+ for complex builds. Fill out the contact form with your budget range for a tailored quote." }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does it take to build a website with VortexDigitalAI?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Timeline depends on scope and complexity. Simple sites can be delivered in days; complex builds with integrations take longer. Contact us with your requirements for a specific timeline." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the AI Financial Analyst course about?",
-            "acceptedAnswer": { "@type": "Answer", "text": "A 3-month practical course teaching AI-powered financial analysis skills, taught by industry practitioners with real-world projects." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the AI for Everyone course about?",
-            "acceptedAnswer": { "@type": "Answer", "text": "A 2-month beginner-friendly course introducing AI concepts and practical applications for non-technical learners." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the AI Powered E-Commerce course about?",
-            "acceptedAnswer": { "@type": "Answer", "text": "A 3-month course teaching how to build and grow e-commerce stores using AI tools for product research, marketing, and operations." }
-          },
-          {
-            "@type": "Question",
-            "name": "Is there a freelancing course at VortexDigitalAI?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes — 'Earning Through Freelancing' is a 2-month course teaching how to find clients and deliver freelance work profitably." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI teach AI graphic design and video editing?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes — a 3-month course covering AI-assisted graphic design and video editing tools and workflows." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI teach AI digital marketing and SEO?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes — a 3-month course covering AI-powered digital marketing strategy and SEO techniques." }
-          },
-          {
-            "@type": "Question",
-            "name": "Are VortexDigitalAI's self-paced courses certified?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. All 14 courses, including self-paced ones like AI Resume Writing, Content Writing, and Coding, are industry-certified." }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I book a free consultation call with VortexDigitalAI?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can book a free 30-minute Google Meet call directly from the website to discuss your project." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI have verified credentials?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Founder Naveed Ali's certifications are verified and viewable on Credly." }
-          },
-          {
-            "@type": "Question",
-            "name": "How fast does VortexDigitalAI respond to inquiries?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Contact form submissions are answered within 24 hours. WhatsApp messages are typically answered faster during business hours." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does VortexDigitalAI offer ongoing support after project delivery?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ongoing support arrangements can be discussed based on project type — contact us via WhatsApp or the form to set this up." }
-          },
-          {
-            "@type": "Question",
-            "name": "What industries does VortexDigitalAI specialize in?",
-            "acceptedAnswer": { "@type": "Answer", "text": "AgTech, Digital Health, EdTech, and general e-commerce/SaaS businesses, alongside core web, SEO, and automation services applicable to any industry." }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I follow VortexDigitalAI's work on social media?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes — VortexDigitalAI is active on LinkedIn, X (Twitter), YouTube, Instagram, GitHub, and TikTok." }
-          },
-          {
-            "@type": "Question",
-            "name": "Who founded VortexDigitalAI?",
-            "acceptedAnswer": { "@type": "Answer", "text": "VortexDigitalAI was founded by Naveed Ali, whose certifications are verified on Credly." }
+      "description": "14 practitioner-led, project-based AI courses covering financial analysis, e-commerce, freelancing, content, marketing, SEO, coding, customer support, automation, and data analysis from beginner to advanced."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does VortexDigitalAI offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VortexDigitalAI builds search-ready websites, technical SEO and AEO/GEO content, business automations, Google Merchant Center feeds, e-commerce migrations, CRM/ERP integrations, customer-support systems, and practical AI courses for teams, founders, and professionals."
           }
-        ]
-      }
-    ]
-  }
-  </script>
+        },
+        {
+          "@type": "Question",
+          "name": "What AI courses does VortexDigitalAI teach?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VortexDigitalAI offers 14 practitioner-led courses in AI financial analysis, e-commerce, freelancing, graphic design, digital marketing and SEO, resume writing, content, coding, customer support, business automation, and data analysis, from beginner to advanced."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I contact VortexDigitalAI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can contact VortexDigitalAI through WhatsApp at +92 312 528 2051, email at naveedali01888@gmail.com, the website project form, or a free 30-minute Google Meet call. Share your goal, current tools, and timeline for a more useful first reply."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI offer Google Merchant Center services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. VortexDigitalAI handles Google Merchant Center setup, verification, product feed creation, title and category optimization, policy checks, disapproval diagnosis, feed error fixes, and Shopping Ads readiness for e-commerce stores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my Google Merchant Center product feed disapproved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Common causes include missing brand or GTIN data, mismatched prices or availability, policy violations, unsupported claims, and image issues. VortexDigitalAI audits the feed, identifies the specific cause, and recommends fixes that help products remain eligible for Google Shopping."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI work with clients in the USA, Canada, Italy, or UK?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. VortexDigitalAI works remotely with businesses in the United States, Canada, Italy, the United Kingdom, Australia, Germany, Europe, the Middle East, and beyond. Projects use clear async communication, flexible scheduling, and delivery documentation across time zones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does VortexDigitalAI's AI website development service include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI website development includes responsive page implementation, conversion-focused content, mobile-first UX, technical SEO, Core Web Vitals improvements, structured data, accessible markup, and content organized so people, search engines, and AI answer systems can understand the business."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does VortexDigitalAI approach AI SEO differently from traditional SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI SEO combines technical SEO and search intent research with Answer Engine Optimization and Generative Engine Optimization. Content is organized around real questions, concise answer units, trustworthy entities, internal links, and structured data so search engines and AI systems can interpret the site accurately."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What automation platforms does VortexDigitalAI use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VortexDigitalAI uses Make, n8n, and Zapier to connect websites, CRMs, helpdesks, email, WhatsApp, and spreadsheets. Workflows can include lead qualification, routing, notifications, data synchronization, summarization, and AI-assisted first drafts with logging and error handling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can VortexDigitalAI build a custom AI chatbot for my website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. VortexDigitalAI can build a lightweight website assistant or an LLM-powered chatbot using OpenAI, Claude, or Gemini, with business-specific instructions, useful fallback answers, lead capture, human handoff, and WhatsApp escalation when a visitor needs personal help."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI offer PrestaShop migration services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. VortexDigitalAI supports PrestaShop-to-Shopify migration planning and implementation, including product catalogs, customer records, order history, redirects, data validation, and launch coordination designed to reduce disruption and protect search visibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can VortexDigitalAI set up Zendesk for my support team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We handle full Zendesk setup including macros, triggers, ticket automation, and analytics dashboards for response time and CSAT tracking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI integrate Intercom for customer messaging?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We build Intercom conversational funnels and lifecycle messaging with AI-assisted personalization for customer support and lead qualification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI build mobile apps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We handle app development end-to-end — design, build, and deploy — for both web and mobile platforms, built to be scalable and secure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What AI solutions does VortexDigitalAI implement for businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prediction models, automation workflows, and decisioning systems using modern AI and LLM integrations tailored to the specific business process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can VortexDigitalAI implement NetSuite ERP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We handle NetSuite ERP implementation, third-party integrations, and workflow automation for growing businesses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI work with Microsoft Dynamics 365?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We customize Microsoft Dynamics 365 for operations and sales pipeline management."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What ecommerce services does VortexDigitalAI provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Store setup, conversion rate optimization (CRO), Google Merchant Center feed optimization, and speed optimization to improve conversion rates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI offer Salesforce CRM services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We build Salesforce CRM automation, custom flows, and AI copilots for growth-focused teams."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI work with AgTech (agriculture technology) companies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We build IoT and AI solutions for precision agriculture, focused on yield optimization using real-time data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI build digital health platforms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We build telehealth platforms, EHR integrations, and data-driven patient care solutions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI build EdTech (education technology) platforms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We build adaptive learning platforms with built-in analytics and engagement tracking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI provide cloud infrastructure services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We handle cloud migration, infrastructure-as-code setup, and full observability stacks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a website from VortexDigitalAI cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pricing depends on pages, content depth, integrations, automation, and ongoing support. Simple projects may start below $500, while complex builds can exceed $10,000. Share your scope and budget range for a practical recommendation rather than a generic package."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to build a website with VortexDigitalAI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A focused website can take days to a few weeks, while projects with custom design, content, migrations, or integrations take longer. The exact timeline depends on scope, approvals, content readiness, and technical dependencies identified during the initial brief."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the AI Financial Analyst course about?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 3-month practical course teaching AI-powered financial analysis skills, taught by industry practitioners with real-world projects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the AI for Everyone course about?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 2-month beginner-friendly course introducing AI concepts and practical applications for non-technical learners."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the AI Powered E-Commerce course about?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 3-month course teaching how to build and grow e-commerce stores using AI tools for product research, marketing, and operations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a freelancing course at VortexDigitalAI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — 'Earning Through Freelancing' is a 2-month course teaching how to find clients and deliver freelance work profitably."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI teach AI graphic design and video editing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — a 3-month course covering AI-assisted graphic design and video editing tools and workflows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI teach AI digital marketing and SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — a 3-month course covering AI-powered digital marketing strategy and SEO techniques."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are VortexDigitalAI's self-paced courses certified?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All 14 courses, including self-paced ones like AI Resume Writing, Content Writing, and Coding, are industry-certified."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I book a free consultation call with VortexDigitalAI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can book a free 30-minute Google Meet call to discuss your website, SEO, automation, e-commerce, or training goals. Bring your current URL, key challenge, preferred timeline, and the tools your team already uses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI have verified credentials?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Founder Naveed Ali's certifications are verified and viewable on Credly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast does VortexDigitalAI respond to inquiries?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Website form submissions are answered within 24 hours. WhatsApp messages are often answered faster during business hours. Include your objective, target market, current platform, and desired outcome so the first response can be specific and useful."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VortexDigitalAI offer ongoing support after project delivery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Ongoing support arrangements can be discussed based on project type — contact us via WhatsApp or the form to set this up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What industries does VortexDigitalAI specialize in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VortexDigitalAI works across e-commerce, SaaS, AgTech, Digital Health, EdTech, professional services, and growing online businesses. The common focus is building clearer digital operations through websites, search visibility, integrations, automation, and practical AI adoption."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I follow VortexDigitalAI's work on social media?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — VortexDigitalAI is active on LinkedIn, X (Twitter), YouTube, Instagram, GitHub, and TikTok."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who founded VortexDigitalAI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VortexDigitalAI was founded by Naveed Ali, a full-stack developer and AI, data analytics, automation, e-commerce, SEO, and integration specialist. His professional certifications are available for verification through Credly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Generative Engine Optimization (GEO)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Generative Engine Optimization prepares a website to be understood, summarized, and cited by AI systems such as ChatGPT, Gemini, Claude, Perplexity, and Google AI features. GEO combines useful original content, clear entity relationships, trustworthy claims, technical accessibility, and consistent site signals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you optimize a website for Google AI Overviews?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We improve technical accessibility, page speed, structured data, search intent coverage, internal linking, and concise answer sections. We also make service definitions, locations, proof points, and FAQs explicit so Google can connect the page to relevant questions without keyword stuffing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does a technical SEO audit include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A technical SEO audit reviews crawlability, indexation, titles, descriptions, headings, canonical signals, redirects, broken links, mobile usability, Core Web Vitals, structured data, sitemap coverage, and internal linking. The output is a prioritized action plan tied to search visibility and user experience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What information is needed to start an SEO or automation project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with your website or store URL, target countries, primary service, ideal customer, current platform, biggest bottleneck, desired outcome, and timeline. Existing analytics, search data, brand guidance, and access details help turn the first review into an actionable plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you protect SEO during an e-commerce migration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We map URLs, preserve important metadata and content, validate product and category data, plan redirects, check canonical tags, test indexability, and monitor the launch. A migration is treated as both a data move and a search-preservation project."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can VortexDigitalAI improve an existing website without redesigning it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Content, metadata, headings, internal links, structured data, FAQs, and conversion messaging can be improved while keeping the existing layout and visual system. This is useful when the site works visually but does not clearly communicate its value to people or search engines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Answer Engine Optimization (AEO)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Answer Engine Optimization structures website content so search engines and conversational systems can extract direct, accurate answers. It uses question-based headings, concise answer paragraphs, clear entities, internal links, and structured data to support featured snippets and AI-generated results."
+          }
+        }
+      ]
+    }
+  ]
+}</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
