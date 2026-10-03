@@ -93,11 +93,10 @@ No server, database, or hosting costs beyond GitHub Pages (which is free) — ev
 
 ## 7. Website chatbot
 
-The existing chat widget uses a free, browser-local language model and a lightweight text-retrieval index. The model is loaded only when a visitor opens chat; the first load may take a while and downloads model files from the public WebLLM/Hugging Face distribution. Subsequent visits can reuse the browser cache.
+The chat widget uses native browser code to search the website content and return the matching published text with a link to its page. It does not use a generative language model: this keeps it instant, avoids large model downloads and external AI APIs, and prevents answers from adding facts that are not in the website.
 
-- **Model:** Qwen2.5-0.5B-Instruct, quantized for WebLLM and distributed under Apache-2.0.
-- **Knowledge:** on first use (and then at most daily), the widget reads the same-origin `sitemap.xml`, extracts visible page text, splits it into small chunks, and retrieves only the most relevant chunks for each question. The index is cached in the browser and rebuilt when the sitemap URL list changes.
-- **Privacy:** questions, retrieved website text, and chat messages stay in the visitor's browser. The only external downloads are the WebLLM module and model files. An unanswered question is sent to the existing contact form only when a visitor chooses to submit it.
-- **Contact escalation:** the homepage reuses its configured Google Apps Script contact endpoint. On pages without that endpoint, the visitor can open a prefilled email to `naveedali01888@gmail.com`; the visitor must press Send in their email app. To change the recipient, edit `contactEmail` in `chatbot/chatbot-config.js`. That file is public configuration and must never contain secrets.
-- **Deployment:** no build step, package install, backend, API key, or GitHub Actions workflow is required. Keep the `chatbot/` directory and `sitemap.xml` at the site root and deploy using the existing GitHub Pages branch/folder configuration.
-- **Limitations:** local inference requires a secure page (HTTPS or localhost), a WebGPU-capable browser/device, available memory, and a network connection for the initial model download. The small model may be slower or less capable than a hosted large model. If WebGPU or model loading fails, the widget offers contact escalation instead of showing technical errors.
+- **Knowledge:** on first question, the widget reads the same-origin `sitemap.xml`, extracts visible text and FAQ structured data from the listed pages, and includes the existing `data/services.json`, `data/courses.json`, and `data/faqs.json` catalogs. It splits the text into chunks, ranks matches with local keyword search, and caches the index in the browser for one hour.
+- **Answers:** it returns only matching site text and links to the source pages. If there is no reliable match—or a requested price is not explicitly published—it shows the contact fallback instead of guessing.
+- **Privacy and performance:** no question or page content is sent to an AI provider. There is no model download, backend, extra package, paid service, or API credential. The content index is built only after the visitor submits their first question.
+- **Contact fallback:** the Contact Team button opens the website's existing contact section at `/index.html#get-in-touch`.
+- **Deployment:** no build step is needed. Keep the `chatbot/` directory, existing `data/` JSON files, and root `sitemap.xml`; deploy with the current GitHub Pages branch/folder setup.

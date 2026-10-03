@@ -9,14 +9,14 @@ Audited: 2026-08-15
 | Layer | Current state |
 |---|---|
 | Frontend | Static HTML5/CSS3/vanilla JS. **No build step, no bundler, no npm.** Each of the 34 pages is a self-contained file with inline `<style>`/`<script>`. |
-| Backend | **None deployed.** A Flask API (`backend/app.py` + 4 service modules) exists in-progress, built for one purpose: powering a support chatbot. It is not yet connected to the live site. |
+| Backend | **None.** The site is static and the customer-support chatbot runs in the browser without a server. |
 | Database | **None.** No user accounts, no orders, no dynamic content of any kind. |
 | Hosting | GitHub Pages, static only, custom domain `vortexdigitalai.com` via `CNAME`. |
 | Auth | None — no login anywhere on the site. |
-| AI | Chatbot backend calls GitHub Models (`models.github.ai`) — a hosted, free-tier API, not local. No RAG, no vector store, no local model runtime exists yet. |
-| Content data | 3 JSON files (`services.json`, `courses.json`, `faqs.json`) — hand-written knowledge base for the chatbot, ~48 entries total. |
-| Package management | None — zero `package.json`, zero `requirements.txt` installed anywhere except the standalone `backend/` folder (Flask, flask-cors, requests, python-dotenv, pytest). |
-| Tests | 16 backend tests exist and pass (`pytest backend/tests/`), all AI calls mocked. Zero frontend tests. |
+| AI | The chatbot uses browser-native keyword retrieval over website pages and the existing JSON catalogs. It does not load a generative model or call an AI API. |
+| Content data | Static HTML pages plus 3 existing JSON catalogs (`services.json`, `courses.json`, `faqs.json`) used by the chatbot as content sources. |
+| Package management | None — zero `package.json`, zero `requirements.txt`, and no external chatbot libraries. |
+| Tests | No automated frontend tests. The chatbot uses native browser APIs and static files. |
 | CI/CD | None. |
 | Docker | None. |
 
@@ -30,7 +30,6 @@ Audited: 2026-08-15
 - Every page has real meta description, canonical tag, Open Graph tags, and JSON-LD (FAQPage + Service/Course schema) — SEO/AEO/GEO groundwork is already in place site-wide.
 - Sitemap and robots.txt exist and reference each other correctly.
 - No secrets committed anywhere in the repo (verified above).
-- The Flask chatbot backend has real, passing tests with AI calls properly mocked — not vaporware.
 - WhatsApp/email/Google Meet contact paths work without any backend at all.
 
 **None of this should be rebuilt.** The upgrade path below is additive.
@@ -41,16 +40,13 @@ Audited: 2026-08-15
 
 | Problem | Severity | Notes |
 |---|---|---|
-| No backend deployed at all yet | Medium | Chatbot code exists locally but isn't live — GitHub Pages can't run it |
 | No automated frontend tests | Low | 34 static pages, high risk of silent link/markup breakage as more get added |
 | No CI | Low | Nothing currently checks HTML validity or link integrity before you upload |
 | No image optimization pipeline | Low | Currently only 1 real image (`naveed-ali.jpg`) + inline SVG — not yet a real problem |
 | No analytics | Medium | You have no visibility into which of the 34 pages actually get traffic |
 | Duplicate content risk | Low-Medium | Course/service pages share a template; thin/near-duplicate content across similar pages could dilute SEO if not periodically reviewed |
-| No dependency lockfile for backend | Low | `requirements.txt` has pinned versions, which is good, but no `pip freeze` lockfile or Dependabot |
-| No rate-limit persistence | Low | The chatbot's rate limiter is in-memory — resets if the server restarts, and doesn't share state across multiple instances |
 
-**No security vulnerabilities were found** in the shipped static site — there's no attack surface (no forms, no auth, no database) beyond the chatbot backend, which already has CORS allow-listing, input length limits, and a rate limiter designed in from the start.
+The chatbot has no server endpoint, API token, or external model integration. Existing site forms and outbound contact links remain unchanged.
 
 ---
 
@@ -61,23 +57,14 @@ Your own Phase 17 rule ("Free-First," "don't add frameworks to look impressive")
 ### Keep as static (no change)
 All 34 HTML pages stay exactly as they are — static HTML on GitHub Pages. There is no dynamic data here that justifies a framework or database. Introducing Django/FastAPI to serve them would add a server, hosting cost, and attack surface for zero functional benefit.
 
-### Add: one small Flask API (already 80% built)
-Purpose-built for the one thing that actually needs a backend — the chatbot. This is the *only* piece of the requested stack that has real justification right now:
-- Flask (not FastAPI/Django — this is a single endpoint, not a platform)
-- Deployed separately (Render/Railway free tier — GitHub Pages can't run it)
-- Already has: rate limiting, input validation, CORS allow-list, tone detection, catalog-grounded responses, 16 passing tests
-
-### AI: keep it hosted-free, skip local RAG/Ollama for now
-Your current chatbot uses GitHub Models (free tier) with a small hand-written JSON knowledge base (48 entries) and simple keyword matching — this **is** a lightweight RAG-equivalent, appropriately scaled to 48 entries. A real vector database (FAISS/Chroma) and local model runtime (Ollama) become worth the operational complexity somewhere around hundreds-to-thousands of documents with genuine semantic ambiguity keyword matching can't resolve. At 48 entries, embeddings would add infrastructure without measurably improving answer quality — this is exactly the "don't introduce a dependency without genuine value" case your own rules call out.
-
-**When to revisit this:** if your services/courses/FAQ catalog grows past roughly 150-200 entries, or you start indexing PDFs/long documents, switch the `catalog_service.py` keyword search to `sentence-transformers` + `Chroma` (both free, both run locally, no code rewrite needed elsewhere since it's already isolated behind one service module).
+### Chatbot: keep it static and source-grounded
+The chatbot searches same-origin pages listed in `sitemap.xml` plus the existing JSON catalogs. It returns matching website text and links rather than using a generative model, so it needs no model download, backend hosting, API token, database, or third-party chatbot library. Missing information is sent to the existing website contact section.
 
 ### Skip entirely, for now
 - **Django** — no users, no auth, no admin-managed content model exists that needs it
-- **FastAPI** — Flask already covers one endpoint fine; FastAPI's advantages (async, Pydantic, auto-docs) matter at higher endpoint counts
+- **FastAPI/Flask** — the static site and chatbot need no server endpoint
 - **PostgreSQL/SQLite** — nothing to persist yet (no orders, no accounts, no CMS)
-- **Docker/Docker Compose** — one Flask file with 4 dependencies doesn't need containerization to deploy to a free host
-- **Redis** — the in-memory rate limiter is fine at current traffic; only becomes a real gap at multi-instance scale
+- **Docker/Docker Compose/Redis** — there is no backend or server-side state to containerize or cache
 - **CI/CD pipelines** — worth adding once there's a backend actually deployed and changing regularly
 
 ### Worth adding regardless of stack size
@@ -91,8 +78,6 @@ Your current chatbot uses GitHub Models (free tier) with a small hand-written JS
 | Item | Cost |
 |---|---|
 | GitHub Pages hosting | Free |
-| GitHub Models (chatbot AI) | Free tier, rate-limited |
-| Flask backend hosting (Render/Railway free tier) | Free (may sleep after inactivity on free tier — one real trade-off) |
 | Link-checking GitHub Action | Free |
 | Analytics (Plausible free tier / GA4) | Free |
 | Everything else in this audit | Free |
@@ -103,10 +88,9 @@ Your current chatbot uses GitHub Models (free tier) with a small hand-written JS
 
 ## 6. Implementation Priority
 
-1. **Deploy the existing chatbot backend** (it's built and tested, just not live) — highest value, lowest additional effort
-2. **Add the chatbot widget to all 34 pages** — frontend JS/CSS not yet written
-3. **Add a GitHub Action for broken-link checking** — prevents repeat of the earlier 404 incident, ~20 lines of YAML
-4. **Add basic analytics** — so future priority decisions are data-driven instead of guesses
-5. **Revisit RAG/local AI only if the knowledge base genuinely outgrows keyword search**
+1. **Keep the chatbot widget and sitemap/catalog content in sync** as pages change.
+2. **Add a GitHub Action for broken-link checking** — prevents repeat of the earlier 404 incident, ~20 lines of YAML
+3. **Add basic analytics** — so future priority decisions are data-driven instead of guesses
+4. **Revisit a hosted model only if natural-language generation becomes worth operating a backend and its credentials.**
 
 Items 6-18 of the original spec (Docker, Postgres, Django, admin dashboard, multi-language backend strategy, Go microservices) are **not recommended at this project's current size** — they'd add ongoing hosting cost, maintenance burden, and attack surface without a corresponding feature that needs them yet.

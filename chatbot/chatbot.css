@@ -59,7 +59,7 @@
   flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px;
   background: #fafafa;
 }
-.vxc-msg{ max-width: 84%; font-size: 13.5px; line-height: 1.5; padding: 10px 13px; border-radius: 12px; word-wrap: break-word; }
+.vxc-msg{ max-width: 84%; font-size: 13.5px; line-height: 1.5; padding: 10px 13px; border-radius: 12px; word-wrap: break-word; white-space: pre-line; }
 .vxc-msg a{ color: inherit; text-decoration: underline; }
 .vxc-msg-user{ align-self: flex-end; background: #000; color: #fff; border-bottom-right-radius: 3px; }
 .vxc-msg-bot{ align-self: flex-start; background: #fff; border: 1px solid #e5e5e5; color: #000; border-bottom-left-radius: 3px; }
@@ -100,17 +100,9 @@
 #vxc-send:focus-visible{ outline: 2px solid #059669; outline-offset: 2px; }
 #vxc-send svg{ width: 16px; height: 16px; }
 
-#vxc-fallback{ display:none; max-height:42%; overflow-y:auto; padding: 12px 16px; background: #fff9f0; border-top: 1px solid #f0e0c0; font-size: 12px; flex-shrink:0; }
+#vxc-fallback{ display:none; flex-shrink:0; padding: 10px 16px; background: #fff9f0; border-top: 1px solid #f0e0c0; font-size: 12px; }
 #vxc-fallback.vxc-show{ display:block; }
-.vxc-contact-open{ display:inline-block; margin:6px 0; padding:8px 12px; border-radius:999px; background:#000; border:1px solid #000; color:#fff; text-decoration:none; font:inherit; font-size:11.5px; cursor:pointer; }
-.vxc-contact-open:disabled{ opacity:.55; cursor:wait; }
-.vxc-contact-form{ display:grid; gap:8px; margin-top:8px; }
-.vxc-contact-form label{ display:grid; gap:4px; font-size:11px; font-weight:600; }
-.vxc-contact-form input,.vxc-contact-form textarea{ box-sizing:border-box; width:100%; border:1px solid #d1d5db; border-radius:7px; padding:7px 9px; font:inherit; background:#fff; color:#111827; }
-.vxc-contact-form textarea{ resize:vertical; min-height:56px; }
-.vxc-contact-form input:focus,.vxc-contact-form textarea:focus{ outline:2px solid #059669; outline-offset:1px; }
-.vxc-contact-form p{ margin:0; line-height:1.4; }
-.vxc-contact-hint{ color:#4b5563; }
+.vxc-contact-open{ display:inline-block; margin:4px 0; padding:7px 12px; border-radius:999px; background:#000; border:1px solid #000; color:#fff; text-decoration:none; font-size:11.5px; }
 
 @media (max-width: 480px){
   #vxc-window{ right: 8px; left: 8px; width: auto; bottom: 84px; height: min(75vh, calc(100vh - 120px)); }
