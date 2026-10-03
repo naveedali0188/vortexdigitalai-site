@@ -1996,6 +1996,8 @@
   'use strict';
 
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEtxN4OYM1pbj7lEV2KbJfUCsw-H-dsPD-VO0cymCiQ3n5_qJA6uAgCLoK4mqRiEn7vg/exec';
+  window.VX_CONTACT_ENDPOINT = APPS_SCRIPT_URL;
+  window.VX_CHATBOT_ACTIVE = true;
 
   /* ---- Page load fade-in (with safety fallback so a slow YouTube embed can't strand the page invisible) ---- */
   function revealPage() { document.body.classList.add('loaded'); }
@@ -2382,6 +2384,7 @@
 
   /* ---- Chatbot ---- */
   (function() {
+    if (window.VX_CHATBOT_ACTIVE) return;
     const WA_LINK = 'https://wa.me/923125282051?text=Hi%2C%20I%20have%20a%20question%20from%20your%20website%20chatbot';
     const EMAIL_LINK = 'mailto:naveedali01888@gmail.com';
     const FALLBACK = "I don't have that information available right now. You can reach our team directly and we'll help you out:";

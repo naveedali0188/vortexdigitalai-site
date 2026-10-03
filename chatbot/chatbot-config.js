@@ -1,32 +1,28 @@
 /* ============================================================
-   CHATBOT CONFIG — edit this file to configure the widget.
-   No secrets go here — this file is public/served to every visitor.
+   PUBLIC CHATBOT CONFIGURATION
+   This file is delivered to visitors. Never put secrets here.
 ============================================================= */
 window.VX_CHATBOT_CONFIG = {
-  // EDIT ME: point this at your deployed backend (see backend/README.md).
-  // Leave as-is during local testing with `flask run` on port 8000.
-  apiUrl: "http://localhost:8000/api/chat",
-
   enabled: true,
-  maxMessageLength: 1000,
+  maxMessageLength: 1600,
   maxHistoryMessages: 10,
+  maxIndexedPages: 100,
+  maxRetrievedChunks: 5,
+  maxAnswerTokens: 180,
+
+  // WebLLM and the small Apache-2.0 Qwen model are loaded only when chat opens.
+  webLlmModuleUrl: "https://esm.run/@mlc-ai/web-llm@0.2.85",
+  modelId: "Qwen2.5-0.5B-Instruct-q4f16_1-MLC",
+
+  contactEmail: "naveedali01888@gmail.com",
 
   welcomeMessage:
-    "Hi! \ud83d\udc4b I'm your AI customer support assistant. I can help you find services, " +
-    "explain courses, and guide you around the site. What can I help you with?",
+    "Hi! I'm the VortexDigitalAI website assistant. I use information from this website to answer questions. What can I help you find?",
 
   quickQuestions: [
     "What services do you offer?",
     "Tell me about your AI courses",
     "How can I contact support?",
     "Do you help with PrestaShop to Shopify migration?"
-  ],
-
-  // Shown if the backend is unreachable (see FALLBACK MODE in the spec)
-  fallbackLinks: [
-    { label: "Browse Services", url: "/index.html#services" },
-    { label: "Browse Courses", url: "/index.html#courses" },
-    { label: "Read FAQs", url: "/index.html#faq" },
-    { label: "WhatsApp Us", url: "https://wa.me/923125282051" }
   ]
 };

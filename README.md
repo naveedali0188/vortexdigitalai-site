@@ -90,3 +90,14 @@ Everything else — colors, contact info, live data, SEO — is already done.
 | Rotate NASA FIRMS API key | Only if it stops working | `FIRMS_MAP_KEY` constant, get a new one free at https://firms.modaps.eosdis.nasa.gov/api/map_key/ |
 
 No server, database, or hosting costs beyond GitHub Pages (which is free) — everything runs directly in the visitor's browser.
+
+## 7. Website chatbot
+
+The existing chat widget uses a free, browser-local language model and a lightweight text-retrieval index. The model is loaded only when a visitor opens chat; the first load may take a while and downloads model files from the public WebLLM/Hugging Face distribution. Subsequent visits can reuse the browser cache.
+
+- **Model:** Qwen2.5-0.5B-Instruct, quantized for WebLLM and distributed under Apache-2.0.
+- **Knowledge:** on first use (and then at most daily), the widget reads the same-origin `sitemap.xml`, extracts visible page text, splits it into small chunks, and retrieves only the most relevant chunks for each question. The index is cached in the browser and rebuilt when the sitemap URL list changes.
+- **Privacy:** questions, retrieved website text, and chat messages stay in the visitor's browser. The only external downloads are the WebLLM module and model files. An unanswered question is sent to the existing contact form only when a visitor chooses to submit it.
+- **Contact escalation:** the homepage reuses its configured Google Apps Script contact endpoint. On pages without that endpoint, the visitor can open a prefilled email to `naveedali01888@gmail.com`; the visitor must press Send in their email app. To change the recipient, edit `contactEmail` in `chatbot/chatbot-config.js`. That file is public configuration and must never contain secrets.
+- **Deployment:** no build step, package install, backend, API key, or GitHub Actions workflow is required. Keep the `chatbot/` directory and `sitemap.xml` at the site root and deploy using the existing GitHub Pages branch/folder configuration.
+- **Limitations:** local inference requires a secure page (HTTPS or localhost), a WebGPU-capable browser/device, available memory, and a network connection for the initial model download. The small model may be slower or less capable than a hosted large model. If WebGPU or model loading fails, the widget offers contact escalation instead of showing technical errors.
