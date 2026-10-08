@@ -18,7 +18,8 @@
 <meta property="og:url" content="https://vortexdigitalai.com/team/afrasiab.html">
 <meta property="og:image" content="https://vortexdigitalai.com/naveed-ali.jpg">
 <meta name="twitter:card" content="summary_large_image">
-
+<meta name="twitter:title" content="Afrasiab — Team | VortexDigitalAI">
+<meta name="twitter:description" content="Member of the VortexDigitalAI delivery team supporting website builds, automations, and client projects.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,7 +69,7 @@ section .section-sub{color:var(--text-dim); font-size:15px; max-width:660px; mar
 @media (max-width:860px){.profile-grid{grid-template-columns:1fr;}}
 .profile-photo-panel{background:var(--bg-panel); border:1px solid var(--line); border-radius:6px; padding:24px; text-align:center;}
 .profile-avatar{width:100%; max-width:260px; aspect-ratio:1/1; border-radius:50%; background:#000; color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Orbitron',sans-serif; font-size:84px; font-weight:800; border:1px solid var(--line); margin:0 auto 16px;}
-.profile-photo-panel h3{font-size:18px; margin-bottom:4px;}
+.profile-photo-panel h2{font-size:18px; margin:1em 0 4px;}
 .profile-role{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); display:block;}
 .info-card{background:var(--bg-panel); border:1px solid var(--line); border-radius:6px; padding:6px 22px;}
 .contact-method-row{display:flex; align-items:center; gap:16px; padding:16px 0; border-bottom:1px solid var(--line); text-decoration:none; transition:transform .2s ease;}
@@ -94,10 +95,11 @@ section.cta{background:var(--bg-panel); border-bottom:none;}
 footer{padding:40px 0 60px; color:var(--text-dim); font-size:13px;}
 footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; border-top:1px solid var(--line); padding-top:24px;}
 footer a{text-decoration:underline;}
-.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;will-change:transform,opacity;}
 .reveal.in{opacity:1; transform:translateY(0);}
-@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} }
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;will-change:transform,opacity;} }
 @media (max-width:600px){ .cta-inner{flex-direction:column; align-items:flex-start;} }
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;will-change:auto!important;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4019508926348026" crossorigin="anonymous"></script>
 <script src="/chatbot/gform.js" defer></script>
@@ -150,8 +152,7 @@ footer a{text-decoration:underline;}
     position:fixed; top:0; right:0; bottom:0; width:min(320px,84vw); height:100vh;
     background:#fff; box-shadow:-12px 0 40px rgba(0,0,0,.18);
     padding:88px 24px 32px; gap:4px; z-index:320; overflow-y:auto;
-    animation:vxSlideIn .3s ease;
-  }
+    animation:vxSlideIn .3s ease;will-change:transform,opacity;}
   .vx-nav.open a{font-size:1rem; padding:12px 14px;}
   @keyframes vxSlideIn{from{transform:translateX(100%);} to{transform:translateX(0);}}
   .vx-toggle{display:flex;}
@@ -321,7 +322,7 @@ footer a{text-decoration:underline;}
     <div class="profile-grid">
       <div class="profile-photo-panel">
         <div class="profile-avatar" aria-hidden="true">A</div>
-        <h3>Afrasiab</h3>
+        <h2>Afrasiab</h2>
         <span class="profile-role">Team Member</span>
       </div>
       <div>

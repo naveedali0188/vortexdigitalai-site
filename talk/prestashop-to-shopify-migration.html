@@ -19,9 +19,8 @@
 <meta property="og:url" content="https://vortexdigitalai.com/talk/prestashop-to-shopify-migration.html">
 <meta property="og:image" content="https://vortexdigitalai.com/naveed-ali.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PrestaShop to Shopify Migration Interview | Vortex Digital AI">
-<meta name="twitter:description" content="An illustrative client consultation on migrating from PrestaShop to Shopify, covering data, design, SEO and the technical approach.">
-
+<meta name="twitter:title" content="Talk: A Real PrestaShop to Shopify Migration Journey">
+<meta name="twitter:description" content="An illustrative consultation between Naveed Ali Qureshi of Vortex Digital AI and a Spain-based eCommerce client planning a PrestaShop to Shopify migration.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -147,7 +146,7 @@ section .section-sub{color:var(--text-dim); font-size:15px; max-width:680px; mar
 .guarantee-box{background:var(--bg-panel); border:2px solid var(--accent); border-radius:8px; padding:28px;}
 .guarantee-cols{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:20px;}
 @media (max-width:700px){.guarantee-cols{grid-template-columns:1fr;}}
-.guarantee-cols h4{font-size:13px; text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px; font-family:'JetBrains Mono', monospace;}
+.guarantee-cols h3{font-size:13px; text-transform:uppercase; letter-spacing:.05em; margin:1.33em 0 10px; font-family:'JetBrains Mono', monospace;}
 .guarantee-cols ul{list-style:none; font-size:13px; color:var(--text-dim);}
 .guarantee-cols li{padding:5px 0;}
 
@@ -197,10 +196,11 @@ footer{padding:40px 0 60px; color:var(--text-dim); font-size:13px;}
 footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; border-top:1px solid var(--line); padding-top:24px;}
 footer a{text-decoration:underline;}
 
-.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;will-change:transform,opacity;}
 .reveal.in{opacity:1; transform:translateY(0);}
-@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} }
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;will-change:transform,opacity;} }
 @media (max-width:600px){ .cta-inner{flex-direction:column; align-items:flex-start;} .qa-bubble{max-width:94%;} }
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;will-change:auto!important;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4019508926348026" crossorigin="anonymous"></script>
 <script type="application/ld+json">
@@ -284,8 +284,7 @@ footer a{text-decoration:underline;}
     position:fixed; top:0; right:0; bottom:0; width:min(320px,84vw); height:100vh;
     background:#fff; box-shadow:-12px 0 40px rgba(0,0,0,.18);
     padding:88px 24px 32px; gap:4px; z-index:320; overflow-y:auto;
-    animation:vxSlideIn .3s ease;
-  }
+    animation:vxSlideIn .3s ease;will-change:transform,opacity;}
   .vx-nav.open a{font-size:1rem; padding:12px 14px;}
   @keyframes vxSlideIn{from{transform:translateX(100%);} to{transform:translateX(0);}}
   .vx-toggle{display:flex;}
@@ -699,7 +698,7 @@ footer a{text-decoration:underline;}
     <div class="guarantee-box">
       <div class="guarantee-cols">
         <div>
-          <h4>Covered</h4>
+          <h3>Covered</h3>
           <ul>
             <li>Migration-related issue investigation</li>
             <li>Bug fixing related to delivered migration work</li>
@@ -710,7 +709,7 @@ footer a{text-decoration:underline;}
           </ul>
         </div>
         <div>
-          <h4>Not covered</h4>
+          <h3>Not covered</h3>
           <ul>
             <li>New features outside the agreed scope</li>
             <li>Third-party service failures</li>

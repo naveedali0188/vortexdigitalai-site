@@ -18,7 +18,8 @@
 <meta property="og:url" content="https://vortexdigitalai.com/services/hipaa-compliance.html">
 <meta property="og:image" content="https://vortexdigitalai.com/naveed-ali.jpg">
 <meta name="twitter:card" content="summary_large_image">
-
+<meta name="twitter:title" content="HIPAA-Aligned Web & AI Projects | VortexDigitalAI">
+<meta name="twitter:description" content="Confidential digital delivery for projects involving health data, with clear access controls, data handling, and HIPAA-aligned practices.">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Service",
@@ -134,10 +135,12 @@ section.cta{background:var(--bg-panel); border-bottom:none;}
 footer{padding:40px 0 60px; color:var(--text-dim); font-size:13px;}
 footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; border-top:1px solid var(--line); padding-top:24px;}
 footer a{text-decoration:underline;}
-.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;will-change:transform,opacity;}
 .reveal.in{opacity:1; transform:translateY(0);}
-@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} }
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;will-change:transform,opacity;} }
 @media (max-width:600px){ .cta-inner{flex-direction:column; align-items:flex-start;} }
+.answer-box{margin-top:18px;max-width:760px;padding:14px 18px;border:1px solid var(--line, #e5e5e5);border-left:3px solid var(--accent, #059669);border-radius:6px;background:var(--bg-panel, #fafafa);color:var(--text-dim, #6b7280);font-size:14px;}.answer-box strong{color:var(--text, #111);}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;will-change:auto!important;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4019508926348026" crossorigin="anonymous"></script>
 <script type="application/ld+json">
@@ -222,8 +225,7 @@ footer a{text-decoration:underline;}
     position:fixed; top:0; right:0; bottom:0; width:min(320px,84vw); height:100vh;
     background:#fff; box-shadow:-12px 0 40px rgba(0,0,0,.18);
     padding:88px 24px 32px; gap:4px; z-index:320; overflow-y:auto;
-    animation:vxSlideIn .3s ease;
-  }
+    animation:vxSlideIn .3s ease;will-change:transform,opacity;}
   .vx-nav.open a{font-size:1rem; padding:12px 14px;}
   @keyframes vxSlideIn{from{transform:translateX(100%);} to{transform:translateX(0);}}
   .vx-toggle{display:flex;}
@@ -232,6 +234,7 @@ footer a{text-decoration:underline;}
   .vx-drop-trigger{width:100%; justify-content:space-between;}
   .vx-actions .vx-btn-cta{display:none;}
 }
+.answer-box{margin-top:18px;max-width:760px;padding:14px 18px;border:1px solid var(--line, #e5e5e5);border-left:3px solid var(--accent, #059669);border-radius:6px;background:var(--bg-panel, #fafafa);color:var(--text-dim, #6b7280);font-size:14px;}.answer-box strong{color:var(--text, #111);}
 </style>
 
 <header class="vx-header">
@@ -383,7 +386,7 @@ footer a{text-decoration:underline;}
   <div class="wrap">
     <span class="eyebrow">Trust & Compliance — VortexDigitalAI</span>
     <h1 class="headline">Confidential, HIPAA-Aligned Digital Delivery</h1>
-    <p class="sub">For projects involving health data, VortexDigitalAI makes confidentiality, access, and data handling explicit from the start. This is an operational commitment to careful delivery—not a claim of certification or legal compliance on a client’s behalf.</p>
+    <p class="sub answer-box"><strong>Direct answer:</strong> For health-data projects, we make confidentiality, access, and data handling explicit from the start; this describes careful operations, not a certification or legal-compliance claim.</p>
     <div class="notice-box">
       <strong>A note on terminology:</strong> There is no official third-party "HIPAA certification" for vendors — HIPAA compliance is a set of practices and legal agreements (like Business Associate Agreements), not a certificate that gets issued. This page describes our commitment to HIPAA-aligned practices and confidentiality, discussed and confirmed per project.
     </div>

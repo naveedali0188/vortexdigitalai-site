@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shopify vs WooCommerce vs PrestaShop vs Wix: Best Ecommerce Platform for Spain — Interview with Naveed Ali Qureshi</title>
+<title>PrestaShop vs Wix: Ecommerce Platform Comparison for Spain</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <script src="/chatbot/gform.js" defer></script>
 
@@ -14,14 +14,13 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shopify vs WooCommerce vs PrestaShop vs Wix: Best Ecommerce Platform for Spain — Interview with Naveed Ali Qureshi">
+<meta property="og:title" content="PrestaShop vs Wix: Ecommerce Platform Comparison for Spain">
 <meta property="og:description" content="An illustrative interview with Naveed Ali Qureshi of Vortex Digital AI comparing Shopify, WooCommerce, PrestaShop and Wix for ecommerce businesses in Spain, covering Bizum, Redsys and IVA.">
 <meta property="og:url" content="https://vortexdigitalai.com/talk/naveed-ali-qureshi-ecommerce-interview-spain.html">
 <meta property="og:image" content="https://vortexdigitalai.com/naveed-ali.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PrestaShop to Shopify Migration Interview | Vortex Digital AI">
-<meta name="twitter:description" content="An illustrative client consultation on migrating from PrestaShop to Shopify, covering data, design, SEO and the technical approach.">
-
+<meta name="twitter:title" content="PrestaShop vs Wix: Ecommerce Platform Comparison for Spain">
+<meta name="twitter:description" content="An illustrative interview with Naveed Ali Qureshi of Vortex Digital AI comparing Shopify, WooCommerce, PrestaShop and Wix for ecommerce businesses in Spain, covering Bizum, Redsys and IVA.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -100,6 +99,8 @@ p.sub{color:var(--text-dim); font-size:16px; max-width:700px; margin-top:16px;}
   margin-top:24px; padding:14px 18px; background:var(--bg-panel); border:1px solid var(--line);
   border-radius:6px; font-size:13px; color:var(--text-dim); max-width:700px;
 }
+.answer-box{margin-top:18px; max-width:760px; padding:14px 18px; border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:6px; background:var(--bg-panel); color:var(--text-dim); font-size:14px;}
+.answer-box strong{color:var(--text);}
 .migration-badge-row{display:flex; align-items:center; gap:16px; margin-top:36px; flex-wrap:wrap;}
 .platform-badge{
   font-family:'Orbitron', sans-serif; font-weight:700; font-size:14px; padding:10px 20px;
@@ -191,10 +192,11 @@ footer{padding:40px 0 60px; color:var(--text-dim); font-size:13px;}
 footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; border-top:1px solid var(--line); padding-top:24px;}
 footer a{text-decoration:underline;}
 
-.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;will-change:transform,opacity;}
 .reveal.in{opacity:1; transform:translateY(0);}
-@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} }
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;will-change:transform,opacity;} }
 @media (max-width:600px){ .cta-inner{flex-direction:column; align-items:flex-start;} .qa-bubble{max-width:94%;} }
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;will-change:auto!important;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4019508926348026" crossorigin="anonymous"></script>
 <script type="application/ld+json">
@@ -278,8 +280,7 @@ footer a{text-decoration:underline;}
     position:fixed; top:0; right:0; bottom:0; width:min(320px,84vw); height:100vh;
     background:#fff; box-shadow:-12px 0 40px rgba(0,0,0,.18);
     padding:88px 24px 32px; gap:4px; z-index:320; overflow-y:auto;
-    animation:vxSlideIn .3s ease;
-  }
+    animation:vxSlideIn .3s ease;will-change:transform,opacity;}
   .vx-nav.open a{font-size:1rem; padding:12px 14px;}
   @keyframes vxSlideIn{from{transform:translateX(100%);} to{transform:translateX(0);}}
   .vx-toggle{display:flex;}
@@ -445,6 +446,7 @@ footer a{text-decoration:underline;}
   <div class="wrap">
     <span class="eyebrow">Talk — Client Consultation Interview</span>
     <h1 class="headline">Talk: Shopify vs WooCommerce vs PrestaShop vs Wix — Best Ecommerce Platform for Spain</h1>
+    <div class="answer-box"><strong>Quick answer:</strong> PrestaShop suits merchants who need greater control and can manage technical upkeep; Wix is simpler to maintain for less complex stores.</div>
     <p class="sub">An illustrative interview with Naveed Ali Qureshi of Vortex Digital AI comparing Shopify, WooCommerce, PrestaShop and Wix for ecommerce businesses in Spain, covering Bizum, Redsys and IVA.</p>
     <div class="disclaimer"><strong>About this page:</strong> An illustrative interview scenario about choosing an ecommerce platform for the Spanish market — not a published interview or real customer testimonial.</div>
   </div>
@@ -627,58 +629,6 @@ function initScrollReveal(){
 }
 window.addEventListener('DOMContentLoaded', initScrollReveal);
 
-// ---- Migration inquiry form: client-side only, opens mailto (no backend needed, no third-party form service) ----
-var form = document.getElementById('migrationForm');
-form.addEventListener('submit', function(e){
-  e.preventDefault();
-
-  // Honeypot spam check — bots tend to fill every field, real users never see this one
-  if(form.company_website.value.trim() !== ''){
-    return;
-  }
-
-  var required = ['name','email','country','current_url'];
-  for(var i=0; i<required.length; i++){
-    var field = form[required[i]];
-    if(!field.value.trim()){
-      field.focus();
-      document.getElementById('formNote').textContent = 'Please fill in all required fields marked *.';
-      return;
-    }
-  }
-  var emailVal = form.email.value.trim();
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)){
-    form.email.focus();
-    document.getElementById('formNote').textContent = 'Please enter a valid email address.';
-    return;
-  }
-
-  var lines = [
-    'Name: ' + form.name.value,
-    'Email: ' + form.email.value,
-    'Country: ' + form.country.value,
-    'Current Store URL: ' + form.current_url.value,
-    'Shopify Store URL: ' + (form.shopify_url.value || 'N/A'),
-    'Approx. Product Count: ' + (form.product_count.value || 'N/A'),
-    'Approx. Customer Count: ' + (form.customer_count.value || 'N/A'),
-    'Approx. Order Count: ' + (form.order_count.value || 'N/A'),
-    'Current PrestaShop Version: ' + (form.prestashop_version.value || 'N/A'),
-    'Required Migration Services: ' + (form.required_services.value || 'N/A'),
-    'Design Migration Required: ' + form.design_migration.value,
-    'SEO Migration Required: ' + form.seo_migration.value,
-    'Preferred Timeline: ' + (form.timeline.value || 'N/A'),
-    '',
-    'Message:',
-    form.message.value || '(none)'
-  ];
-
-  var subject = encodeURIComponent('PrestaShop to Shopify Migration Consultation Request');
-  var body = encodeURIComponent(lines.join('\n'));
-  var sheetData = {name:form.name.value, email:form.email.value, country:form.country.value, current_url:form.current_url.value, shopify_url:form.shopify_url.value, product_count:form.product_count.value, customer_count:form.customer_count.value, order_count:form.order_count.value, prestashop_version:form.prestashop_version.value, required_services:form.required_services.value, design_migration:form.design_migration.value, seo_migration:form.seo_migration.value, timeline:form.timeline.value, message:form.message.value};
-  if(typeof vxSubmitToSheet === 'function'){ vxSubmitToSheet(sheetData); }
-  window.location.href = 'mailto:naveedali01888@gmail.com?subject=' + subject + '&body=' + body;
-  document.getElementById('formNote').textContent = 'Opening your email client with these details filled in — send the email to complete your request.';
-});
 </script>
 
 

@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fahad Ali — App &amp; Web Developer | VortexDigitalAI">
-<meta name="twitter:description" content="WordPress, custom web apps, and mobile app development by Fahad Ali at VortexDigitalAI.">
+<meta name="twitter:description" content="WordPress, custom web apps, and mobile app development by Fahad Ali at VortexDigitalAI — serving clients worldwide.">
 <meta name="twitter:image" content="https://vortexdigitalai.com/team/fahad-ali-app-web-developer.jpg">
 
 <!-- ============ SCHEMA: ProfilePage + Person ============ -->
@@ -133,7 +133,7 @@ section .section-sub{color:var(--text-dim); font-size:15px; max-width:660px; mar
 .profile-photo-card img{width:100%; height:520px; object-fit:cover; object-position:top center; display:block;}
 @media (max-width:860px){.profile-photo-card img{height:380px;}}
 .profile-caption{text-align:center; margin-top:16px;}
-.profile-caption h3{font-size:18px; margin-bottom:4px;}
+.profile-caption h2{font-size:18px; margin:1em 0 4px;}
 .profile-role{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); display:block;}
 @media (prefers-reduced-motion: reduce){ .photo-ring{animation:none;} }
 .info-card{background:var(--bg-panel); border:1px solid var(--line); border-radius:6px; padding:6px 22px;}
@@ -176,10 +176,11 @@ section.cta{background:var(--bg-panel); border-bottom:none;}
 footer{padding:40px 0 60px; color:var(--text-dim); font-size:13px;}
 footer .foot-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; border-top:1px solid var(--line); padding-top:24px;}
 footer a{text-decoration:underline;}
-.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;will-change:transform,opacity;}
 .reveal.in{opacity:1; transform:translateY(0);}
-@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;} }
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none;will-change:transform,opacity;} }
 @media (max-width:600px){ .cta-inner{flex-direction:column; align-items:flex-start;} }
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;will-change:auto!important;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4019508926348026" crossorigin="anonymous"></script>
 <script src="/chatbot/gform.js" defer></script>
@@ -232,8 +233,7 @@ footer a{text-decoration:underline;}
     position:fixed; top:0; right:0; bottom:0; width:min(320px,84vw); height:100vh;
     background:#fff; box-shadow:-12px 0 40px rgba(0,0,0,.18);
     padding:88px 24px 32px; gap:4px; z-index:320; overflow-y:auto;
-    animation:vxSlideIn .3s ease;
-  }
+    animation:vxSlideIn .3s ease;will-change:transform,opacity;}
   .vx-nav.open a{font-size:1rem; padding:12px 14px;}
   @keyframes vxSlideIn{from{transform:translateX(100%);} to{transform:translateX(0);}}
   .vx-toggle{display:flex;}
@@ -413,10 +413,10 @@ footer a{text-decoration:underline;}
         <div class="profile-photo-card">
           <img src="/team/fahad-ali-app-web-developer.jpg"
                alt="Fahad Ali, app and web developer at VortexDigitalAI, in a light blue suit against an orange circular background"
-               width="896" height="1100" loading="eager">
+               width="896" height="1100" loading="lazy">
         </div>
         <div class="profile-caption">
-          <h3>Fahad Ali</h3>
+          <h2>Fahad Ali</h2>
           <span class="profile-role">App &amp; Web Developer · VortexDigitalAI</span>
         </div>
       </div>

@@ -21,9 +21,9 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="VortexDigitalAI | AI Websites, SEO & Automation" />
-  <meta name="twitter:description" content="Build a stronger digital operation with AI websites, SEO, automation, e-commerce migration and practical training." />
-  <meta name="twitter:image" content="https://vortexdigitalai.com/naveed-ali.jpg" />
+<meta name="twitter:title" content="VortexDigitalAI | AI Websites, SEO & Automation">
+<meta name="twitter:description" content="Build a stronger digital operation with AI websites, SEO, automation, e-commerce migration and practical training.">
+<meta name="twitter:image" content="https://vortexdigitalai.com/naveed-ali.jpg" />
   <meta name="twitter:site" content="@vortexdigitalai" />
 
   <!-- Structured data: Organization + Person + Services + FAQ (AEO/GEO) -->
@@ -867,7 +867,7 @@
     .section-sub { color: var(--muted); max-width: 540px; margin-bottom: 48px; font-size: 1rem; line-height: 1.75; }
 
     /* reveal */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease-expo), transform .7s var(--ease-expo); }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease-expo), transform .7s var(--ease-expo);will-change:transform,opacity;}
     .reveal.visible { opacity: 1; transform: none; }
     .reveal-delay-1 { transition-delay: .1s; }
     .reveal-delay-2 { transition-delay: .2s; }
@@ -1227,7 +1227,7 @@
     .footer-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr repeat(5, auto); gap: 32px; align-items: start; }
     .footer-brand { max-width: 280px; }
     .footer-tagline { font-size: .87rem; color: var(--muted); line-height: 1.65; margin-top: 10px; }
-    .footer-col h4 { font-family: var(--font-display); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .footer-col h3 { font-family: var(--font-display); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 1.33em 0 16px; }
     .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
     .footer-col ul a { font-size: .88rem; color: var(--muted); transition: color .2s; }
     .footer-col ul a:hover { color: var(--cyan); }
@@ -1303,9 +1303,10 @@
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-      .reveal { opacity: 1; transform: none; }
+      .reveal { opacity: 1; transform: none;will-change:transform,opacity;}
     }
-  </style>
+  @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;will-change:auto!important;}}
+</style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4019508926348026" crossorigin="anonymous"></script>
 <script src="/chatbot/gform.js" defer></script>
 </head>
@@ -1464,7 +1465,7 @@
       <div class="hero-photo-wrap">
         <div class="photo-ring" aria-hidden="true"></div>
         <div class="hero-photo-card">
-          <img src="https://vortexdigitalai.com/naveed-ali.jpg" alt="Naveed Ali — Founder, VortexDigitalAI" />
+          <img src="https://vortexdigitalai.com/naveed-ali.jpg" alt="Naveed Ali — Founder, VortexDigitalAI" width="800" height="800" loading="lazy" />
           <div class="hero-photo-badge">
             <div class="badge-avatar"><i class="fas fa-user-tie"></i></div>
             <div>
@@ -1844,7 +1845,7 @@
         <p class="footer-tagline">AI websites, SEO, automation, e-commerce systems, and practical training—built by Naveed Ali and the Vortex team.</p>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <ul>
           <li><a href="#hero">Home</a></li>
           <li><a href="#services">Services</a></li>
@@ -1854,7 +1855,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h3>Services</h3>
         <ul>
           <li><a href="#services">All Services</a></li>
           <li><a href="/order-fulfillment.html">Order Fulfillment</a></li>
@@ -1863,7 +1864,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Courses</h4>
+        <h3>Courses</h3>
         <ul>
           <li><a href="#courses">All Courses</a></li>
           <li><a href="/courses/ai-financial-analyst.html">AI Financial Analyst</a></li>
@@ -1872,7 +1873,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Projects</h4>
+        <h3>Projects</h3>
         <ul>
           <li><a href="/environmental-impact.html">Impact Tracker</a></li>
           <li><a href="/ecommerce.html">eCommerce Migration</a></li>
@@ -1880,7 +1881,7 @@
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Platforms</h4>
+        <h3>Platforms</h3>
         <ul>
           <li><a href="https://wa.me/923125282051" target="_blank" rel="noopener noreferrer">Google</a></li>
           <li><a href="https://www.credly.com/users/naveed-ali-qureshi" target="_blank" rel="noopener noreferrer">Credly</a></li>
