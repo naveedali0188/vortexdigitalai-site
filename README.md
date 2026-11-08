@@ -11,6 +11,7 @@ Hosted on **GitHub Pages**, custom domain via `CNAME`.
 |---|---|
 | `index.html` | Main website (homepage — services, courses, FAQ, contact, everything) |
 | `environmental-impact.html` | **New page** — live Global Environmental Impact Tracker |
+| `voice-gender/index.html` | Gender Recognition from Voice landing page and link to the Flask tool |
 | `404.html` | Custom "page not found" page |
 | `CNAME` | Tells GitHub Pages to serve the site on `vortexdigitalai.com` instead of the default `*.github.io` address |
 | `robots.txt` | Tells search engines which pages they're allowed to crawl |

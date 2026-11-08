@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Upload a .wav audio clip and instantly detect whether the voice is male or female using AI (MFCC + Machine Learning). Free tool by Vorext Digital AI.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vortexdigitalai.com/voice-gender/">
+  <title>Gender Recognition from Voice - AI Tool | Vorext Digital AI</title>
+  <meta property="og:title" content="Gender Recognition from Voice - AI Tool | Vorext Digital AI">
+  <meta property="og:description" content="Upload a .wav audio clip and explore AI voice gender recognition by Vorext Digital AI.">
+  <meta property="og:url" content="https://vortexdigitalai.com/voice-gender/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VortexDigitalAI">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --bg: #fff;
+      --bg-2: #fafafa;
+      --surface: #fff;
+      --border: #e5e5e5;
+      --ink: #000;
+      --muted: #6b7280;
+      --font-display: Orbitron, sans-serif;
+      --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--bg); font: 16px/1.6 var(--font-body); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+    .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--border); background: rgba(255,255,255,.92); backdrop-filter: blur(16px); }
+    .header-inner { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .logo { display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+    .logo-icon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; color: #fff; background: #000; }
+    .logo-text { font: 800 1rem var(--font-display); letter-spacing: -.02em; }
+    .primary-nav { display: flex; align-items: center; gap: 4px; }
+    .primary-nav > a, .nav-drop-trigger { padding: 7px 9px; border: 0; border-radius: 4px; color: var(--muted); background: transparent; font-size: .79rem; white-space: nowrap; cursor: pointer; }
+    .primary-nav > a:hover, .nav-drop-trigger:hover { color: var(--ink); background: var(--bg-2); }
+    .nav-dropdown { position: relative; }
+    .nav-drop-trigger { display: flex; align-items: center; gap: 6px; font-family: var(--font-body); }
+    .nav-drop-panel { position: absolute; top: calc(100% + 8px); left: 0; z-index: 30; min-width: 230px; padding: 8px; border: 1px solid var(--border); border-radius: 8px; background: #fff; box-shadow: 0 16px 40px #0002; opacity: 0; visibility: hidden; transform: translateY(5px); transition: .18s ease; }
+    .nav-dropdown:hover .nav-drop-panel, .nav-dropdown.open .nav-drop-panel { opacity: 1; visibility: visible; transform: none; }
+    .nav-drop-panel a { display: block; padding: 9px 10px; border-radius: 6px; font-size: .84rem; }
+    .nav-drop-panel a:hover { background: var(--bg-2); }
+    .nav-drop-panel small { display: block; color: var(--muted); font-size: .72rem; }
+    .header-actions { display: flex; align-items: center; }
+    .nav-toggle { display: none; width: 40px; height: 40px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid var(--border); border-radius: 5px; background: #fff; }
+    .nav-toggle span { width: 20px; height: 2px; background: var(--ink); }
+    .nav-backdrop { display: none; }
+    .page-main { width: min(1000px, calc(100% - 48px)); min-height: 56vh; margin: 0 auto; padding: 90px 0 110px; }
+    .hero { max-width: 760px; margin: 0 auto; text-align: center; }
+    .eyebrow { margin-bottom: 18px; color: var(--muted); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 0; font: 800 clamp(2rem, 5vw, 3.5rem)/1.16 var(--font-display); letter-spacing: -.04em; }
+    .hero-subtitle { max-width: 620px; margin: 20px auto 28px; color: var(--muted); font-size: clamp(1rem, 2vw, 1.15rem); }
+    .primary-cta { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 10px; padding: 12px 24px; border-radius: 999px; color: #fff; background: linear-gradient(135deg, #000, #333); font-weight: 700; transition: transform .2s, box-shadow .2s; }
+    .primary-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px #0003; }
+    .tool-note { max-width: 600px; margin: 22px auto 0; color: var(--muted); font-size: .82rem; }
+    .site-footer { margin-top: 20px; padding: 52px 24px 28px; border-top: 1px solid var(--border); background: var(--bg-2); }
+    .footer-inner { width: min(1180px, 100%); margin: 0 auto; display: grid; grid-template-columns: 1.2fr repeat(3, 1fr); gap: 32px; }
+    .footer-tagline { max-width: 320px; margin: 10px 0 0; color: var(--muted); font-size: .87rem; }
+    .footer-col h2 { margin: 0 0 14px; color: var(--muted); font: 700 .8rem var(--font-display); letter-spacing: .08em; text-transform: uppercase; }
+    .footer-col ul { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
+    .footer-col a { color: var(--muted); font-size: .86rem; }
+    .footer-col a:hover { color: var(--ink); }
+    .footer-bottom { width: min(1180px, 100%); margin: 32px auto 0; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: .82rem; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #6b7280; outline-offset: 3px; }
+    @media (max-width: 900px) {
+      .nav-toggle { display: flex; }
+      .primary-nav { display: none; }
+      .primary-nav.open { position: fixed; top: 0; right: 0; bottom: 0; z-index: 25; width: min(340px, 86vw); display: flex; flex-direction: column; align-items: stretch; gap: 2px; overflow-y: auto; padding: 82px 20px 30px; background: #fff; box-shadow: -12px 0 40px #0002; }
+      .primary-nav.open > a, .primary-nav.open .nav-drop-trigger { width: 100%; padding: 11px 12px; text-align: left; font-size: .96rem; }
+      .nav-drop-panel { position: static; display: none; padding: 4px 0 4px 14px; border: 0; box-shadow: none; opacity: 1; visibility: visible; transform: none; }
+      .nav-dropdown.open .nav-drop-panel { display: block; }
+      .nav-backdrop.open { position: fixed; inset: 0; z-index: 15; display: block; background: #0007; }
+    }
+    @media (max-width: 640px) {
+      .container, .page-main { width: min(100% - 32px, 1180px); }
+      .logo-text { font-size: .86rem; }
+      .page-main { padding: 68px 0 80px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="VortexDigitalAI home">
+        <span class="logo-icon" aria-hidden="true"><i class="fas fa-bolt"></i></span>
+        <span class="logo-text">VortexDigitalAI</span>
+      </a>
+      <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <div class="nav-dropdown">
+          <button class="nav-drop-trigger" type="button" aria-expanded="false">Services <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="nav-drop-panel">
+            <a href="/services/ai-websites.html">AI Websites</a>
+            <a href="/services/ai-seo.html">AI SEO</a>
+            <a href="/services/automations.html">Automations</a>
+            <a href="/services/artificial-intelligence.html">Artificial Intelligence</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-drop-trigger" type="button" aria-expanded="false">Projects <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+          <div class="nav-drop-panel">
+            <a href="/environmental-impact.html">Impact Tracker</a>
+            <a href="/voice-gender/" aria-current="page">🎤 Gender Recognition from Voice</a>
+            <a href="/ecommerce.html">eCommerce Migration</a>
+          </div>
+        </div>
+        <a href="/#expertise">Expertise</a>
+        <a href="/#technologies">Integrations</a>
+        <a href="/#courses">Courses</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#get-in-touch">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Open mobile menu" aria-expanded="false" aria-controls="primaryNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+  <main class="page-main">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">VortexDigitalAI · Free AI Tool</p>
+      <h1 id="page-title">Gender Recognition from Voice</h1>
+      <p class="hero-subtitle">Upload a short audio clip and let AI detect the gender</p>
+      <a class="primary-cta" href="https://voice.vorextdigitalai.com" target="_blank" rel="noopener noreferrer">
+        Open the voice analyzer <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+      </a>
+      <p class="tool-note">The analyzer accepts WAV audio files. It opens in a new tab so you can use the full voice-analysis experience.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo-text" href="/">VortexDigitalAI</a>
+        <p class="footer-tagline">AI websites, SEO, automation, e-commerce systems, and practical training—built by Naveed Ali and the Vortex team.</p>
+      </div>
+      <div class="footer-col">
+        <h2>Company</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#courses">Courses</a></li>
+          <li><a href="/#get-in-touch">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2>Projects</h2>
+        <ul>
+          <li><a href="/environmental-impact.html">Impact Tracker</a></li>
+          <li><a href="/voice-gender/">Gender Recognition from Voice</a></li>
+          <li><a href="/ecommerce.html">eCommerce Migration</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2>Connect</h2>
+        <ul>
+          <li><a href="https://wa.me/923125282051" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="mailto:naveedali01888@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 VortexDigitalAI. All rights reserved.</div>
+  </footer>
+  <script>
+    const nav = document.getElementById("primaryNav");
+    const toggle = document.getElementById("navToggle");
+    const backdrop = document.getElementById("navBackdrop");
+    function closeMenu() {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open mobile menu");
+      backdrop.classList.remove("open");
+      document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
+        dropdown.classList.remove("open");
+        dropdown.querySelector(".nav-drop-trigger").setAttribute("aria-expanded", "false");
+      });
+    }
+    toggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Close mobile menu" : "Open mobile menu");
+      backdrop.classList.toggle("open", isOpen);
+    });
+    backdrop.addEventListener("click", closeMenu);
+    nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+    document.querySelectorAll(".nav-drop-trigger").forEach((button) => {
+      button.addEventListener("click", () => {
+        const dropdown = button.closest(".nav-dropdown");
+        const isOpen = dropdown.classList.toggle("open");
+        button.setAttribute("aria-expanded", String(isOpen));
+      });
+    });
+  </script>
+</body>
+</html>
